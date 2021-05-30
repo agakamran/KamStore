@@ -1,0 +1,38 @@
+<mdb-card>
+  <mdb-card-body>
+    <h3 class="h2-responsive mb-4">
+      <strong>Edit profile</strong>
+    </h3>
+    <!--Body-->
+    <form [formGroup]="ProfileForm">     
+      <h5 class="h5-responsive">Display name</h5> 
+      <input type="checkbox" id="isEmailConfirmed" class="form-control" mdbInput formControlName="isEmailConfirmed" hidden/>     
+      <div class="md-form" *ngIf="!user.isEmailConfirmed">
+        <i class="fa fa-user prefix"></i>
+        <input type="text" id="form1" class="form-control" mdbInput formControlName="displayName" readonly disabled/>
+        <label for="form1">Display name</label>
+      </div>
+      <h5 class="h5-responsive">Photo Url</h5>     
+      <div class="md-form">
+        <i class="fa fa-user prefix"></i>        
+        <input [(ngModel)]="_photoUrl" mdbInput formControlName="photoUrl" type="text" class="form-control"/>        
+         <input type="file" (change)="_selectFiles($event)" /> 
+        <label for="form2">Photo Url</label>        
+      </div>        
+      <!-- <div class="md-form">
+        <input type="file" (change)="showPreviewImage($event)">
+        <img [src]="localUrl" *ngIf="localUrl" class="imgPlaceholder">
+      </div> -->
+     
+      <h5 class="h5-responsive">phoneNumber</h5>
+        <div class="md-form">
+          <i class="fa fa-user prefix"></i>            
+          <input [(ngModel)]="_phoneNumber" mdbInput formControlName="phoneNumber" type="text" class="form-control"/>
+         <label for="phoneNumber">phoneNumber</label>
+        </div>
+      <div class="text-right">
+        <button type="button" mdbBtn color="primary" (click)="onProfileUpdate()">Update profile</button>
+      </div>
+    </form>
+  </mdb-card-body>
+</mdb-card>

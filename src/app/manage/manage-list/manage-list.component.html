@@ -1,0 +1,69 @@
+<br><br>
+<div class="light-font">{{pageTitle}}
+  <nav class="navbar navbar-expand-lg navbar-dark unique-color">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown" dropdown >
+                <a  dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                <span class="caret">Əməliyyatlar</span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu" >
+                    <li class="nav-item">
+                        <a class="dropdown-item waves-light" mdbWavesEffect href="manage/additem">ADD ITEM</a>
+                    </li>  
+                    <li >
+                     <a  class="dropdown-item waves-light" mdbWavesEffect href="manage/firma">EDIT FIRMA</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item waves-light" mdbWavesEffect href="manage/ChangePassword">ChangePassword</a>
+                    </li>
+                    <!-- <li>
+                        <a class="dropdown-item waves-light" mdbWavesEffect href="manage/profil">Profile</a>
+                    </li>
+                    
+                    <li>
+                        <a class="dropdown-item waves-light" mdbWavesEffect href="manage/uplod">Uplod All file</a>
+                    </li> -->
+                </div>   
+            </li>           
+           
+            <li class="nav-item"><!--*ngIf="isLoggedIn && !isLoading" -->
+                <a  class="nav-link waves-light" mdbWavesEffect href="manage/projects" routerLinkActive="active" mdbWavesEffect>PROJECTS</a>
+              </li>
+              <li  class="nav-item"><!--*ngIf="isLoggedIn && !isLoading" -->
+                <a  class="nav-link waves-light" mdbWavesEffect href="manage/customers" routerLinkActive="active" mdbWavesEffect>TABLES</a>
+              </li>
+              <li class="nav-item"><!--*ngIf="isLoggedIn && !isLoading" -->
+                <a  class="nav-link waves-light" mdbWavesEffect href="manage/charts" routerLinkActive="active" mdbWavesEffect>CHARTS</a>
+              </li>
+               <li  class="nav-item"><!--*ngIf="isLoggedIn && !isLoading" -->
+                <a  class="nav-link waves-light" mdbWavesEffect href="manage/profile" routerLinkActive="active" mdbWavesEffect>PROFILE</a>
+              </li>
+            
+           <!-- <li class="nav-item">
+                <a class="nav-link" href="manage/mykabinet">Şəxsi otaq</a>
+            </li>          
+            <li class="nav-item">
+                <a class="nav-link" href="manage/netice">Nəticəm</a>
+            </li>          
+            
+            <li class="nav-item">
+              <a class="nav-link" href="manage/TwoFactorAuthentication">Two-factor authentication</a>
+          </li>-->
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+                <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"><i class="fab fa-instagram"></i></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+  <router-outlet></router-outlet>
+</div>
+
+  

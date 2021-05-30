@@ -1,0 +1,18 @@
+[
+    {
+        "gender_Id":"",       
+        "gender_name": "KADIN"   
+    },
+    {
+        "gender_Id":"",       
+        "gender_name": "ERKEK"   
+    },
+    {
+        "gender_Id":"",       
+        "gender_name": "ÇOCUK"   
+    },
+    {
+        "gender_Id":"",       
+        "gender_name": "CANSIZ"   
+    }
+]

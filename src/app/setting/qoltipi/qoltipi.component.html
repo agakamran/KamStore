@@ -1,0 +1,104 @@
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Add/Edit/Delete Qoltipi</h3>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2">
+          <button type="button" mdbBtn color="primary" class="btn btn-success btn-rounded btn-sm my-0"
+          (click)="addqol.show()" (click)="_addqol()">Add <i class="fas fa-plus fa-2x" aria-hidden="true"></i></button>
+          </span> 
+          <div mdbModal #addqol="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="card-header">
+                  <button type="button" class="close pull-right" aria-label="Close" (click)="addqol.hide()">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                  <h4 class="modal-title w-100" id="myModalLabel"><span>New Qoltipi</span></h4>
+                </div>               
+              <form [formGroup]="qolForm" class="normal-form" >               
+                <div class="modal-body" > 
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <label for="formGroupExampleInput">Categoriya</label>                             
+                        <select [(ngModel)]="gender"  name="_gen" formControlName="gender_Id" (change)="selgen($event.target.value)"                       
+                        class="browser-default custom-select" >
+                          <option >Choose</option>                                    
+                            <option *ngFor="let o of _gender" [value]="o.gender_name" >{{o.gender_name}}</option>                                 
+                        </select>                     
+                    </div>
+                    <div class="col-sm-12">
+                      <label for="Qoltipi name" class=""><i class="fas fa-tag prefix grey-text"></i>Qoltipi name</label>
+                      <input type="text"  [(ngModel)]="qol.qoltipi_name"   name="qoltipi_name"  class="form-control" formControlName="qoltipi_name" placeholder="Qoltipi yazin" mdbInput> 
+                    </div>
+                  </div>                       
+                           
+                </div>
+                <div class="modal-footer">
+                 <button type="submit" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect (click)=onadd() (click)="addqol.hide()" [disabled]="!qolForm.valid">Save changes</button>
+                 <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="addqol.hide()" mdbWavesEffect>Close</button>
+                 </div>
+               </form>
+              </div>
+            </div>
+          </div> 
+          <!------------------------------------------------------------->
+          <div mdbModal #delqol="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="card-header">
+                  <button type="button" class="close pull-right" aria-label="Close" (click)="delqol.hide()">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ qol.qoltipi_name }}</span></h4>
+                </div>
+                <form  class="normal-form">           
+                <div class="modal-footer">
+                 <button type="submit" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect (click)="ondel()" (click)="delqol.hide()">YES</button>
+                 <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="delqol.hide()" mdbWavesEffect>NO</button>
+                 </div>
+               </form>
+              </div>
+            </div>
+          </div> 
+          <table class="table table-bordered table-responsive-md table-striped text-center"  *ngIf='listqol && listqol.length'>
+            <thead>
+              <tr>                
+               <!-- <th class="text-center">Navid</th>-->
+                <th class="text-center">Qol Id</th> 
+                <th class="text-center">Qoltipi name</th>  
+                <th class="text-center">Categoriy name</th>  
+                      
+                <th class="text-center">Sort</th>
+                <th class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody *ngFor='let p of filteredqol'>
+              <tr>
+               <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->
+                <td class="pt-3-half" contenteditable="true">{{ p.qol_Id }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.qoltipi_name }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.item_categoriy_name }}</td>
+               <!-- <td class="pt-3-half" contenteditable="true">{{ p.firma_telefon}}</td>    
+                <td class="pt-3-half" contenteditable="true">{{ p.firma_unvan}}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.firma_email}}</td>  
+                <td class="pt-3-half" contenteditable="true">{{ p.voen}}</td>  -->
+                <td class="pt-3-half">
+                  <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                        aria-hidden="true"></i></a></span>
+                  <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                        aria-hidden="true"></i></a></span>
+                </td>
+                <td>
+                  <span class="table-remove">
+                    <button type="button" (click)="addqol.show()" (click)="_editqol(p)" class="btn btn-info btn-sm my-0">
+                      Edit<i class="fas fa-edit"></i></button>
+                    <button type="button" (click)="delqol.show()" (click)="_editqol(p)" class="btn btn-danger btn-rounded btn-sm my-0">
+                      Remove<i class="fas fa-trash-alt"></i></button>
+                  </span>
+                </td>
+              </tr>       
+            </tbody>
+          </table>
+        </div>
+      </div>
+</div>

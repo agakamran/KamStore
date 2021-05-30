@@ -1,0 +1,641 @@
+<div class="card">
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Add/Edit/Delete beden</h3>    
+  <div class="card-body">
+    <div id="table" class="table-editable">   
+      <div mdbModal #bedsize="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fluid " role="document" style="width: 900px;height: auto">
+          <div class="modal-content">
+            <div class="card-header">
+              <button type="button" class="close pull-right" aria-label="Close" (click)="bedsize.hide()">
+                <span aria-hidden="true">×</span>
+              </button>
+              <h4 class="modal-title w-100" id="myModalLabel" ><span>Beden size</span></h4>
+              <div class="bs-example">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="#qadin" class="nav-link active" data-toggle="tab">Qadın</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#kishi" class="nav-link" data-toggle="tab">Kişi</a>
+                    </li>                    
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane fade show active" id="qadin">                     
+                    <div id="accordion">
+                      <div class="card">                    
+                        <button  data-toggle="collapse" style="text-align: left;" data-target="#collapseOne" color="default" aria-controls="collapseOne" mdbWavesEffect>
+                              Geyim
+                        </button>                                  
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                                  <table class="table table-striped table-bordered table-sm dataTable"  *ngIf='listbeden && listbeden.length'>
+                                    <thead>
+                                      <tr>                
+                                       <!-- <th class="text-center">Navid</th>-->
+                                       <th class="text-center">Beden</th>
+                                        <th class="text-center">TR/EY</th>    
+                                        <th class="text-center">UK</th>    
+                                        <th class="text-center">US</th>    
+                                        <th class="text-center">IT</th>
+                                        <th class="text-center">Gokus</th>  
+                                        <th class="text-center">bel</th>            
+                                       
+                                      </tr>
+                                    </thead>
+                                    <tbody *ngFor='let p of bedQad_Gey'>
+                                      <tr>
+                                       <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->  
+                                       <td class="pt-3-half" contenteditable="true">{{ p.beden }}</td>           
+                                        <td class="pt-3-half" contenteditable="true">{{ p.trEu }}</td>
+                                        <td class="pt-3-half" contenteditable="true">{{ p.uk}}</td>    
+                                        <td class="pt-3-half" contenteditable="true">{{ p.us}}</td>
+                                        <td class="pt-3-half" contenteditable="true">{{ p.it}}</td>  
+                                        <td class="pt-3-half" contenteditable="true">{{ p.koks}}</td>  
+                                        <td class="pt-3-half" contenteditable="true">{{ p.bel}}</td>                                                                     
+                                      </tr>       
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="col-md-4" style="font-family: 'source_sans_proregular';font-size: x-small;">
+                                <p>Göğüs :</p>
+                                <p>Mezurayı göğüsünüzün üzerinde en geniş noktasına yerleştirerek, göğsünüzün çevresi için ölçüm yapın.</p>
+                                <p>Bel :</p>
+                                <p>Ellerinizi belinize koyun.Elinizin bulunduğu nokta bel noktasıdır. O noktadan belinizin çevresini ölçün.</p>
+                                <p>İç Bacak Boyu :</p>
+                                <p>Bacak içini en üst çatal noktasından bilek kemiğine kadar ölçün.</p>                     
+                               <p>* Mezurayı düz tutmaya; yere paralel olarak şekilde, kaydırmamaya dikkat etmelisiniz.
+                                 * Ölçü alırken kendinizi rahat bırakmalı, nefesinizi tutmamalı ve göğüs kafesini şişirmeden ölçü almalısınız.
+                                 * Ölçü alırken çıplak beden üzerinden almalısınız.
+                                </p>
+                              </div>
+                              <div class="col-md-2">
+          
+                                <div class="view">
+                                  <img src="../../../assets/images/size-woman-graph.jpg" class="img-fluid"
+                                      alt="smaple image">
+                                  <div class="mask flex-center hm-gradient">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>                               
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                          <button  data-toggle="collapse" style="text-align: left;" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Ayakkabı
+                            </button>
+                          
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-8">
+                                <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                                  <table class="table table-striped table-bordered table-sm dataTable"  *ngIf='listbeden && listbeden.length'>
+                                    <thead>
+                                      <tr>                
+                                       <!-- <th class="text-center">Navid</th>-->                                       
+                                        <th class="text-center">TR/EY</th>    
+                                        <th class="text-center">UK</th>    
+                                        <th class="text-center">US</th>                                            
+                                        <th class="text-center">Ayak yzun</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody *ngFor='let p of bedQad_ayaq'>
+                                      <tr>
+                                       <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->  
+                                                
+                                        <td class="pt-3-half" contenteditable="true">{{ p.trEu }}</td>
+                                        <td class="pt-3-half" contenteditable="true">{{ p.uk}}</td>    
+                                        <td class="pt-3-half" contenteditable="true">{{ p.us}}</td>                                     
+                                        <td class="pt-3-half" contenteditable="true">{{ p.ayakUz}}</td>                                                                    
+                                      </tr>       
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="col-md-4" style="font-family: 'source_sans_proregular';font-size: x-small;">
+                               <div class="shoes-draft">
+                                  <img src="../../../assets/images/size-chart-foot.gif" alt="">
+                                  <div class="mask flex-center hm-gradient">
+                                  </div>
+                                </div>  
+                                <p>                                 
+                                  Cetvel ya da mezura ile topuğunuzdan, en uzun ayak parmağınızın hizasına kadar olan
+                                  kısmı ölçünüz.
+                                </p>                           
+                              </div>
+                            </div>   
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <button data-toggle="collapse" style="text-align: left;" data-target="#Pantolon" aria-expanded="false" aria-controls="Pantolon" mdbWavesEffect>
+                              Pantolon & Alt Giyim
+                        </button>                          
+                        <div id="Pantolon" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                                  <table class="table table-striped table-bordered table-sm dataTable"  *ngIf='listbeden && listbeden.length'>
+                                    <thead>
+                                      <tr>                
+                                       <!-- <th class="text-center">Navid</th>-->
+                                       
+                                        <th class="text-center">TR/EY</th>  
+                                        <th class="text-center">Beden</th>  
+                                        <th class="text-center">Bel(sm)</th>            
+                                       
+                                      </tr>
+                                    </thead>
+                                    <tbody *ngFor='let p of bedQad_pant'>
+                                      <tr>
+                                       <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->  
+                                       <td class="pt-3-half" contenteditable="true">{{ p.trEu }}</td>
+                                       <td class="pt-3-half" contenteditable="true">{{ p.beden }}</td>  
+                                        <td class="pt-3-half" contenteditable="true">{{ p.bel}}</td>                                                                     
+                                      </tr>       
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="col-md-4" style="font-family: 'source_sans_proregular';font-size: x-small;">
+                                <p>Göğüs :</p>
+                                <p>Mezurayı göğüsünüzün üzerinde en geniş noktasına yerleştirerek, göğsünüzün çevresi için ölçüm yapın.</p>
+                                <p>Bel :</p>
+                                <p>Ellerinizi belinize koyun.Elinizin bulunduğu nokta bel noktasıdır. O noktadan belinizin çevresini ölçün.</p>
+                                <p>İç Bacak Boyu :</p>
+                                <p>Bacak içini en üst çatal noktasından bilek kemiğine kadar ölçün.</p>                     
+                               <p>* Mezurayı düz tutmaya; yere paralel olarak şekilde, kaydırmamaya dikkat etmelisiniz.
+                                 * Ölçü alırken kendinizi rahat bırakmalı, nefesinizi tutmamalı ve göğüs kafesini şişirmeden ölçü almalısınız.
+                                 * Ölçü alırken çıplak beden üzerinden almalısınız.
+                                </p>
+                              </div>
+                              <div class="col-md-2">
+          
+                                <div class="view">
+                                  <img src="../../../assets/images/size-woman-graph.jpg" class="img-fluid"
+                                      alt="smaple image">
+                                  <div class="mask flex-center hm-gradient">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>    
+                           </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        
+                            <button  data-toggle="collapse" data-target="#denim" style="text-align: left;" aria-expanded="false" aria-controls="denim">
+                              Denim & Kot
+                            </button>
+                         
+                        <div id="denim" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                                  <table class="table table-striped table-bordered table-sm dataTable"  *ngIf='listbeden && listbeden.length'>
+                                    <thead>
+                                      <tr>                
+                                       <!-- <th class="text-center">Navid</th>-->
+                                        <th class="text-center">TR/EY</th> 
+                                        <th class="text-center">Bel(sm)</th>     
+                                        <th class="text-center">İç BacakBoyu(sm)</th>                              
+                                      </tr>
+                                    </thead>
+                                    <tbody *ngFor='let p of bedQad_kot'>
+                                      <tr>
+                                        <td class="pt-3-half" contenteditable="true">{{ p.trEu }}</td>
+                                        <td class="pt-3-half" contenteditable="true">{{ p.bel}}</td>    
+                                        <td class="pt-3-half" contenteditable="true">{{ p.ichBacakBoyu}}</td>
+                                         
+                                                                                                           
+                                      </tr>       
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="col-md-4" style="font-family: 'source_sans_proregular';font-size: x-small;">
+                                <p>Göğüs :</p>
+                                <p>Mezurayı göğüsünüzün üzerinde en geniş noktasına yerleştirerek, göğsünüzün çevresi için ölçüm yapın.</p>
+                                <p>Bel :</p>
+                                <p>Ellerinizi belinize koyun.Elinizin bulunduğu nokta bel noktasıdır. O noktadan belinizin çevresini ölçün.</p>
+                                <p>İç Bacak Boyu :</p>
+                                <p>Bacak içini en üst çatal noktasından bilek kemiğine kadar ölçün.</p>                     
+                               <p>* Mezurayı düz tutmaya; yere paralel olarak şekilde, kaydırmamaya dikkat etmelisiniz.
+                                 * Ölçü alırken kendinizi rahat bırakmalı, nefesinizi tutmamalı ve göğüs kafesini şişirmeden ölçü almalısınız.
+                                 * Ölçü alırken çıplak beden üzerinden almalısınız.
+                                </p>
+                              </div>
+                              <div class="col-md-2">
+          
+                                <div class="view">
+                                  <img src="../../../assets/images/size-woman-graph.jpg" class="img-fluid"
+                                      alt="smaple image">
+                                  <div class="mask flex-center hm-gradient">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>    
+                          </div>
+                        </div>
+                      </div>
+                    </div>  
+                  </div>
+                    <div class="tab-pane fade" id="kishi">
+                       <div id="accordion1">
+                      <div class="card">                    
+                        <button  data-toggle="collapse" style="text-align: left;" data-target="#collapseOneK" color="default" aria-controls="collapseOneK" mdbWavesEffect>
+                              Geyim
+                        </button>                                  
+                        <div id="collapseOneK" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion1">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                                  <table class="table table-striped table-bordered table-sm dataTable"  *ngIf='listbeden && listbeden.length'>
+                                    <thead>
+                                      <tr>                
+                                       <!-- <th class="text-center">Navid</th>-->
+                                       <th class="text-center">Beden</th>
+                                        <th class="text-center">TR/EY</th>    
+                                        <th class="text-center">UK/US</th>   
+                                        <th class="text-center">Gokus(sm)</th>  
+                                        <th class="text-center">Yaka(sm)</th>            
+                                       
+                                      </tr>
+                                    </thead>
+                                    <tbody *ngFor='let p of bedkishi_Gey'>
+                                      <tr>
+                                       <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->  
+                                       <td class="pt-3-half" contenteditable="true">{{ p.beden }}</td>           
+                                        <td class="pt-3-half" contenteditable="true">{{ p.trEu }}</td>
+                                        <td class="pt-3-half" contenteditable="true">{{ p.uk}}</td>                                   
+                                        <td class="pt-3-half" contenteditable="true">{{ p.koks}}</td>  
+                                        <td class="pt-3-half" contenteditable="true">{{ p.yaka}}</td>                                                                     
+                                      </tr>       
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="col-md-4" style="font-family: 'source_sans_proregular';font-size: x-small;">
+                                <p>Yaka :</p>
+                                <p>Mezurayı gömlek yakasının geldiği kısma yerleştirip boyun çevresi için ölçüm yapınız.</p>
+                                <p>Göğüs :</p>
+                                <p>Mezurayı göğüsünüzün üzerinde en geniş noktasına yerleştirerek, göğsünüzün çevresi için ölçüm yapın.</p>
+                                <p>Bel :</p>
+                                <p>Ellerinizi belinize koyun.Elinizin bulunduğu nokta bel noktasıdır. O noktadan belinizin çevresini ölçün.</p>
+                                <p>İç Bacak Boyu :</p>
+                                <p>Bacak içini en üst çatal noktasından bilek kemiğine kadar ölçün.</p>
+                              <p> * Mezurayı düz tutmaya; yere paralel olarak şekilde, kaydırmamaya dikkat etmelisiniz.
+                                    * Ölçü alırken kendinizi rahat bırakmalı, nefesinizi tutmamalı ve göğüs kafesini şişirmeden ölçü almalısınız.
+                                    * Ölçü alırken çıplak beden üzerinden almalısınız.
+                         </p>
+                              </div>
+                              <div class="col-md-2">
+          
+                                <div class="view">
+                                  <img src="../../../assets/images/size-man-graph.jpg" class="img-fluid"
+                                      alt="smaple image">
+                                  <div class="mask flex-center hm-gradient">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>                               
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                          <button  data-toggle="collapse" style="text-align: left;" data-target="#collapseTwoK" aria-expanded="false" aria-controls="collapseTwoK">
+                              Ayakkabı
+                            </button>
+                          
+                        <div id="collapseTwoK" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion1">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-8">
+                                <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                                  <table class="table table-striped table-bordered table-sm dataTable"  *ngIf='listbeden && listbeden.length'>
+                                    <thead>
+                                      <tr>                
+                                       <!-- <th class="text-center">Navid</th>-->                                       
+                                        <th class="text-center">TR/EY</th>    
+                                        <th class="text-center">UK</th>    
+                                        <th class="text-center">US</th>                                            
+                                        <th class="text-center">Ayak yzun</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody *ngFor='let p of bedkishi_ayaq'>
+                                      <tr>
+                                       <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->  
+                                                
+                                        <td class="pt-3-half" contenteditable="true">{{ p.trEu }}</td>
+                                        <td class="pt-3-half" contenteditable="true">{{ p.uk}}</td>    
+                                        <td class="pt-3-half" contenteditable="true">{{ p.us}}</td>                                     
+                                        <td class="pt-3-half" contenteditable="true">{{ p.ayakUz}}</td>                                                                    
+                                      </tr>       
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="col-md-4" style="font-family: 'source_sans_proregular';font-size: x-small;">
+                               <div class="shoes-draft">
+                                  <img src="../../../assets/images/size-chart-foot.gif" alt="">
+                                  <div class="mask flex-center hm-gradient">
+                                  </div>
+                                </div>  
+                                <p>                                 
+                                  Cetvel ya da mezura ile topuğunuzdan, en uzun ayak parmağınızın hizasına kadar olan
+                                  kısmı ölçünüz.
+                                </p>                           
+                              </div>
+                            </div>   
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <button data-toggle="collapse" style="text-align: left;" data-target="#PantolonK" aria-expanded="false" aria-controls="PantolonK" mdbWavesEffect>
+                          Pantolon & Kot & Alt Giyim
+                        </button>                          
+                        <div id="PantolonK" class="collapse" aria-labelledby="headingThree" data-parent="#accordion1">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                                  <table class="table table-striped table-bordered table-sm dataTable"  *ngIf='listbeden && listbeden.length'>
+                                    <thead>
+                                      <tr>                
+                                       <!-- <th class="text-center">Navid</th>-->
+                                       
+                                        <th class="text-center">Kot(cins)</th>  
+                                        <th class="text-center">Kanvas</th>  
+                                        <th class="text-center">Bel(sm)</th>            
+                                        <th class="text-center">Uzunluk</th>
+                                        <th class="text-center">İç bacak boyu(sm)</th> 
+                                      </tr>
+                                    </thead>
+                                    <tbody *ngFor='let p of bedkishi_pant'>
+                                      <tr>
+                                       <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->  
+                                       <td class="pt-3-half" contenteditable="true">{{ p.kot }}</td>
+                                       <td class="pt-3-half" contenteditable="true">{{ p.trEu }}</td>  
+                                       <td class="pt-3-half" contenteditable="true">{{ p.bel}}</td>     
+                                       <td class="pt-3-half" contenteditable="true">{{ p.uzunluk}}</td>  
+                                       <td class="pt-3-half" contenteditable="true">{{ p.ichBacakBoyu}}</td>                                                                    
+                                      </tr>       
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="col-md-4" style="font-family: 'source_sans_proregular';font-size: x-small;">
+                                <p>Yaka :</p>
+                                <p>
+                                  Mezurayı gömlek yakasının geldiği kısma yerleştirip boyun çevresi için ölçüm yapınız.</p>
+                                  <p>Göğüs :</p>
+                                 <p>Mezurayı göğüsünüzün üzerinde en geniş noktasına yerleştirerek, göğsünüzün çevresi için ölçüm yapın.</p>
+                                  
+                                  <p>Bel :</p>
+                                  
+                                  <p>Ellerinizi belinize koyun.Elinizin bulunduğu nokta bel noktasıdır. O noktadan belinizin çevresini ölçün.</p>
+                                  
+                                  <p>İç Bacak Boyu :</p>
+                                 
+                                  <p>Bacak içini en üst çatal noktasından bilek kemiğine kadar ölçün.</p>
+                                  
+                                  <p>* Mezurayı düz tutmaya; yere paralel olarak şekilde, kaydırmamaya dikkat etmelisiniz.
+                                  * Ölçü alırken kendinizi rahat bırakmalı, nefesinizi tutmamalı ve göğüs kafesini şişirmeden ölçü almalısınız.
+                                  * Ölçü alırken çıplak beden üzerinden almalısınız.</p>
+                                  
+                               
+                              </div>
+                              <div class="col-md-2">
+          
+                                <div class="view">
+                                  <img src="../../../assets/images/size-man-graph.jpg" class="img-fluid"
+                                      alt="smaple image">
+                                  <div class="mask flex-center hm-gradient">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>    
+                           </div>
+                        </div>
+                      </div>                     
+                    </div>   
+                    </div>                   
+                </div>
+            </div>
+            </div>  
+          </div>
+        </div>
+      </div>  
+      <span class="table-add float-right mb-3 mr-2">
+        <button type="button" mdbBtn class="btn blue-gradient btn-rounded btn-sm my-0" (click)="_bedsize()"
+        (click)="bedsize.show()" >Add <i class="fas fa-plus fa-2x" aria-hidden="true"></i></button>
+
+        <button type="button" mdbBtn color="primary" class="btn btn-success btn-rounded btn-sm my-0"
+        (click)="addbed.show()" (click)="_addbed()">Add <i class="fas fa-plus fa-2x" aria-hidden="true"></i></button>
+        </span> 
+        <div mdbModal #addbed="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="card-header">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="addbed.hide()">
+                  <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title w-100" id="myModalLabel"><span>New Beden</span></h4>
+              </div>               
+            <form [formGroup]="bedenForm" class="normal-form" >               
+              <div class="modal-body" > 
+                <div class="row">
+                  <div class="col-sm-4">
+                    <label for="trEu" class=""><i class="fas fa-tag prefix grey-text"></i>TR/EU (kanvas)</label>
+                  <input type="text" [(ngModel)]="bed.trEu" name="trEu" placeholder="" class="form-control" formControlName="trEu" mdbInput>   
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="uk" class=""><i class="fas fa-tag prefix grey-text"></i>UK</label>
+                    <input type="text"  [(ngModel)]="bed.uk"   name="uk"  class="form-control" formControlName="uk" placeholder="" mdbInput> 
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="us" class=""><i class="fas fa-tag prefix grey-text"></i>US</label>
+                    <input type="text"  [(ngModel)]="bed.us"   name="us"  class="form-control" formControlName="us" placeholder="" mdbInput> 
+                  </div>
+                </div>   
+                <div class="row">
+                  <div class="col-sm-4">
+                    <label for="it" class=""><i class="fas fa-tag prefix grey-text"></i>IT</label>
+                  <input type="text"  [(ngModel)]="bed.it"   name="it" placeholder="" class="form-control" formControlName="it" mdbInput> 
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="koks" class=""><i class="fas fa-tag prefix grey-text"></i>Köks</label>
+                    <input type="text"  [(ngModel)]="bed.koks"   name="koks" placeholder=""  class="form-control" formControlName="koks" mdbInput> 
+                  </div>
+                  <div class="col-sm-4">
+                      <label for="bel" class=""><i class="fas fa-tag prefix grey-text"></i>Bel</label>
+                      <input type="text"  [(ngModel)]="bed.bel"   name="bel" placeholder=""  class="form-control" formControlName="bel" mdbInput> 
+                    </div>
+                </div>                 
+                <div class="row">
+                  <div class="col-sm-4">
+                    <label for="ayakUz" class=""><i class="fas fa-tag prefix grey-text"></i>Ayak_yzun</label>
+                  <input type="text"  [(ngModel)]="bed.ayakUz"   name="ayakUz" placeholder="" class="form-control" formControlName="ayakUz" mdbInput> 
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="ichBacakBoyu" class=""><i class="fas fa-tag prefix grey-text"></i>ichBacakBoyu</label>
+                    <input type="text"  [(ngModel)]="bed.ichBacakBoyu"   name="ichBacakBoyu" placeholder=""  class="form-control" formControlName="ichBacakBoyu" mdbInput> 
+                  </div>
+                  <div class="col-sm-4">
+                      <label for="yaka" class=""><i class="fas fa-tag prefix grey-text"></i>yaka</label>
+                      <input type="text"  [(ngModel)]="bed.yaka"   name="yaka" placeholder=""  class="form-control" formControlName="yaka" mdbInput> 
+                    </div>
+                </div>  
+                <div class="row">
+                  <div class="col-sm-4">
+                    <label for="kot" class=""><i class="fas fa-tag prefix grey-text"></i>kot(cins)</label>
+                  <input type="text"  [(ngModel)]="bed.kot"   name="kot" placeholder="" class="form-control" formControlName="kot" mdbInput> 
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="Bədən name" class=""><i class="fas fa-tag prefix grey-text"></i>Bədən</label>
+                    <input type="text"  [(ngModel)]="bed.beden"   name="beden" placeholder=""  class="form-control" formControlName="beden" mdbInput> 
+                
+                  </div>
+                  <div class="col-sm-4">
+                      <label for="uzunluk" class=""><i class="fas fa-tag prefix grey-text"></i>uzunluk</label>
+                      <input type="text"  [(ngModel)]="bed.uzunluk"   name="uzunluk" placeholder=""  class="form-control" formControlName="uzunluk" mdbInput> 
+                    </div>
+                </div> 
+                <div class="row">
+                  <div class="col-sm-4">
+                    <label for="formGroupExampleInput">Categoriya</label>
+                    <select [(ngModel)]="catname"  name="_cate" formControlName="catname" (change)="selcate($event.target.value)"                       
+                         class="browser-default custom-select" >
+                           <option >Choose</option>                                    
+                     <option *ngFor="let o of _page" [value]="o.item_categoriy_name" >{{o.item_categoriy_name}}</option>                                 
+                   </select>                
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="formGroupExampleInput">Gender</label>
+                         <select [(ngModel)]="gender"  name="_gen" formControlName="gender_Id" (change)="selgen($event.target.value)"                       
+                              class="browser-default custom-select" >
+                                <option >Choose</option>                                    
+                          <option *ngFor="let o of _gender" [value]="o.gender_name" >{{o.gender_name}}</option>                                 
+                        </select>                   
+                  </div>  
+                  <div class="col-sm-4">
+                     <!--  <label for="kanvas" class=""><i class="fas fa-tag prefix grey-text"></i>kanvas</label>
+                    <input type="text"  [(ngModel)]="bed.kanvas"   name="kanvas" placeholder=""  class="form-control" formControlName="kanvas" mdbInput> -->
+                  </div>                
+                </div>             
+              </div>
+              <div class="modal-footer">
+               <button type="submit" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect (click)=onadd() (click)="addbed.hide()" [disabled]="!bedenForm.valid">Save changes</button>
+               <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="addbed.hide()" mdbWavesEffect>Close</button>
+               </div>
+             </form>
+            </div>
+          </div>
+        </div> 
+        <!------------------------------------------------------------->
+        <div mdbModal #delbed="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="card-header">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="delbed.hide()">
+                  <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ bed.beden_Id }}</span></h4>
+              </div>
+              <form  class="normal-form">           
+              <div class="modal-footer">
+               <button type="submit" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect (click)="ondel()" (click)="delbed.hide()">YES</button>
+               <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="delbed.hide()" mdbWavesEffect>NO</button>
+               </div>
+             </form>
+            </div>
+          </div>
+        </div> 
+        <div class="row"><div class="col-sm-12 col-md-6">
+          <div class="dataTables_length bs-select" id="dtBasicExample_length">
+            <label>Show <select name="dtBasicExample_length" aria-controls="dtBasicExample" class="custom-select custom-select-sm form-control form-control-sm">
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select> entries</label>
+          </div>
+        </div><div class="col-sm-12 col-md-6">
+          <div id="dtBasicExample_filter" class="dataTables_filter">
+            <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dtBasicExample"></label></div></div></div>
+        <table id="dtBasicExample" class="table table-striped table-bordered table-sm dataTable"  *ngIf='listbeden && listbeden.length'>
+          <thead>
+            <tr>                
+             <!-- <th class="text-center">Navid</th>-->
+             <th class="text-center">Beden</th>
+              <th class="text-center">TR/EY</th>    
+              <th class="text-center">UK</th>    
+              <th class="text-center">US</th>    
+              <th class="text-center">IT</th>
+              <th class="text-center">Gokus</th>  
+              <th class="text-center">bel</th>
+              <th class="text-center">Ayak yzun</th>
+              <th class="text-center">Ich Bacak Boyu</th>           
+              <th class="text-center">yaka</th>
+              <th class="text-center">kot</th>
+            <!--  <th class="text-center">kanvas</th>-->
+              <th class="text-center">uzunluk</th>
+              <th class="text-center">Categoriy name</th>
+              <th class="text-center">Gender_name</th>              
+              <th class="text-center">Sort</th>
+              <th class="text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody *ngFor='let p of filteredbeden'>
+            <tr>
+             <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->  
+             <td class="pt-3-half" contenteditable="false">{{ p.beden }}</td>           
+              <td class="pt-3-half" contenteditable="false">{{ p.trEu }}</td>
+              <td class="pt-3-half" contenteditable="false">{{ p.uk}}</td>    
+              <td class="pt-3-half" contenteditable="false">{{ p.us}}</td>
+              <td class="pt-3-half" contenteditable="false">{{ p.it}}</td>  
+              <td class="pt-3-half" contenteditable="false">{{ p.koks}}</td>  
+              <td class="pt-3-half" contenteditable="false">{{ p.bel}}</td>
+              <td class="pt-3-half" contenteditable="false">{{ p.ayakUz}}</td>
+              <td class="pt-3-half" contenteditable="false">{{ p.ichBacakBoyu}}</td>
+              <td class="pt-3-half" contenteditable="false">{{ p.yaka}}</td>
+              <td class="pt-3-half" contenteditable="false">{{ p.kot}}</td>
+            <!--  <td class="pt-3-half" contenteditable="false">{{ p.kanvas}}</td>-->
+              <td class="pt-3-half" contenteditable="false">{{ p.uzunluk}}</td>
+              <td class="pt-3-half" contenteditable="false">{{ p.item_categoriy_name}}</td>
+              <td class="pt-3-half" contenteditable="false">{{ p.gender_name}}</td>             
+              <td class="pt-3-half">
+                <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                      aria-hidden="true"></i></a></span>
+                <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                      aria-hidden="true"></i></a></span>
+              </td>
+              <td>
+                <span class="table-remove">
+                  <button type="button" (click)="addbed.show()" (click)="_editbed(p)" class="btn btn-info btn-sm my-0">
+                    Edit<i class="fas fa-edit"></i></button>
+                  <button type="button" (click)="delbed.show()" (click)="_editbed(p)" class="btn btn-danger btn-rounded btn-sm my-0">
+                    Remove<i class="fas fa-trash-alt"></i></button>
+                </span>
+              </td>
+            </tr>       
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+<script>
+  $(document).ready(function () {
+$('#dtBasicExample').DataTable();
+$('.dataTables_length').addClass('bs-select');
+});
+</script>

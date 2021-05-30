@@ -1,0 +1,246 @@
+<!-- Editable table -->
+<div class="card">
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Editable table</h3>
+  <div class="card-body">
+    <div id="table" class="table-editable">
+      <span class="table-add float-right mb-3 mr-2">
+        <button type="button" mdbBtn color="primary" class="btn btn-success btn-rounded btn-sm my-0"
+        (click)="addrole.show()" >Add <i class="fas fa-plus fa-2x" aria-hidden="true"></i></button>
+        </span>         
+        <div mdbModal #addrole="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+             <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                 <div class="card-header">
+                   <button type="button" class="close pull-right" aria-label="Close" (click)="addrole.hide()">
+                     <span aria-hidden="true">×</span>
+                   </button>
+                   <h4 class="modal-title w-100" id="myModalLabel"><span>New Role</span></h4>
+                 </div>
+                 <form [formGroup]="addform" class="normal-form" (click)=onadd()>
+                 <div class="modal-body">          
+                    <input type="hidden" formControlName="id"> 
+                    <label for="name">Role Name</label>
+                    <input formControlName="name" placeholder="Enter your Name" type="text" class="form-control">   
+                  </div>
+                 <div class="modal-footer">
+                  <button type="submit" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect >Save changes</button>
+                   <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="addrole.hide()" mdbWavesEffect>Close</button>
+                  </div>
+                </form>
+               </div>
+             </div>
+        </div> 
+        <div mdbModal #editrole="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="card-header">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="editrole.hide()">
+                  <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title w-100" id="myModalLabel"><span>New Role</span></h4>
+              </div>
+              <form [formGroup]="addform" class="normal-form" (click)=onadd()>
+              <div class="modal-body">          
+                 <input type="hidden" formControlName="id"> 
+                 <label for="name">Role Name</label>
+                 <input formControlName="name" placeholder="Enter your Name" type="text" class="form-control">   
+               </div>
+              <div class="modal-footer">
+               <button type="submit" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect >Save changes</button>
+                <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="editrole.hide()" mdbWavesEffect>Close</button>
+               </div>
+             </form>
+            </div>
+          </div>
+       </div> 
+       <div mdbModal #delrole="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="card-header">
+              <button type="button" class="close pull-right" aria-label="Close" (click)="delrole.hide()">
+                <span aria-hidden="true">×</span>
+              </button>
+              <h4 class="modal-title w-100" id="myModalLabel"><span>New Role</span></h4>
+            </div>
+            <form [formGroup]="addform" class="normal-form" (click)=onadd()>
+            <div class="modal-body">          
+               <input type="hidden" formControlName="id"> 
+               <label for="name">Role Name</label>
+               <input formControlName="name" placeholder="Enter your Name" type="text" class="form-control">   
+             </div>
+            <div class="modal-footer">
+             <button type="submit" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect >Save changes</button>
+              <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="delrole.hide()" mdbWavesEffect>Close</button>
+             </div>
+           </form>
+          </div>
+        </div>
+        </div>  
+      <table class="table table-bordered table-responsive-md table-striped text-center">
+        <thead>
+          <tr>
+            <th class="text-center">Person Name</th>
+            <th class="text-center">Age</th>           
+            <th class="text-center">Sort</th>
+            <th class="text-center">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pt-3-half" contenteditable="true">Aurelia Vega</td>
+            <td class="pt-3-half" contenteditable="true">30</td>          
+            <td class="pt-3-half">
+              <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                    aria-hidden="true"></i></a></span>
+              <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                    aria-hidden="true"></i></a></span>
+            </td>
+            <td>
+              <span class="table-remove">
+                <button type="button" (click)="editrole.show()" class="btn btn-info btn-sm my-0">Edit</button>
+                <button type="button" (click)="delrole.show()" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button>
+              </span>
+            </td>
+          </tr>       
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Editable table -->
+
+
+
+<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title></mat-card-title>
+      <mat-card-subtitle>
+       
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      
+       <!-- <p *ngIf="!bilet"><em>Loading...</em></p>-->
+        <div class="search-div">
+            <button mat-raised-button (click)="onCreate()">
+              <mat-icon>add</mat-icon>Create
+            </button>
+          <mat-form-field class="search-from-field">
+             <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+              <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+        <div class="mat-elevation-z8">
+          <mat-table [dataSource]="listDate" matSort>   
+              <ng-container matColumnDef="id">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Rolid</mat-header-cell>
+                  <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="name">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Rolname</mat-header-cell>
+                  <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+              </ng-container> 
+              <ng-container matColumnDef="normalizedName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>NormName</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.normalizedName}}</mat-cell>
+            </ng-container> 
+                         
+              <ng-container matColumnDef="actions">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                  <mat-cell *matCellDef="let row">
+                    <button (click)="onEdit(row)"><i class="fas fa-edit"></i></button>
+                    <button mat-icon-button color="warn" (click)="onDelete(row.id)"><i class="fas fa-trash-alt"></i></button>
+                  </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="loading">
+                  <mat-footer-cell *matFooterCellDef colspan="6">
+                    Loading data ...
+                  </mat-footer-cell>
+                </ng-container>
+                <ng-container matColumnDef="noData">
+                    <mat-footer-cell *matFooterCellDef colspan="6">
+                      No data.
+                    </mat-footer-cell>
+                  </ng-container>
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+              <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listDate!=null}"></mat-footer-row>
+              <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listDate!=null && listDate.data.length==0)}"></mat-footer-row>
+            </mat-table>    
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>   
+        </div> 
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+  <!--<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ pageTitle }}</mat-card-title>
+      <mat-card-subtitle>
+       
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="search-div">
+            <button mat-raised-button (click)="onCreate()">
+              <mat-icon>add</mat-icon>Create
+            </button>
+          <mat-form-field class="search-from-field">
+             <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+              <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+        <div class="mat-elevation-z8">
+          <mat-table [dataSource]="listDate" matSort>   
+              <ng-container matColumnDef="id">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>RoleId</mat-header-cell>
+                  <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="name">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>RoleName</mat-header-cell>
+                  <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+              </ng-container>
+             
+              <ng-container matColumnDef="actions">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                  <mat-cell *matCellDef="let row">
+                    <button mat-icon-button (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
+                    <button mat-icon-button color="warn" (click)="onDelete(row.id)"><mat-icon>delete_outline</mat-icon></button>
+                  </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="loading">
+                <mat-footer-cell *matFooterCellDef colspan="6">
+                    Loading data ...
+                  </mat-footer-cell>
+                </ng-container>
+              <ng-container matColumnDef="noData">
+                    <mat-footer-cell *matFooterCellDef colspan="6">
+                      No data.
+                    </mat-footer-cell>
+                  </ng-container>
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+              <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listDate!=null}"></mat-footer-row>
+              <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listDate!=null && listDate.data.length==0)}"></mat-footer-row>
+            </mat-table>    
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>   
+        </div> 
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+  </mat-card>-->
+  
+  
+  

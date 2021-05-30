@@ -1,0 +1,21 @@
+[
+{"nid":"","pid":null,"ntitle":"Administrator","npath":"admin/","nicon":null,"nlan":"Az","ncsay":"1","nrol":"Administrator","ink":1,"nisparent":true},
+{"nid":"","pid":"Administrator","ntitle":"Admin","npath":"admin/admin","nicon":null,"nlan":"Az","ncsay":"1","nrol":"Administrator","ink":2,"nisparent":false},
+{"nid":"","pid":"Administrator","ntitle":"ADD MENU","npath":"admin/addmen","nicon":null,"nlan":"Az","ncsay":"1","nrol":"Administrator","ink":3,"nisparent":false},
+{"nid":"","pid":"Administrator","ntitle":"ADD ROLE","npath":"admin/role","nicon":null,"nlan":"Az","ncsay":"1","nrol":"Administrator","ink":4,"nisparent":false},
+{"nid":"","pid":null,"ntitle":"Settings","npath":"setting/","nicon":null,"nlan":"Az","ncsay":"1","nrol":"Administrator","ink":5,"nisparent":true},
+{"nid":"","pid":"Settings","ntitle":"Add Genders","npath":"setting/gender","nicon":null,"nlan":"Az","ncsay":"1","nrol":"Administrator","ink":6,"nisparent":false},
+{"nid":"","pid":"Settings","ntitle":"Add beden","npath":"setting/beden","nicon":null,"nlan":"Az","ncsay":"1","nrol":"Administrator","ink":7,"nisparent":false},
+{"nid":"","pid":"Settings","ntitle":"Add cateqoriya","npath":"setting/categoriya","nicon":null,"nlan":"Az","ncsay":"1","nrol":"Administrator","ink":8,"nisparent":false},
+{"nid":"","pid":"Settings","ntitle":"Add colors","npath":"setting/colors","nicon":null,"nlan":"Az","ncsay":"1","nrol":"Administrator","ink":9,"nisparent":false},
+{"nid":"","pid":"Settings","ntitle":"Add desen","npath":"setting/desen","nicon":null,"nlan":"Az","ncsay":"0","nrol":"Administrator","ink":10,"nisparent":false},
+{"nid":"","pid":"Settings","ntitle":"Add marka","npath":"setting/marka","nicon":null,"nlan":"Az","ncsay":"0","nrol":"Administrator","ink":11,"nisparent":false},
+{"nid":"","pid":"Settings","ntitle":"Add stil","npath":"setting/stil","nicon":null,"nlan":"Az","ncsay":"0","nrol":"Administrator","ink":12,"nisparent":false},
+{"nid":"","pid":"Settings","ntitle":"Add material","npath":"setting/materal","nicon":null,"nlan":"Az","ncsay":"1","nrol":"Administrator","ink":13,"nisparent":false},
+{"nid":"","pid":"Settings","ntitle":"Add yaka","npath":"setting/yaka","nicon":null,"nlan":"Az","ncsay":"0","nrol":"Administrator","ink":14,"nisparent":false},
+{"nid":"","pid":"Settings","ntitle":"Add kullanimalani","npath":"setting/kullanimalani","nicon":null,"nlan":"Az","ncsay":"1","nrol":"Administrator","ink":15,"nisparent":false},
+{"nid":"","pid":"Settings","ntitle":"Add kumashtipi","npath":"setting/kumashtipi","nicon":null,"nlan":"Az","ncsay":"0","nrol":"Administrator","ink":16,"nisparent":false},
+{"nid":"","pid":"Settings","ntitle":"Add qelip","npath":"setting/qelip","nicon":null,"nlan":"Az","ncsay":"0","nrol":"Administrator","ink":17,"nisparent":false},
+{"nid":"","pid":"Settings","ntitle":"Add qoltipi","npath":"setting/qoltipi","nicon":null,"nlan":"Az","ncsay":"1","nrol":"Administrator","ink":18,"nisparent":false}
+]
+

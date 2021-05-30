@@ -1,0 +1,1287 @@
+[
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Giyim",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Elbise",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "T-shirt",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Pijama Takımı",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Gömlek",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Eşofman Takımı",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Trençkot",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Etek",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Mont",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Sweatshirt",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Pantolon",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Tayt",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Büyük Beden",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Tesettür",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Ayakkabı",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Topuklu Ayakkabı",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Sneaker",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Terlik",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Günlük Ayakkabı",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Babet",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Sandalet",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Aksesuar & Çanta",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Aksesuar & Çanta",
+    "item_categoriy_name": "Çanta",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Aksesuar & Çanta",
+    "item_categoriy_name": "Güneş Gözlüğü",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Aksesuar & Çanta",
+    "item_categoriy_name": "Saat",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Aksesuar & Çanta",
+    "item_categoriy_name": "Takı",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Aksesuar & Çanta",
+    "item_categoriy_name": "Cüzdan",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "İç Giyim",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "İç Giyim",
+    "item_categoriy_name": "Pijama",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "İç Giyim",
+    "item_categoriy_name": "Sütyen",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "İç Giyim",
+    "item_categoriy_name": "İç Çamaşırı Takımları",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "İç Giyim",
+    "item_categoriy_name": "Fantezi Giyim",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "İç Giyim",
+    "item_categoriy_name": "Gecelik",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "İç Giyim",
+    "item_categoriy_name": "Çorap",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Lüks & Designer",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Lüks & Designer",
+    "item_categoriy_name": "Lüks Çanta",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Lüks Giyim",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Lüks Ayakkabı",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Tasarım Giyim",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Tasarım Ayakkabı",
+    "gender_Id": "KADIN"
+  },
+  
+  {
+    "item_categoriy_Id": "",
+    "parid": "İç Giyim",
+    "item_categoriy_name": "Plaj Giyim",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Kozmetik & Kişisel Bakım",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kozmetik & Kişisel Bakım",
+    "item_categoriy_name": "Parfüm",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kozmetik & Kişisel Bakım",
+    "item_categoriy_name": "Göz Makyajı",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kozmetik & Kişisel Bakım",
+    "item_categoriy_name": "Güneş Ürünleri",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kozmetik & Kişisel Bakım",
+    "item_categoriy_name": "Cilt Bakım",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kozmetik & Kişisel Bakım",
+    "item_categoriy_name": "Saç Bakımı",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kozmetik & Kişisel Bakım",
+    "item_categoriy_name": "Makyaj",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kozmetik & Kişisel Bakım",
+    "item_categoriy_name": "Saç Bakım",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kozmetik & Kişisel Bakım",
+    "item_categoriy_name": "Cinsel Sağlık",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kozmetik & Kişisel Bakım",
+    "item_categoriy_name": "Hijyenik Ped",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kozmetik & Kişisel Bakım",
+    "item_categoriy_name": "Epilasyon Ürünleri",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Spor & Outdoor",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Sweatshirt",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "T-shirt",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Spor Sütyeni",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Tayt",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Eşofman",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Koşu Ayakkabısı",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Spor Çantası",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Spor Ekipmanları",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Outdoor Ayakkabı",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Outdoor Ekipmanları",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Sporcu Besinleri",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Sporcu Aksesuarları",
+    "gender_Id": "KADIN"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Giyim",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Gömlek",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "T-shirt",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Polo Yaka T-shirt",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Eşofman",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Şort",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Deniz Şortu",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Ceket",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Sweatshirt",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Jean",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Pantolon",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Takım Elbise",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Ayakkabı",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Spor Ayakkabı",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Günlük Ayakkabı",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Sneaker",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Koşu & Antrenman",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Klasik",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Kozmetik & Kişisel Bakım",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kozmetik & Kişisel Bakım",
+    "item_categoriy_name": "Parfüm",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kozmetik & Kişisel Bakım",
+    "item_categoriy_name": "Cinsel Sağlık",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kozmetik & Kişisel Bakım",
+    "item_categoriy_name": "Tıraş Makinesi",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kozmetik & Kişisel Bakım",
+    "item_categoriy_name": "Tıraş Bıçağı",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Aksesuar",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Aksesuar",
+    "item_categoriy_name": "Saat",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Aksesuar",
+    "item_categoriy_name": "Güneş Gözlüğü",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Aksesuar",
+    "item_categoriy_name": "Cüzdan",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Aksesuar",
+    "item_categoriy_name": "Kemer",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Aksesuar",
+    "item_categoriy_name": "Çanta",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Aksesuar",
+    "item_categoriy_name": "Erkek Takı",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "İç Giyim",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "İç Giyim",
+    "item_categoriy_name": "Boxer",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "İç Giyim",
+    "item_categoriy_name": "Boxer",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "İç Giyim",
+    "item_categoriy_name": "Çorap",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "İç Giyim",
+    "item_categoriy_name": "Pijama",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "İç Giyim",
+    "item_categoriy_name": "Atlet",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Spor & Outdoor",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Eşofman",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Spor Ayakkabı",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "T-shirt",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Sweatshirt",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Forma",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Outdoor Giyim",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Outdoor Ayakkabı",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Spor Ekipmanları",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Outdoor Ekipmanları",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Sporcu Besinleri",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Spor & Outdoor",
+    "item_categoriy_name": "Sporcu Aksesuarları",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Elektronik",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Elektronik",
+    "item_categoriy_name": "Tıraş Makinesi",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Elektronik",
+    "item_categoriy_name": "Cep Telefonu",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Elektronik",
+    "item_categoriy_name": "Akıllı Saat",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Elektronik",
+    "item_categoriy_name": "Bilgisayar",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Elektronik",
+    "item_categoriy_name": "Oyun & Konsollar",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Elektronik",
+    "item_categoriy_name": "Akıllı Bileklik",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Lüks & Designer",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Giyim",
+    "item_categoriy_name": "Lüks Giyim",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Ayakkabı",
+    "item_categoriy_name": "Lüks Ayakkabı",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Lüks & Designer",
+    "item_categoriy_name": "Lüks Çanta",
+    "gender_Id": "ERKEK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Bebek",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek",
+    "item_categoriy_name": "Bebek Takımları",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek",
+    "item_categoriy_name": "Ayakkabı",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek",
+    "item_categoriy_name": "Hastane Çıkışı",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek",
+    "item_categoriy_name": "Tulum & Salopet",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek",
+    "item_categoriy_name": "Body & Zıbın",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek",
+    "item_categoriy_name": "T-shirt & Atlet",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek",
+    "item_categoriy_name": "Elbise",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek",
+    "item_categoriy_name": "Şort",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek",
+    "item_categoriy_name": "Bebek Bezi",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek",
+    "item_categoriy_name": "Bebek Maması",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek",
+    "item_categoriy_name": "Islak Mendil",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Kız Çocuk",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kız Çocuk",
+    "item_categoriy_name": "Elbise",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kız Çocuk",
+    "item_categoriy_name": "Spor Ayakkabı",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kız Çocuk",
+    "item_categoriy_name": "T-shirt & Atlet",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kız Çocuk",
+    "item_categoriy_name": "Sweatshirt",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kız Çocuk",
+    "item_categoriy_name": "Tayt",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kız Çocuk",
+    "item_categoriy_name": "Günlük Ayakkabı",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kız Çocuk",
+    "item_categoriy_name": "Şort",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kız Çocuk",
+    "item_categoriy_name": "Eşofman",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Kız Çocuk",
+    "item_categoriy_name": "İç Giyim & Pijama",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Erkek Çocuk",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Erkek Çocuk",
+    "item_categoriy_name": "T-shirt & Atlet",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Erkek Çocuk",
+    "item_categoriy_name": "Gömlek",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Erkek Çocuk",
+    "item_categoriy_name": "Sweatshirt",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Erkek Çocuk",
+    "item_categoriy_name": "Şort",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Erkek Çocuk",
+    "item_categoriy_name": "Plaj Giyim",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Erkek Çocuk",
+    "item_categoriy_name": "Eşofman",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Erkek Çocuk",
+    "item_categoriy_name": "İç Giyim & Pijama",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Erkek Çocuk",
+    "item_categoriy_name": "Spor Ayakkabı",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Erkek Çocuk",
+    "item_categoriy_name": "Sandalet",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Erkek Çocuk",
+    "item_categoriy_name": "Günlük Ayakkabı",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Bebek Bakım",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek Bakım",
+    "item_categoriy_name": "Banyo & Tuvalet",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek Bakım",
+    "item_categoriy_name": "Bebek Şampuanı",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek Bakım",
+    "item_categoriy_name": "Krem & Yağlar",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Bebek Bakım",
+    "item_categoriy_name": "Bebek Çantası",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Oyuncak",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Oyuncak",
+    "item_categoriy_name": "Eğitici Oyuncaklar",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Oyuncak",
+    "item_categoriy_name": "Oyuncak Araba",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Oyuncak",
+    "item_categoriy_name": "Oyuncak Bebek",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Oyuncak",
+    "item_categoriy_name": "Bebek & Okul Öncesi",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Oyuncak",
+    "item_categoriy_name": "Kumandalı Oyuncaklar",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Oyuncak",
+    "item_categoriy_name": "Oyun Hamuru",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Taşıma & Güvenlik",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Taşıma & Güvenlik",
+    "item_categoriy_name": "Bebek Arabası & Puset",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Taşıma & Güvenlik",
+    "item_categoriy_name": "Park Yatak",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Taşıma & Güvenlik",
+    "item_categoriy_name": "Ana Kucağı",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Taşıma & Güvenlik",
+    "item_categoriy_name": "Portbebe & Kanguru",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Taşıma & Güvenlik",
+    "item_categoriy_name": "Yürüteç",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Beslenme & Emzirme",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Beslenme & Emzirme",
+    "item_categoriy_name": "Biberon & Emzik",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Beslenme & Emzirme",
+    "item_categoriy_name": "Göğüs Pompası",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Beslenme & Emzirme",
+    "item_categoriy_name": "Mama Sandalyesi",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Beslenme & Emzirme",
+    "item_categoriy_name": "Alıştırma Bardağı",
+    "gender_Id": "ÇOCUK"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "EV & yasham",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Sofra & Mutfak",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Yemek Takımı",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Kahvaltı Takımı",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Baharat Takımı",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Fincan & Kupa",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Fırın & Kek Kalıbı",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Çaydanlık",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Tencere Seti",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Düdüklü Tencere",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Banyo",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Havlu & Havlu Seti",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Banyo Seti",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Klozet Takımı",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Ev Tekstili",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Yatak Odası",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Mutfak",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Banyo",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Perde",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Halı & Kilim & Paspas",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Yatak Örtüsü",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Nevresim Takımı",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid":null,
+    "item_categoriy_name": "Mobilya",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "Mobilya",
+    "item_categoriy_name": "Salon & Oturma Odası",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Yatak Odası",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Çalışma Odası",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Bahçe ve Balkon",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Ev Dekorasyon",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Aydınlatma",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Dekoratif Aksesuar",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Tablo",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Duvar Kağıdı",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Ayna",
+    "gender_Id": "CANSIZ"
+  },
+  {
+    "item_categoriy_Id": "",
+    "parid": "EV & yasham",
+    "item_categoriy_name": "Spor & Outdoor",
+    "gender_Id": "CANSIZ"
+  }
+]

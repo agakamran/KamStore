@@ -1,0 +1,10 @@
+[
+    {  "navId":"1", "navLink":"/welcome",  "navtext":"Home"           },
+    {  "navId":"2", "navLink":"/products", "navtext":"Product List"   }, 
+    {  "navId":"3", "navLink":"/bilet",    "navtext":"Bilet"          },
+    {  "navId":"4", "navLink":"/movzu",    "navtext":"Mövzu"          },
+    {  "navId":"5", "navLink":"/movtest",  "navtext":"Mövzu Testləri" },
+    {  "navId":"6", "navLink":"/Imta",     "navtext":"Imtahan"        } ,
+    {  "navId":"7", "navLink":"/role",     "navtext":"Role"        } 
+
+]
