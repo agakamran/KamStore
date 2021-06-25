@@ -3,7 +3,7 @@ import { SettingsService } from 'src/app/services/settings.service';
 import { NotificationService } from 'src/app/helpers/notification.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Lang } from 'src/app/models/_carts';
-import { item_desen } from 'src/app/models/_settings';
+import { _desen } from 'src/app/models/_settings';
 
 @Component({
   selector: 'app-desen',
@@ -12,21 +12,21 @@ import { item_desen } from 'src/app/models/_settings';
 })
 export class DesenComponent implements OnInit {
   desForm: FormGroup; 
-  listdes:item_desen[] = []; 
-  filtereddes: item_desen[];
-  des:item_desen=new item_desen(); 
+  listdes:_desen[] = []; 
+  filtereddes: _desen[];
+  des:_desen=new _desen(); 
   _lang:Lang[]=[{lid: '1', lname: 'Az'},{lid: '2', lname: 'En'},{lid: '3', lname: 'Ru'} ];  _lan='';
-  _des: item_desen[];  _pid:'';
+  _des: _desen[];  _pid:'';
   
   constructor(private _caSer: SettingsService,
      private notificationService: NotificationService) {
-     this.des.item_desen_Id="";
+     this.des.desId="";
    }
 
    ngOnInit(): void {
     this.desForm = new FormGroup({  
      // firma_id: new FormControl('', [Validators.required,Validators.maxLength(36)]),   
-     item_desen_name: new FormControl('', [Validators.required,Validators.maxLength(50)]),
+     desenname: new FormControl('', [Validators.required,Validators.maxLength(50)]),
   
         
     });  
@@ -39,29 +39,29 @@ export class DesenComponent implements OnInit {
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
 
-get item_desen_name() { return this.desForm.get('item_desen_name'); }
+get desenname() { return this.desForm.get('desenname'); }
 
 langu(lan:any){  this._lan=lan; }
   _adddes()
   {
-    this.des.item_desen_Id='';   
-    this.des.item_desen_name=''; 
+    this.des.desId='';   
+    this.des.desname=''; 
    
   }
   _cline(){ 
     this.desForm = new FormGroup({  
        
-      item_desen_Id: new FormControl(''),
-      item_desen_name: new FormControl(''),
+      desenId: new FormControl(''),
+      desenname: new FormControl(''),
     
       });
      
    }
-   _editdes(ca:item_desen){ 
+   _editdes(ca:_desen){ 
     //console.log('12111')   
     // console.log(ca)  
-       this.des.item_desen_Id=ca.item_desen_Id;
-       this.des.item_desen_name=ca.item_desen_name;//this._page.find(x=>x.pid==ca.pId).pagename;
+       this.des.desId=ca.desId;
+       this.des.desname=ca.desname;//this._page.find(x=>x.pid==ca.pId).pagename;
       // this.fir.firma_telefon=ca.firma_telefon; 
       // this.fir.firma_unvan=ca.firma_unvan;
       // this.fir.voen=ca.voen,
@@ -75,8 +75,8 @@ langu(lan:any){  this._lan=lan; }
        //console.log('333')
       // console.log(this.firForm.value)
        var p={
-        item_desen_Id:this.des.item_desen_Id  ,
-        item_desen_name:this.desForm.value.item_desen_name,
+        desId:this.des.desId  ,
+        desname:this.desForm.value.desname,
         //firma_telefon:this.firForm.value.firma_telefon,
         //firma_unvan:this.firForm.value.firma_unvan,
         //voen:this.firForm.value.voen,

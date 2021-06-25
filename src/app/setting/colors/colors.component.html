@@ -19,14 +19,14 @@
                 <div class="modal-body" > 
                   <div class="row">
                     <div class="col-sm-12">
-                      <label for="item_color" class=""><i class="fas fa-tag prefix grey-text"></i>Color name</label>
-                    <input type="text" [(ngModel)]="col.item_color" name="item_color" placeholder="color yazin" class="form-control" formControlName="item_color" mdbInput>   
+                      <label for="colname" class=""><i class="fas fa-tag prefix grey-text"></i>Color name</label>
+                    <input type="text" [(ngModel)]="col.colname" name="colname" placeholder="colname yazin" class="form-control" formControlName="colname" mdbInput>   
                     </div>
                     <div class="col-sm-12">
-                      <label for="url_color" class=""><i class="fas fa-tag prefix grey-text"></i>Url color</label>
-                      <input type="text"  [(ngModel)]="col.url_color"   name="url_color"  class="form-control" formControlName="url_color" placeholder="Url_color yazin" mdbInput> 
+                      <label for="colurl" class=""><i class="fas fa-tag prefix grey-text"></i>color Url </label>
+                      <input type="text"  [(ngModel)]="col.colurl"   name="colurl"  class="form-control" formControlName="colurl" placeholder="colurl yazin" mdbInput> 
                     </div>
-                  </div>   
+                  </div>                     
                  <!-- <div class="row">
                     <div class="col-sm-4">
                       <label for="firma_telefon" class=""><i class="fas fa-tag prefix grey-text"></i>firma_telefon</label>
@@ -59,7 +59,7 @@
                   <button type="button" class="close pull-right" aria-label="Close" (click)="delcol.hide()">
                     <span aria-hidden="true">×</span>
                   </button>
-                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ col.item_color }}</span></h4>
+                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ col.colname }}</span></h4>
                 </div>
                 <form  class="normal-form">           
                 <div class="modal-footer">
@@ -74,9 +74,9 @@
             <thead>
               <tr>                
                <!-- <th class="text-center">Navid</th>-->
-                <th class="text-center">Color_Id</th> 
-                <th class="text-center">Color</th>   
-                <th class="text-center">Url Color</th> 
+                <th class="text-center">ColId</th> 
+                <th class="text-center">Color name</th>   
+                <th class="text-center">Color </th> 
                 <!--<th class="text-center">firma_telefon</th>    
                 <th class="text-center">firma_unvan</th>    
                 <th class="text-center">firma_email</th>
@@ -88,9 +88,9 @@
             <tbody *ngFor='let p of filteredcol'>
               <tr>
                <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->
-                <td class="pt-3-half" contenteditable="true">{{ p.item_color_Id }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.item_color }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.url_color }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.colId }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.colname }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.colurl }}</td>
                <!-- <td class="pt-3-half" contenteditable="true">{{ p.firma_telefon}}</td>    
                 <td class="pt-3-half" contenteditable="true">{{ p.firma_unvan}}</td>
                 <td class="pt-3-half" contenteditable="true">{{ p.firma_email}}</td>  

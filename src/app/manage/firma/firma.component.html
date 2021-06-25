@@ -20,30 +20,30 @@
                 <div class="modal-body" > 
                   <div class="row">
                     <div class="col-sm-12">
-                      <label for="firma_name" class=""><i class="fas fa-tag prefix grey-text"></i>Firma adi</label>
-                    <input type="text" [(ngModel)]="fir.firma_name" name="firma_name" placeholder="firma_name yazin" class="form-control" formControlName="firma_name" mdbInput>   
+                      <label for="storname" class=""><i class="fas fa-tag prefix grey-text"></i>Firma adi</label>
+                    <input type="text" [(ngModel)]="fir.storname" name="storname" placeholder="storname yazin" class="form-control" formControlName="storname" mdbInput>   
                     </div>
                     <div class="col-sm-12">
-                      <label for="firma_email" class=""><i class="fas fa-tag prefix grey-text"></i>firma_email</label>
-                      <input type="text" readonly [(ngModel)]="fir.firma_email"   name="firma_email" placeholder="firma_email yazin"  class="form-control" formControlName="firma_email" mdbInput> 
+                      <label for="storemail" class=""><i class="fas fa-tag prefix grey-text"></i>storemail</label>
+                      <input type="text" readonly [(ngModel)]="fir.storemail"   name="storemail" placeholder="storemail yazin"  class="form-control" formControlName="storemail" mdbInput> 
                     </div>
                     <div class="col-sm-12">
-                      <label for="firma_unvan" class=""><i class="fas fa-tag prefix grey-text"></i>firma_unvan</label>
-                      <input  type="text"  [(ngModel)]="fir.firma_unvan"   name="firma_unvan"  class="form-control" formControlName="firma_unvan" placeholder="firma_unvan yazin" mdbInput> 
-                    </div>
-                  </div>   
-                  <div class="row">
+                      <label for="storadress" class=""><i class="fas fa-tag prefix grey-text"></i>storadress</label>
+                      <input  type="text"  [(ngModel)]="fir.storadress"   name="storadress"  class="form-control" formControlName="storadress" placeholder="storunvan yazin" mdbInput> 
+                    </div>                  
                     <div class="col-sm-12">
-                      <label for="firma_telefon" class=""><i class="fas fa-tag prefix grey-text"></i>firma_telefon</label>
-                    <input type="text" [(ngModel)]="fir.firma_telefon"   name="firma_telefon" placeholder="" class="form-control" formControlName="firma_telefon" mdbInput> 
+                      <label for="storphone" class=""><i class="fas fa-tag prefix grey-text"></i>stortelefon</label>
+                    <input type="text" [(ngModel)]="fir.storphone"   name="storphone" placeholder="" class="form-control" formControlName="storphone" mdbInput> 
                     </div>
-                   
+                    <!-- <div class="col-sm-12">
+                      <label for="storpercent" class=""><i class="fas fa-tag prefix grey-text"></i>storpercent</label>
+                      <input type="number"  [(ngModel)]="fir.storpercent"   name="storpercent" placeholder="storpercent yazin"  class="form-control" formControlName="storpercent" mdbInput> 
+                    </div>                  -->
                     <div class="col-sm-12">
-                        <label for="voen" class=""><i class="fas fa-tag prefix grey-text"></i>voen</label>
-                        <input type="number"  [(ngModel)]="fir.voen"   name="voen" placeholder="voen yazin"  class="form-control" formControlName="voen" mdbInput> 
-                      </div>
-                  </div>                 
-                           
+                        <label for="storvoen" class=""><i class="fas fa-tag prefix grey-text"></i>storvoen</label>
+                        <input type="number"  [(ngModel)]="fir.storvoen"   name="storvoen" placeholder="storvoen yazin"  class="form-control" formControlName="storvoen" mdbInput> 
+                    </div>
+                  </div> 
                 </div>
                 <div class="modal-footer">
                  <button type="submit" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect (click)=onadd() (click)="addfir.hide()" [disabled]="!firForm.valid">Save changes</button>
@@ -53,7 +53,7 @@
               </div>
             </div>
           </div> 
-          <!------------------------------------------------------------->
+        <!------------------------------------------------------------->
           <div mdbModal #delfir="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -61,7 +61,7 @@
                   <button type="button" class="close pull-right" aria-label="Close" (click)="delfir.hide()">
                     <span aria-hidden="true">×</span>
                   </button>
-                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ fir.firma_name }}</span></h4>
+                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ fir.storname }}</span></h4>
                 </div>
                 <form  class="normal-form">           
                 <div class="modal-footer">
@@ -76,12 +76,13 @@
             <thead>
               <tr>                
                <!-- <th class="text-center">Navid</th>-->
-                <th class="text-center">firma_id</th> 
-                <th class="text-center">firma_name</th>    
-                <th class="text-center">firma_telefon</th>    
-                <th class="text-center">firma_unvan</th>    
-                <th class="text-center">firma_email</th>
-                <th class="text-center">voen</th>             
+                <th class="text-center">storid</th> 
+                <th class="text-center">storname</th>    
+                <th class="text-center">storphone</th>    
+                <th class="text-center">storadress</th>    
+                <th class="text-center">storemail</th>
+                 <!-- <th class="text-center">storpercent</th>  -->
+                <th class="text-center">storvoen</th>             
                 <th class="text-center">Sort</th>
                 <th class="text-center">Actions</th>
               </tr>
@@ -89,12 +90,13 @@
             <tbody *ngFor='let p of filteredfir'>
               <tr>
                <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->
-                <td class="pt-3-half" contenteditable="true">{{ p.firma_Id }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.firma_name }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.firma_telefon}}</td>    
-                <td class="pt-3-half" contenteditable="true">{{ p.firma_unvan}}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.firma_email}}</td>  
-                <td class="pt-3-half" contenteditable="true">{{ p.voen}}</td>  
+                <td class="pt-3-half" contenteditable="true">{{ p.storId }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.storname }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.storphone}}</td>    
+                <td class="pt-3-half" contenteditable="true">{{ p.storadress}}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.storemail}}</td>                  
+                <!-- <td class="pt-3-half" contenteditable="true">{{ p.storpercent}}</td>   -->
+                <td class="pt-3-half" contenteditable="true">{{ p.storvoen}}</td>
                 <td class="pt-3-half">
                   <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
                         aria-hidden="true"></i></a></span>

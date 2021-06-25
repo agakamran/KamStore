@@ -21,13 +21,13 @@ export class YakaComponent implements OnInit {
   _gender: gender[];_gen:any; gender:any;
   constructor( private _caSer: SettingsService,
      private notificationService: NotificationService) {
-     this.yak.yaka_Id="";
+     this.yak.yakaId="";
    }   
    ngOnInit(): void {
     this.yakForm = new FormGroup({  
      // firma_id: new FormControl('', [Validators.required,Validators.maxLength(36)]),   
-     yaka_name: new FormControl('', [Validators.required,Validators.maxLength(50)]),   
-     gender_Id: new FormControl('', [Validators.required,Validators.maxLength(50)]),   
+     yakaname: new FormControl('', [Validators.required,Validators.maxLength(50)]),   
+     genId: new FormControl('', [Validators.required,Validators.maxLength(50)]),   
     });  
       this._caSer._getgender().subscribe( p=>{ this._gender=p;//console.log(p)
         //this._page=this._page.filter(g=>g.parid==='')
@@ -39,35 +39,36 @@ export class YakaComponent implements OnInit {
           // console.log(this.listyak)                        
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
-get yaka_name() { return this.yakForm.get('yaka_name'); }
-get gender_Id() { return this.yakForm.get('gender_Id'); }
+get yakaname() { return this.yakForm.get('yakaname'); }
+get genId() { return this.yakForm.get('genId'); }
 
 langu(lan:any){  this._lan=lan; }
 //selcat(sel){ this._cat=sel;}
 selgen(sel:any){ this._gen=sel;}
   _addyak() {
-    this.yak.yaka_Id='';   
-    this.yak.yaka_name='';  
-    this.yak.gender_Id='';  
+    this.gender='';
+    this.yak.yakaId='';   
+    this.yak.yakaname='';  
+    this.yak.genId='';  
   }
   _cline(){ 
     this.yakForm = new FormGroup({         
-      yaka_Id: new FormControl(''),
-      yaka_name: new FormControl(''),   
+      yakaId: new FormControl(''),
+      yakaname: new FormControl(''),   
       });     
    }
    _edityak(ca:yaka){ 
    // console.log('12111')   
     // console.log(ca)  
 
-       this.yak.yaka_Id=ca.yaka_Id;
-       this.yak.yaka_name=ca.yaka_name;
-       if(ca.gender_Id!=null) {
-         this.gender=this._gender.find(x=>x.gender_name==ca.gender_Id)!.gender_Id;  
+       this.yak.yakaId=ca.yakaId;
+       this.yak.yakaname=ca.yakaname;
+       if(ca.genId!=null) {
+         this.gender=this._gender.find(x=>x.genId==ca.genId)!.genname;  
        }     
        
-       this.yak.gender_Id=ca.gender_Id;
-      // console.log( this.catname)        
+       this.yak.genId=ca.genId;
+       console.log( this.gender)        
      }
  onadd()
   { 
@@ -75,14 +76,14 @@ selgen(sel:any){ this._gen=sel;}
     {
        //console.log('333')
       // console.log(this.yakForm.value)
-      let _gender_Id='';
+      let _genderId='';
       if(this.gender!=null){
-        _gender_Id= this._gender.find(x=>x.gender_name===this.gender )!.gender_Id
+        _genderId= this._gender.find(x=>x.genname===this.gender )!.genId
       }
        var p={
-        yaka_Id:this.yak.yaka_Id  ,
-        yaka_name:this.yakForm.value.yaka_name,         
-        gender_Id:_gender_Id      
+        yakaId:this.yak.yakaId  ,
+        yakaname:this.yakForm.value.yaka_name,         
+        genId:_genderId      
              
       }
       //  console.log(p)

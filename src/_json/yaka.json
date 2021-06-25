@@ -1,182 +1,182 @@
 [
      {
-        "yaka_Id": "",
-        "yaka_name": "Balıkçı Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Balıkçı Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Bisiklet Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Bisiklet Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Degaje Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Degaje Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Dik Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Dik Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Düğmeli"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Düğmeli"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Geniş Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Geniş Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Gömlek Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Gömlek Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Hakim Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Hakim Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Kapüşonlu"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Kapüşonlu"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Kare Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Kare Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Kayık Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Kayık Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Klasik"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Klasik"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Kruvaze Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Kruvaze Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "O Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "O Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Polo Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Polo Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Sıfır Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Sıfır Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "u yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "u yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "V Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "V Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Yuvarlak Yaka"  ,
-        "gender_Id":"KADIN"     
+        "yakaId": "",
+        "yakaname": "Yuvarlak Yaka"  ,
+        "genId":"KADIN"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Balıkçı Yaka"  ,
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "Balıkçı Yaka"  ,
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Bisiklet Yaka"  ,
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "Bisiklet Yaka"  ,
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Dik Yaka"  ,
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "Dik Yaka"  ,
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Düğmeli"  ,
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "Düğmeli"  ,
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Geniş Yaka"  ,
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "Geniş Yaka"  ,
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Gömlek Yaka"  ,
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "Gömlek Yaka"  ,
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Hakim Yaka"  ,
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "Hakim Yaka"  ,
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "İtalyan Yaka"  ,
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "İtalyan Yaka"  ,
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Kapüşonlu"  ,
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "Kapüşonlu"  ,
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Kayık Yaka"  ,
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "Kayık Yaka"  ,
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Klasik",
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "Klasik",
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "O Yaka" ,
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "O Yaka" ,
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Polo Yaka",
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "Polo Yaka",
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Sıfır Yaka",
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "Sıfır Yaka",
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Sivri Yaka",
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "Sivri Yaka",
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "V Yaka",
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "V Yaka",
+        "genId":"ERKEK"     
     },
     {
-        "yaka_Id": "",
-        "yaka_name": "Yuvarlak Yaka",
-        "gender_Id":"ERKEK"     
+        "yakaId": "",
+        "yakaname": "Yuvarlak Yaka",
+        "genId":"ERKEK"     
     }
 ]

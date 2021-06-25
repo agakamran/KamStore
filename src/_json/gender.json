@@ -1,18 +1,18 @@
 [
     {
-        "gender_Id":"",       
-        "gender_name": "KADIN"   
+        "genId":"",       
+        "genname": "KADIN"   
     },
     {
-        "gender_Id":"",       
-        "gender_name": "ERKEK"   
+        "genId":"",       
+        "genname": "ERKEK"   
     },
     {
-        "gender_Id":"",       
-        "gender_name": "ÇOCUK"   
+        "genId":"",       
+        "genname": "ÇOCUK"   
     },
     {
-        "gender_Id":"",       
-        "gender_name": "CANSIZ"   
+        "genId":"",       
+        "genname": "CANSIZ"   
     }
 ]

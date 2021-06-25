@@ -20,21 +20,21 @@
                   <div class="row">
                     <div class="col-sm-12">
                       <label for="kumash tipi" class=""><i class="fas fa-tag prefix grey-text"></i>kumash tipi</label>
-                    <input type="text" [(ngModel)]="kum.kumash_name" name="kumash_name" placeholder="kumash tipi yazin" class="form-control" formControlName="kumash_name" mdbInput>   
+                    <input type="text" [(ngModel)]="kum.kumashname" name="kumashname" placeholder="kumash tipi yazin" class="form-control" formControlName="kumashname" mdbInput>   
                     </div>
                    <!-- <div class="col-sm-6">
                       <label for="firma_unvan" class=""><i class="fas fa-tag prefix grey-text"></i>firma_unvan</label>
-                      <input type="text"  [(ngModel)]="fir.firma_unvan"   name="firma_unvan"  class="form-control" formControlName="firma_unvan" placeholder="firma_unvan yazin" mdbInput> 
+                      <input type="text"  [(ngModel)]="fir.firmaunvan"   name="firmaunvan"  class="form-control" formControlName="firma_unvan" placeholder="firma_unvan yazin" mdbInput> 
                     </div>-->
                   </div>   
                  <!-- <div class="row">
                     <div class="col-sm-4">
                       <label for="firma_telefon" class=""><i class="fas fa-tag prefix grey-text"></i>firma_telefon</label>
-                    <input type="text"  [(ngModel)]="fir.firma_telefon"   name="firma_telefon" placeholder="firma_telefon yazin" class="form-control" formControlName="firma_telefon" mdbInput> 
+                    <input type="text"  [(ngModel)]="fir.firmatelefon"   name="firmatelefon" placeholder="firmatelefon yazin" class="form-control" formControlName="firmatelefon" mdbInput> 
                     </div>
                     <div class="col-sm-4">
                       <label for="firma_email" class=""><i class="fas fa-tag prefix grey-text"></i>firma_email</label>
-                      <input type="text"  [(ngModel)]="fir.firma_email"   name="firma_email" placeholder="firma_email yazin"  class="form-control" formControlName="firma_email" mdbInput> 
+                      <input type="text"  [(ngModel)]="fir.firmaemail"   name="firma_email" placeholder="firmaemail yazin"  class="form-control" formControlName="firmaemail" mdbInput> 
                     </div>
                     <div class="col-sm-4">
                         <label for="voen" class=""><i class="fas fa-tag prefix grey-text"></i>voen</label>
@@ -58,7 +58,7 @@
                   <button type="button" class="close pull-right" aria-label="Close" (click)="delkum.hide()">
                     <span aria-hidden="true">×</span>
                   </button>
-                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ kum.kumash_name }}</span></h4>
+                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ kum.kumashname }}</span></h4>
                 </div>
                 <form  class="normal-form">           
                 <div class="modal-footer">
@@ -86,8 +86,8 @@
             <tbody *ngFor='let p of filteredkum'>
               <tr>
                <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->
-                <td class="pt-3-half" contenteditable="true">{{ p.kumash_Id }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.kumash_name }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.kumashId }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.kumashname }}</td>
                <!-- <td class="pt-3-half" contenteditable="true">{{ p.firma_telefon}}</td>    
                 <td class="pt-3-half" contenteditable="true">{{ p.firma_unvan}}</td>
                 <td class="pt-3-half" contenteditable="true">{{ p.firma_email}}</td>  

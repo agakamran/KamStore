@@ -25,19 +25,20 @@ export class FirmaComponent implements OnInit {
   
   constructor(private store: Store<AppState>, private _caSer: SettingsService,
      private notificationService: NotificationService) {
-     this.fir.firma_Id="";
+      const _storpercent=''
+     this.fir.storId="";
      this.store.select(getemail).subscribe(k=>{ this._email=k; })
      this.store.select(getId).subscribe(k=>{   this._Id=k;   })
    }
-
-   ngOnInit(): void {
-    this.firForm = new FormGroup({  
-      firma_id: new FormControl('', [Validators.maxLength(36)]),   
-      firma_name: new FormControl('', [Validators.required,Validators.maxLength(36)]),
-      firma_telefon: new FormControl('', [Validators.required,Validators.maxLength(50)]),
-      firma_unvan: new FormControl('', [Validators.maxLength(50)]),  
-      firma_email: new FormControl('', [Validators.required,Validators.maxLength(50)]),
-      voen: new FormControl(0, [Validators.required])
+  ngOnInit(): void {
+       this.firForm = new FormGroup({  
+      storid: new FormControl('', [Validators.maxLength(36)]),   
+      storname: new FormControl('', [Validators.required,Validators.maxLength(36)]),
+      storphone: new FormControl('', [Validators.required,Validators.maxLength(50)]),
+      storadress: new FormControl('', [Validators.maxLength(50)]),  
+      storemail: new FormControl('', [Validators.required,Validators.maxLength(50)]),
+      storvoen: new FormControl(0, [Validators.required])
+     // storpercent: new FormControl(0, [Validators.required])
         
     });  
       //this._caSer._getfirma().subscribe( p=>{ this._page=p;console.log(p)});  
@@ -46,52 +47,56 @@ export class FirmaComponent implements OnInit {
            this.listfir=list; 
          //  console.log(this.listfir)
            this.listfir=this.listfir.filter(k=>k.userId===this._Id)
-         //  console.log(this.listfir)
+          // console.log(this.listfir)
          //  console.log(this._storage.getId())
            this.filteredfir = this.listfir; 
           // console.log(this.listfir)                        
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
-    }
+  }
 
-get firma_name() { return this.firForm.get('firma_name'); }
-get firma_telefon() { return this.firForm.get('firma_telefon'); }
-get firma_unvan() { return this.firForm.get('firma_unvan'); }
-get firma_email() { return this.firForm.get('firma_email'); }
-get voen() { return this.firForm.get('voen'); }
+get storname() { return this.firForm.get('storname'); }
+get storphone() { return this.firForm.get('storphone'); }
+get storadress() { return this.firForm.get('storadress'); }
+get storemail() { return this.firForm.get('storemail'); }
+get storvoen() { return this.firForm.get('storvoen'); }
+//get storpercent() { return this.firForm.get('storpercent'); }
 langu(lan:any){  this._lan=lan; }
 //selPage(sel){ this._pid=sel;}
 //selrol(sel){ this._rol=sel;}
   _addfir()
   {
-    this.fir.firma_name='';
-    this.fir.firma_telefon='';
-    this.fir.firma_unvan='';
-    this.fir.firma_email='';
-    this.fir.firma_Id=''; 
-    this.fir.voen=0;   
+    this.fir.storname='';
+    this.fir.storphone='';
+    this.fir.storadress='';
+    this.fir.storemail='';
+    this.fir.storId=''; 
+    this.fir.storvoen=0;   
+   // this.fir.storpercent=0; 
   }
   _cline(){ 
     this.firForm = new FormGroup({  
        
-      firma_Id: new FormControl(''),
-      firma_name: new FormControl(''),
-      firma_telefon: new FormControl(''),
-      firma_unvan: new FormControl(''),      
-      firma_email: new FormControl(''),
+      storId: new FormControl(''),
+      storname: new FormControl(''),
+      storphone: new FormControl(''),
+      storadress: new FormControl(''),      
+      storemail: new FormControl(''),
       userId: new FormControl(''),
-      voen: new FormControl(0)
+      storvoen: new FormControl(0)
+     // storpercent: new FormControl(0)
       });
      
    }
    _editfir(ca:firma){ 
     //console.log('12111')   
     // console.log(ca)  
-       this.fir.firma_Id=ca.firma_Id;
-       this.fir.firma_name=ca.firma_name;//this._page.find(x=>x.pid==ca.pId).pagename;
-       this.fir.firma_telefon=ca.firma_telefon; 
-       this.fir.firma_unvan=ca.firma_unvan;
-       this.fir.voen=ca.voen,
-       this.fir.firma_email=this._email;
+       this.fir.storId=ca.storId;
+       this.fir.storname=ca.storname;//this._page.find(x=>x.pid==ca.pId).pagename;
+       this.fir.storphone=ca.storphone; 
+       this.fir.storadress=ca.storadress;
+       this.fir.storvoen=ca.storvoen;
+       this.fir.storpercent=ca.storpercent,
+       this.fir.storemail=this._email;
        this.fir.userId=this._Id;      
      }
  onadd()
@@ -101,12 +106,13 @@ langu(lan:any){  this._lan=lan; }
       // console.log('333')
        //console.log(this.firForm.value)
        var p={
-        firma_Id:this.fir.firma_Id  ,
-        firma_name:this.firForm.value.firma_name,
-        firma_telefon:this.firForm.value.firma_telefon,
-        firma_unvan:this.firForm.value.firma_unvan,
-        voen:this.firForm.value.voen,
-        firma_email:this._email,
+        storId:this.fir.storId  ,
+        storname:this.firForm.value.storname,
+        storphone:this.firForm.value.storphone,
+        storadress:this.firForm.value.storadress,
+        storvoen:this.firForm.value.storvoen,
+        storpercent:this.firForm.value.storpercent,
+        storemail:this._email,
         userId:this._Id
       
       }

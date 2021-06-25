@@ -18,6 +18,7 @@ export interface User {
     isEmailConfirmed?:boolean;
     phoneNumber?:string;
     photoUrl?: string;
+    storpercent?:number;
     isNewUser?: boolean;
     isAdmin?: boolean;
     isOnline?: boolean;
@@ -61,6 +62,7 @@ export class IndexViewModel
     email:string;
     phoneNumber:string;
     photoUrl?: string;
+    percent:number;
     statusMessage:string;
 }
 export interface RequestResult {    

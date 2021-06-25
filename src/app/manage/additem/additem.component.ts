@@ -8,7 +8,7 @@ import { getemail, getId} from 'src/app/auth/store/auth.selectors';
 //import { flatMap } from 'rxjs/operators';
 import { NotificationService } from 'src/app/helpers/notification.service';
 import { Lang } from 'src/app/models/_carts';
-import { beden, firma, gender, itemdetail, items_photo, item_categoriy, item_color, item_desen, item_marka, item_materal, item_stil, kullanimAlani, kumashtipi, qelip, qoltipi, yaka } from 'src/app/models/_settings';
+import { beden, firma, gender, product, prodphoto, _categoriy, _color, _desen, _marka, _materal, _stil, kullanimAlani, kumashtipi, qelip, qoltipi, yaka } from 'src/app/models/_settings';
 
 import { AppState } from 'src/app/reducers';
 import { SettingsService } from 'src/app/services/settings.service';
@@ -24,33 +24,33 @@ export class AdditemComponent implements OnInit {
   //#region
    _Id:any;_email:any;
   itemForm: FormGroup; 
-  listitem:itemdetail[] = []; 
-  filtereditem: itemdetail[];
-  item:itemdetail=new itemdetail(); 
+  listitem:product[] = []; 
+  filtereditem: product[];
+  item:product=new product(); 
   //itemphto:items_photo=new items_photo();
   _lang:Lang[]=[{lid: '1', lname: 'Az'},{lid: '2', lname: 'En'},{lid: '3', lname: 'Ru'} ];  _lan='';
-  _item: itemdetail[];  _pid:'';  
+  _item: product[];  _pid:'';  
   //-----------------------
   _gender: gender[];_gen:any; gender:string;
-  _cate: item_categoriy[];_cat:any; catname: string;
-  _cate1: item_categoriy[];
+  _cate: _categoriy[];_cat:any; catname: string;
+  _cate1: _categoriy[];
   _firma: firma[];_fir:any; firname: string;
-  _marka: item_marka[];_mar:any; marname: string;
+  _marka: _marka[];_mar:any; marname: string;
   _beden: beden[];_bed:any; bedname: string;
   _beden1: beden[];
-  _color: item_color[];_col:any; colname: string;
+  _color: _color[];_col:any; colname: string;
   _qelip: qelip[];_qel:any; qelname: string;
   _qelip1: qelip[];
-  _mater: item_materal[];_mat:any; matname: string;
-  _mater1: item_materal[];
+  _mater: _materal[];_mat:any; matname: string;
+  _mater1: _materal[];
   _yaka: yaka[];_yak:any; yakname: string;
   _yaka1: yaka[];
   _qoltipi: qoltipi[];_qol:any; qolname: string;
   _qoltipi1: qoltipi[];
-  _stil: item_stil[];_sti:any; stilname: string;
-  //_stil1: item_stil[];
-  _desen: item_desen[];_des:any; desname: string;
-  _desen1: item_desen[];
+  _stil: _stil[];_sti:any; stilname: string;
+  //_stil1: _stil[];
+  _desen: _desen[];_des:any; desname: string;
+  _desen1: _desen[];
   _kumash: kumashtipi[];_kum:any; kumname: string;
   _kumash1: kumashtipi[];
   _kullan: kullanimAlani[];_kul:any; kulname: string;
@@ -59,9 +59,9 @@ export class AdditemComponent implements OnInit {
   //#endregion
   searchText: string = '';
   previous: string;
-  headElements = ['firma_name','item_name','item_price','beden','gender_name','item_color','item_categoriy_name',
+  headElements = ['firmaname','_name','_buy_unitprice','beden','genname','_color','_catname',
 
-  // 'item_delivery','item_desen_name','item_discount','item_hidden','item_marka_name','item_materal_name','item_quantity','item_sales_price','item_stil_name','kullanim_name',
+  // '_delivery','_desenname','_discount','_hidden','_markaname','_materalname','_unitsinstock','_sales_price','_stil_name','kullanim_name',
   // 'kumash_name','qaime_date','qelip_name','qoltipi_name','trEu','yaka_name'
    ,'Actions'
   ];
@@ -84,8 +84,8 @@ export class AdditemComponent implements OnInit {
   //        'beden','gender_name','firma_name',
   //      'item_categoriy_name','item_color'
       //  ,'item_delivery','item_desen_name',
-      //  'item_discount','item_hidden','item_marka_name','item_materal_name','item_name',
-      //  'item_price','item_quantity','item_sales_price','item_stil_name','kullanim_name',
+      //  'item_discount','item_hidden','markaname','matname','item_name',
+      //  'item_buy_unitprice','item_unitsinstock','item_sales_price','item_stil_name','kullanim_name',
       //  'kumash_name','qaime_date','qelip_name','qoltipi_name','trEu','yaka_name'
       //   ,'Actions'
      // ]);
@@ -98,32 +98,31 @@ export class AdditemComponent implements OnInit {
      //#region 
    // console.log(this._email)  
     this.itemForm = new FormGroup({
-      item_Id: new FormControl('', [Validators.maxLength(36)]),  
-      firma_Id: new FormControl('', [Validators.required,Validators.maxLength(36)]),   
-      gender_Id: new FormControl('', [Validators.required,Validators.maxLength(36)]),   
-      item_categoriy_Id: new FormControl('', [Validators.required,Validators.maxLength(36)]),   
-      item_marka_Id: new FormControl('', [Validators.required,Validators.maxLength(36)]),   
-               
-      item_color_Id: new FormControl('', [Validators.required,Validators.maxLength(36)]),   
-      kulalan_Id: new FormControl('', [Validators.required,Validators.maxLength(36)]),
-      item_stil_Id: new FormControl('', [Validators.required,Validators.maxLength(36)]),
+      proId: new FormControl('', [Validators.maxLength(36)]),
+      genId: new FormControl('', [Validators.required,Validators.maxLength(36)]),
+      catId: new FormControl('', [Validators.required,Validators.maxLength(36)]),      
+      markaId: new FormControl('', [Validators.required,Validators.maxLength(36)]), 
+      qelipId: new FormControl('', [Validators.maxLength(36)]),             
+      matId: new FormControl('', [Validators.maxLength(36)]),
+      yakaId: new FormControl('', [Validators.maxLength(36)]),
+      qolId: new FormControl('', [Validators.maxLength(36)]), 
+      stilId: new FormControl('', [Validators.required,Validators.maxLength(36)]),
+      desenId: new FormControl('', [Validators.maxLength(36)]),
+      kulalanId: new FormControl('', [Validators.required,Validators.maxLength(36)]),
+      kumashId: new FormControl('', [Validators.maxLength(36)]), 
 
-      beden_Id: new FormControl('', [Validators.maxLength(36)]),
-      qelip_Id: new FormControl('', [Validators.maxLength(36)]),
-      item_materal_Id: new FormControl('', [Validators.maxLength(36)]),   
-      yaka_Id: new FormControl('', [Validators.maxLength(36)]),   
-      qol_Id: new FormControl('', [Validators.maxLength(36)]),         
-      item_desen_Id: new FormControl('', [Validators.maxLength(36)]),     
-      kumash_Id: new FormControl('', [Validators.maxLength(36)]), 
-
-      item_name: new FormControl('', [Validators.required,Validators.maxLength(36)]),  
-      item_code: new FormControl('', [Validators.required,Validators.maxLength(36)]),     
-      item_price: new FormControl('', [Validators.required,Validators.required]),
-      item_sales_price: new FormControl('', [Validators.required,Validators.required]), 
-      item_quantity: new FormControl('', [Validators.required,Validators.required]),
-      item_discount: new FormControl('', [Validators.required,Validators.required]),
-      item_hidden: new FormControl(false),
-      item_delivery: new FormControl(false),
+      bedenId: new FormControl('', [Validators.maxLength(36)]), 
+      colId: new FormControl('', [Validators.required,Validators.maxLength(36)]),    
+      prodname: new FormControl('', [Validators.required,Validators.maxLength(36)]),    
+      barcode: new FormControl('', [Validators.required,Validators.maxLength(36)]),  
+      storId: new FormControl('', [Validators.required,Validators.maxLength(36)]),  
+      boxquantity: new FormControl(1, [Validators.required,Validators.required]),
+      unitsinstock: new FormControl(1, [Validators.required,Validators.required]),        
+      buy_unitprice: new FormControl('', [Validators.required,Validators.required]),
+      sell_unitprice: new FormControl('', [Validators.required,Validators.required]),    
+      discount: new FormControl('', [Validators.required,Validators.required]),     
+      Discontinued: new FormControl(false),
+      delivery: new FormControl(false),
       _file: new FormControl('', [Validators.required]) 
      //#endregion      
     });
@@ -131,30 +130,30 @@ export class AdditemComponent implements OnInit {
       this._ref();
     }
     //#region 
-    get item_Id() { return this.itemForm.get('item_Id'); }
-    get firma_Id() { return this.itemForm.get('firma_Id'); }
-    get gender_Id() { return this.itemForm.get('gender_Id'); }
-    get item_categoriy_Id() { return this.itemForm.get('item_categoriy_Id'); }
-    get item_marka_Id() { return this.itemForm.get('item_marka_Id'); }
-    get beden_Id() { return this.itemForm.get('beden_Id'); }
-    get item_color_Id() { return this.itemForm.get('item_color_Id'); }
-    get qelip_Id() { return this.itemForm.get('qelip_Id'); }
-    get item_materal_Id() { return this.itemForm.get('item_materal_Id'); }
-    get yaka_Id() { return this.itemForm.get('yaka_Id'); }
-    get qol_Id() { return this.itemForm.get('qol_Id'); }
-    get item_stil_Id() { return this.itemForm.get('item_stil_Id'); }
-    get item_desen_Id() { return this.itemForm.get('item_desen_Id'); }
-    get kulalan_Id() { return this.itemForm.get('kulalan_Id'); }
-    get kumash_Id() { return this.itemForm.get('kumash_Id'); }
-    get item_name() { return this.itemForm.get('item_name'); }
-    get item_code() { return this.itemForm.get('item_code'); }
-    get item_price() { return this.itemForm.get('item_price'); }
-    get item_sales_price() { return this.itemForm.get('item_sales_price'); }
-    get item_quantity() { return this.itemForm.get('item_quantity'); }
-    get item_discount() { return this.itemForm.get('item_discount'); }
-    get item_hidden() { return this.itemForm.get('item_hidden'); }
-    get item_delivery() { return this.itemForm.get('item_delivery'); }
-    get qaime_date() { return this.itemForm.get('qaime_date'); }  
+    // get proId() { return this.itemForm.get('proId'); }
+    // get storId() { return this.itemForm.get('storId'); }
+    // get genId() { return this.itemForm.get('genId'); }
+    // get catId() { return this.itemForm.get('catId'); }
+    // get markaId() { return this.itemForm.get('markaId'); }
+    // get bedenId() { return this.itemForm.get('bedenId'); }
+    // get colId() { return this.itemForm.get('colId'); }
+    // get qelipId() { return this.itemForm.get('qelipId'); }
+    // get matId() { return this.itemForm.get('matId'); }
+    // get yakaId() { return this.itemForm.get('yakaId'); }
+    // get qolId() { return this.itemForm.get('qolId'); }
+    // get stilId() { return this.itemForm.get('stilId'); }
+    // get desId() { return this.itemForm.get('desId'); }
+    // get kulalanId() { return this.itemForm.get('kulalanId'); }
+    // get kumashId() { return this.itemForm.get('kumashId'); }
+    // get itemname() { return this.itemForm.get('name'); }
+    // get barcode() { return this.itemForm.get('barcode'); }
+    // get buy_unitprice() { return this.itemForm.get('buy_unitprice'); }
+    // get sell_unitprice() { return this.itemForm.get('sell_unitprice'); }
+    // get unitsinstock() { return this.itemForm.get('unitsinstock'); }
+    // get discount() { return this.itemForm.get('discount'); }
+    // get hidden() { return this.itemForm.get('hidden'); }
+    // get delivery() { return this.itemForm.get('delivery'); }
+    // get ModifiedDate() { return this.itemForm.get('ModifiedDate'); }  
     //#endregion
 _ref(){
    //#region 
@@ -199,16 +198,15 @@ _ref(){
 langu(lan:any){  this._lan=lan; }
 selgen(sel:any){
    this._gen=sel;
-   this._cate=this._cate1.filter(v=>v.gender_Id===this._gender.find(x=>x.gender_name===this._gen)!.gender_Id &&v.parid !=null )   
+   this._cate=this._cate1.filter(v=>v.genId===this._gender.find(x=>x.genname===this._gen)!.genId &&v.parid !=null )   
 }
-selcate(sel:any){
- 
+selcate(sel:any){ 
   this._cat=sel; 
   this._yaka=this._qoltipi=this._kumash= this._qelip=this._mater=this._desen=[]; 
   
-  this._beden=this._beden1.filter(x=>x.gender_Id===(this._gender.find(x=>x.gender_name===this._gen)!.gender_Id)&&
-  x.item_categoriy_Id===this._cate1.find(t=>t.item_categoriy_name===sel && 
-  t.gender_Id=== this._gender.find(x=>x.gender_name===this._gen)!.gender_Id)!.parid); 
+  this._beden=this._beden1.filter(x=>x.genId===(this._gender.find(x=>x.genname===this._gen)!.genId)&&
+  x.catId===this._cate1.find(t=>t.catname===sel && 
+  t.genId=== this._gender.find(x=>x.genname===this._gen)!.genId)!.parid); 
   //console.log(this._beden)
  // console.warn(this._beden.length);
  this._shomi=false;this._shomi1=false;
@@ -217,12 +215,12 @@ selcate(sel:any){
     // _b.disabled =false;
     this._shomi=true;   
     // console.warn(this._beden.length);
-    if(this._cate1.find(r=>r.item_categoriy_Id===this._cate1.find(t=>t.item_categoriy_name===sel && 
-      t.gender_Id=== this._gender.find(x=>x.gender_name===this._gen)!.gender_Id)!.parid)!.item_categoriy_name==='Giyim')
+    if(this._cate1.find(r=>r.catId===this._cate1.find(t=>t.catname===sel && 
+      t.genId=== this._gender.find(x=>x.genname===this._gen)!.genId)!.parid)!.catname==='Giyim')
       {    
         this._shomi1=true;
-         this._yaka=this._yaka1.filter(x=>x.gender_Id===this._gender.find(x=>x.gender_name===this._gen)!.gender_Id);
-         this._qoltipi=this._qoltipi1.filter(x=>x.gender_Id===this._gender.find(x=>x.gender_name===this._gen)!.gender_Id);
+         this._yaka=this._yaka1.filter(x=>x.genId===this._gender.find(x=>x.genname===this._gen)!.genId);
+         this._qoltipi=this._qoltipi1.filter(x=>x.genId===this._gender.find(x=>x.genname===this._gen)!.genId);
          this._kumash=this._kumash1;
          this._qelip=this._qelip1;
          this._mater=this._mater1;
@@ -247,83 +245,78 @@ selkull(sel:any){ this._kul=sel;}
 selkumas(sel:any){ this._kum=sel;}
 
 
- async _edititem(ca:itemdetail)
+ async _edititem(ca:product)
  {
    // this. _additem();  
   // console.log(ca)
    
     this.urls=[]; 
      var bed;let kum;let qol;let yak;let mat;let des; let ccol;
-      this.item.item_Id=ca.item_Id;  
-      //console.log(this._firma.filter(t=>t.firma_Id===ca.firma_Id).firma_email)
-      this.item.firma_Id=this._email;//this._firma.find(t=>t.firma_Id===ca.firma_Id)!.firma_email; 
-
-      this.gender=this._gender.find(v=>v.gender_Id===ca.gender_Id)!.gender_name;     
+      this.item.proId=ca.proId;
+      this.item.storId=this._email;
+      this.gender=this._gender.find(v=>v.genId===ca.genId)!.genname;     
       this.selgen(this.gender);   
-      this.catname=this._cate1.find(e=>e.item_categoriy_Id===ca.item_categoriy_Id )!.item_categoriy_name; 
+      this.catname=this._cate1.find(e=>e.catId===ca.catId )!.catname; 
       this.selcate(this.catname); 
-      this.marname=this._marka.find(r=>r.item_marka_Id===ca.item_marka_Id)!.item_marka_name; 
+      this.marname=this._marka.find(r=>r.markaId===ca.markaId)!.markaname; 
       this.selmar(this.marname)
-      this.kulname=this._kullan.find(k=>k.kulalan_Id===ca.kulalan_Id)!.kullanim_name;
-      this.stilname=this._stil.find(k=>k.item_stil_Id===ca.item_stil_Id)!.item_stil_name;   
+      this.kulname=this._kullan.find(k=>k.kulalanId===ca.kulalanId)!.kullanimname;
+      this.stilname=this._stil.find(k=>k.stilId===ca.stilId)!.stilname;   
       //console.log(ca.item_color_Id)
 
-      if(ca.item_color_Id!=null){ ccol=this._color.find(k=>k.item_color_Id=== ca.item_color_Id)!.item_color;this.colname = ccol; }
+      if(ca.colId!=null){ ccol=this._color.find(k=>k.colId=== ca.colId)!.colname;this.colname = ccol; }
       
-     // console.log(this.colname)
-     // console.log('-----------ZZZZ-----------')       
-      this.item.item_name=ca.item_name;  
-      this.item.item_code=ca.item_code;     
-      this.item.item_price=ca.item_price; 
-      this.item.item_sales_price=ca.item_sales_price; 
-      this.item.item_quantity=ca.item_quantity;
-      this.item.item_discount=ca.item_discount;
-      this.item.item_hidden=ca.item_hidden;
+       
+      this.item.prodname=ca.prodname;  
+      this.item.barcode=ca.barcode;     
+      this.item.buy_unitprice=ca.buy_unitprice; 
+      this.item.sell_unitprice=ca.sell_unitprice; 
+      this.item.unitsinstock=ca.unitsinstock;
+      this.item.discount=ca.discount;
+      this.item.Discontinued=ca.Discontinued;
       let dd=false;
-      if(ca.item_delivery==true){dd=true; this.item.item_delivery=dd; }
+      if(ca.delivery==true){dd=true; this.item.delivery=dd; }
       
-      if(ca.beden_Id!=undefined && ca.beden_Id!='')
-      {     
-        //console.log(ca.beden_Id) 
-        bed=this._beden1.find(k=>k.beden_Id===ca.beden_Id)!.trEu;
+      if(ca.bedenId!=undefined && ca.bedenId!='')
+      {  
+        bed=this._beden1.find(k=>k.bedenId===ca.bedenId)!.trEu;
         this.bedname=bed; 
         this._shomi=true;
         this.selbed(this.bedname); 
       }
-      if(ca.yaka_Id!=null && ca.yaka_Id!='')
+      if(ca.yakaId!=null && ca.yakaId!='')
       {
-       // console.log(ca.yaka_Id) 
-          yak=this._yaka1.find(k=>k.yaka_Id===ca.yaka_Id)!.yaka_name;  this.yakname =yak; this._shomi1=true;        
+          yak=this._yaka1.find(k=>k.yakaId===ca.yakaId)!.yakaname;  this.yakname =yak; this._shomi1=true;        
           this.selyaka(this.yakname)
-          if(ca.qelip_Id!=null && ca.qelip_Id!=''){ qol=this._qelip.find(k=>k.qelip_Id===ca.qelip_Id)!.qelip_name; this.qelname =qol;}
-          if(ca.item_materal_Id!=null){ mat=this._mater.find(k=>k.item_materal_Id===ca.item_materal_Id)!.item_materal_name;  this.matname=mat;  }
-          if(ca.qol_Id!=null){ qol=this._qoltipi1.find(k=>k.qol_Id===ca.qol_Id)!.qoltipi_name; this.qolname=qol; }
+          if(ca.qelipId!=null && ca.qelipId!=''){ qol=this._qelip.find(k=>k.qelipId===ca.qelipId)!.qelipname; this.qelname =qol;}
+          if(ca.matId!=null){ mat=this._mater.find(k=>k.matId===ca.matId)!.matname;  this.matname=mat;  }
+          if(ca.qolId!=null){ qol=this._qoltipi1.find(k=>k.qolId===ca.qolId)!.qoltipiname; this.qolname=qol; }
           this.selqol( this.qolname) ;     
-          if(ca.item_desen_Id!=null) { des=this._desen.find(k=>k.item_desen_Id===ca.item_desen_Id)!.item_desen_name; this.desname=des;}   
-          if(ca.kumash_Id!=null){ kum=this._kumash.find(k=>k.kumash_Id===ca.kumash_Id)!.kumash_name;  this.kumname = kum;}    
+          if(ca.desId!=null) { des=this._desen.find(k=>k.desId===ca.desId)!.desname; this.desname=des;}   
+          if(ca.kumashId!=null){ kum=this._kumash.find(k=>k.kumashId===ca.kumashId)!.kumashname;  this.kumname = kum;}    
       }
      // console.log('kkkk')  
-     var k = await this._caSer._getitemsphoto(this.item.item_Id).toPromise()
-     var s=k as items_photo[];
+     var k = await this._caSer._getitemsphoto(this.item.proId).toPromise()
+     var s=k as prodphoto[];
      let ad=environment.apiUrl.replace('/api/','/');
       for (let i = 0; i < s.length; i++) 
       {
-        let slices = s[i].item_photo_url.split("/")
+        let slices = s[i].photourl.split("/")
         let filename= slices[slices.length-1]    
-        var res =  await fetch(ad+s[i].item_photo_url)      
+        var res =  await fetch(ad+s[i].photourl)      
         var blob = await res.blob()
         var file = new File([blob],filename);
         this.selectedFiles.push(file);
-        this.urls.push(ad+s[i].item_photo_url); 
+        this.urls.push(ad+s[i].photourl); 
         //console.log(ad+s[i].item_photo_url)     
       }     
   }     
  async ondel() {
    console.log(this.item)
-   var phot = await this._caSer._getitemsphoto(this.item.item_Id).toPromise() as items_photo[] ;
+   var phot = await this._caSer._getitemsphoto(this.item.proId).toPromise() as prodphoto[] ;
    //shekili silir
    for (let item of phot) {  await this._caSer._delitemsphoto(item).toPromise(); }
-   this.item.qaime_date=formatDate(new Date(),  'yyyy-MM-dd T HH:mm:ss', 'en-US');
+   this.item.ModifiedDate=formatDate(new Date(),  'yyyy-MM-dd T HH:mm:ss', 'en-US');
    await this._caSer._delitemdetail(this.item).toPromise()
     this.notificationService.warn('!Deleted successfully');
     this._getit();    
@@ -331,31 +324,31 @@ selkumas(sel:any){ this._kum=sel;}
   async _additem()
   {
     //this.itemForm.reset();
-    this.item.item_Id='';
-    this.item.firma_Id=this._email;
+    this.item.proId='';
+    this.item.storId=this._email;
    
-    this.item.gender_Id='';     
-    this.item.item_categoriy_Id='';  
-    this.item.item_marka_Id='';  
-    this.item.beden_Id='';          
-    this.item.item_color_Id='';    
-    this.item.qelip_Id='';
-    this.item.item_materal_Id='';   
-    this.item.yaka_Id='';  
-    this.item.qol_Id='';    
-    this.item.item_stil_Id='';    
-    this.item.item_desen_Id='';
-    this.item.kulalan_Id='';   
-    this.item.kumash_Id='';   
-    this.item.item_name=''; 
-    this.item.item_code='';    
-    this.item.item_price=0;
-    this.item.item_sales_price=0; 
-    this.item.item_quantity=0;
-    this.item.item_discount=0;
-    this.item.item_hidden=false;
-    this.item.item_delivery=false;
-    this.item.qaime_date='';
+    this.item.genId='';     
+    this.item.catId='';  
+    this.item.markaId='';  
+    this.item.bedenId='';          
+    this.item.colId='';    
+    this.item.qelipId='';
+    this.item.matId='';   
+    this.item.yakaId='';  
+    this.item.qolId='';    
+    this.item.stilId='';    
+    this.item.desId='';
+    this.item.kulalanId='';   
+    this.item.kumashId='';   
+    this.item.prodname=''; 
+    this.item.barcode='';    
+    this.item.buy_unitprice=0;
+    this.item.sell_unitprice=0; 
+    this.item.unitsinstock=0;
+    this.item.discount=0;
+    this.item.Discontinued=false;
+    this.item.delivery=false;
+    this.item.ModifiedDate='';
     this.selectedFiles = [];
     this.urls = [];
     this.gender=this.catname=this.marname=this.colname=this.kulname=this.stilname=
@@ -365,30 +358,30 @@ selkumas(sel:any){ this._kum=sel;}
   }
   _cline(){ 
     this.itemForm = new FormGroup({  
-      item_Id: new FormControl(''),   
-      firma_Id: new FormControl(''),    
-      gender_Id: new FormControl(''),   
-      item_categoriy_Id: new FormControl(''),   
-      item_marka_Id: new FormControl(''),   
-      beden_Id: new FormControl(''),           
-      item_color_Id: new FormControl(''),    
-      qelip_Id: new FormControl(''), 
-      item_materal_Id: new FormControl(''),    
-      yaka_Id: new FormControl(''),   
-      qol_Id: new FormControl(''),     
-      item_stil_Id: new FormControl(''),     
-      item_desen_Id: new FormControl(''), 
-      kulalan_Id: new FormControl(''),    
-      kumash_Id: new FormControl(''),    
-      item_name: new FormControl(''),  
-      item_code: new FormControl(''),     
-      item_price: new FormControl(0), 
-      item_sales_price: new FormControl(0), 
-      item_quantity: new FormControl(0),
-      item_discount: new FormControl(0),
-      item_hidden: new FormControl(false),
-      item_delivery: new FormControl(''), 
-      qaime_date: new FormControl('')  
+      proId: new FormControl(''),   
+      storId: new FormControl(''),    
+      genId: new FormControl(''),   
+      catId: new FormControl(''),   
+      markaId: new FormControl(''),   
+      bedenId: new FormControl(''),           
+      colId: new FormControl(''),    
+      qelipId: new FormControl(''), 
+      matId: new FormControl(''),    
+      yakaId: new FormControl(''),   
+      qolId: new FormControl(''),     
+      stilId: new FormControl(''),     
+      desId: new FormControl(''), 
+      kullanimId: new FormControl(''),    
+      kumashId: new FormControl(''),    
+      prodname: new FormControl(''),  
+      barcode: new FormControl(''),     
+      buy_unitprice: new FormControl(0), 
+      sell_unitprice: new FormControl(0), 
+      unitsinstock: new FormControl(0),
+      discount: new FormControl(0),
+      hidden: new FormControl(false),
+      delivery: new FormControl(''), 
+      ModifiedDate: new FormControl('')  
       });
      
    }
@@ -451,77 +444,73 @@ _selectFiles(event:any)
    // let dd=false;   if(this.itemForm.value.item_delivery=="") {dd=true;}    
     this.message = '';  
     var bed='';let kum='';let qol='';let yak='';let qel='';let mat='';let des=''; let fir='';let geni='';let _itm='';
-    geni=this._gender.find(g=>g.gender_name===this.itemForm.value.gender_Id)!.gender_Id;
+    geni=this._gender.find(g=>g.genname===this.itemForm.value.genId)!.genId;
     
     if(this._shomi)
     {
-      bed=this._beden1.find(g=>g.trEu===this.itemForm.value.beden_Id)!.beden_Id;  
+      bed=this._beden1.find(g=>g.trEu===this.itemForm.value.bedenId)!.bedenId;  
      // console.log('A!!!!!!')
       if(this._shomi1){       
-       if(this._cate1.find(r=>r.item_categoriy_Id===this._cate1.find(t=>t.item_categoriy_name===this._cat && 
-        t.gender_Id=== this._gender.find(x=>x.gender_name===this._gen)!.gender_Id)!.parid)!.item_categoriy_name==='Giyim')
+       if(this._cate1.find(r=>r.catId===this._cate1.find(t=>t.catname===this._cat && 
+        t.genId=== this._gender.find(x=>x.genname===this._gen)!.genId)!.parid)!.catname==='Giyim')
         {           
-            kum=this._kumash.find(h=>h.kumash_name===this.itemForm.value.kumash_Id)!.kumash_Id;
-            yak=this._yaka1.find(h=>h.yaka_name===this.itemForm.value.yaka_Id)!.yaka_Id;
-            qol=this._qoltipi1.find(h=>h.qoltipi_name===this.itemForm.value.qol_Id)!.qol_Id; 
-            qel=this._qelip.find(h=>h.qelip_name===this.itemForm.value.qelip_Id)!.qelip_Id;  
-            mat=this._mater.find(h=>h.item_materal_name===this.itemForm.value.item_materal_Id)!.item_materal_Id;
-            des=this._desen.find(h=>h.item_desen_name===this.itemForm.value.item_desen_Id)!.item_desen_Id; 
+            kum=this._kumash.find(h=>h.kumashname===this.itemForm.value.kumashId)!.kumashId;
+            yak=this._yaka1.find(h=>h.yakaname===this.itemForm.value.yakaId)!.yakaId;
+            qol=this._qoltipi1.find(h=>h.qoltipiname===this.itemForm.value.qolId)!.qolId; 
+            qel=this._qelip.find(h=>h.qelipname===this.itemForm.value.qelipId)!.qelipId;  
+            mat=this._mater.find(h=>h.matname===this.itemForm.value.matId)!.matId;
+            des=this._desen.find(h=>h.desname===this.itemForm.value.desId)!.desId; 
         }  
       }
     }
     
-    if(this.item.item_Id!=''){_itm=this.item.item_Id;}
+    if(this.item.proId!=''){_itm=this.item.proId;}
    //console.log(this.item.firma_Id)
     // if(this.item.firma_Id!='')
     // {
     //   fir!=this._firma.find(g=>g.firma_email===this.item.firma_Id)!.firma_Id; 
     // }   
     var itemcatid='';
-    if(this.itemForm.value.item_categoriy_Id!=undefined){
-     itemcatid= this._cate1.find(g=>g.item_categoriy_name===this.itemForm.value.item_categoriy_Id)!.item_categoriy_Id  }   
+    if(this.itemForm.value.catId!=undefined){
+     itemcatid= this._cate1.find(g=>g.catname===this.itemForm.value.catId)!.catId  }   
   var itemmarkid='';
-  if(this.itemForm.value.item_marka_Id!=undefined){
-   itemmarkid=this._marka.find(g=>g.item_marka_name===this.itemForm.value.item_marka_Id)!.item_marka_Id }
+  if(this.itemForm.value.markaId!=undefined){
+   itemmarkid=this._marka.find(g=>g.markaname===this.itemForm.value.markaId)!.markaId }
    var itemcolid='';
-   if(this.itemForm.value.item_color_Id!=undefined){
-    itemcolid= this._color.find(h=>h.item_color===this.itemForm.value.item_color_Id)!.item_color_Id}
+   if(this.itemForm.value.colId!=undefined)
+   {
+     //console.log(this.itemForm.value.colId)
+    itemcolid= this._color.find(h=>h.colname===this.itemForm.value.colId)!.colId}
+
    var itemstilid='';
-   if(this.itemForm.value.item_stil_Id!=undefined){
-    itemstilid=this._stil.find(h=>h.item_stil_name===this.itemForm.value.item_stil_Id)!.item_stil_Id
+   if(this.itemForm.value.stilId!=undefined){
+    itemstilid=this._stil.find(h=>h.stilname===this.itemForm.value.stilId)!.stilId
    }
    var itemkulid='';
-   if(this.itemForm.value.kulalan_Id!=undefined){
-    itemkulid= this._kullan.find(h=>h.kullanim_name===this.itemForm.value.kulalan_Id)!.kulalan_Id
+   if(this.itemForm.value.kulalanId!=undefined){
+    itemkulid= this._kullan.find(h=>h.kullanimname===this.itemForm.value.kulalanId)!.kulalanId
    }
    if(_itm===undefined){_itm='';}
      var p={
-      item_Id:_itm ,
-      firma_Id:this.item.firma_Id,
-      gender_Id:geni,   
-      item_categoriy_Id:itemcatid,   
-      item_marka_Id:itemmarkid,         
-      item_color_Id:itemcolid,
-      item_stil_Id:itemstilid, 
-      kulalan_Id:itemkulid,   
-
-      item_desen_Id:des, qelip_Id:qel,item_materal_Id:mat, beden_Id:bed, yaka_Id:yak, qol_Id:qol, kumash_Id:kum, 
-      item_name:this.itemForm.value.item_name, item_code:this.itemForm.value.item_code,     
-      item_price:this.itemForm.value.item_price, item_sales_price:this.itemForm.value.item_sales_price, 
-      item_quantity:this.itemForm.value.item_quantity,item_discount:this.itemForm.value.item_discount,
-      item_hidden:false,item_delivery:this.itemForm.value.item_delivery,qaime_date:new Date().toISOString()
+       proId:_itm ,genId:geni,catId:itemcatid,markaId:itemmarkid, bedenId:bed,colId:itemcolid,qelipId:qel, matId:mat,
+      yakaId:yak,qolId:qol, stilId:itemstilid,desId:des,kulalanId:itemkulid, kumashId:kum,
+      storId:this.item.storId,prodname:this.itemForm.value.prodname,  barcode:this.itemForm.value.barcode,       
+      boxquantity:this.itemForm.value.boxquantity,unitsinstock:this.itemForm.value.unitsinstock,
+      buy_unitprice:this.itemForm.value.buy_unitprice, sell_unitprice:this.itemForm.value.sell_unitprice,
+      discount:this.itemForm.value.discount,ModifiedDate:new Date().toISOString(),Discontinued:false,opr:'Add',
+      delivery:this.itemForm.value.delivery
     }  
-   console.log(p) 
- // console.log('SS')     
-    let itm = await this._caSer._positemdetail(p).toPromise() as itemdetail
+    //console.log(p) 
+    //console.log('SS')     
+    let itm = await this._caSer._positemdetail(p).toPromise() as product
 
-    var _p={ item_Id:itm.item_Id , firma_Id:itm.firma_Id, gender_Id:this.itemForm.value.gender_Id } 
-    var phot = await this._caSer._getitemsphoto(_p.item_Id).toPromise() as items_photo[] ;
+    var _p={ proId:itm.proId , storId:itm.proId, genId:this.itemForm.value.genId } 
+    
+    var phot = await this._caSer._getitemsphoto(_p.proId).toPromise() as prodphoto[] ;
     //shekili silir
     for (let item of phot) {  await this._caSer._delitemsphoto(item).toPromise(); }
      //shekili elave edir
     for (let i = 0; i < this.selectedFiles.length; i++)  { 
-
        await this._caSer.upload(_p, this.selectedFiles[i]).toPromise()
     }
     this._additem(); 

@@ -21,50 +21,50 @@ export class QoltipiComponent implements OnInit {
  _gender: gender[];_gen:string; gender:string;
   constructor( private _caSer: SettingsService,
      private notificationService: NotificationService) {
-     this.qol.qol_Id="";
+     this.qol.qolId="";
    }   
    ngOnInit(): void {
     this.qolForm = new FormGroup({  
      // qol_Id: new FormControl(''),   
-     qoltipi_name: new FormControl('', [Validators.required,Validators.maxLength(50)]),   
-     gender_Id: new FormControl('', [Validators.required,Validators.maxLength(50)]),   
+     qoltipiname: new FormControl('', [Validators.required,Validators.maxLength(50)]),   
+     genId: new FormControl('', [Validators.required,Validators.maxLength(50)]),   
     });  
-      this._caSer._getgender().subscribe( p=>{ this._gender=p;//console.log(p)
+      this._caSer._getgender().subscribe( p=>{ this._gender=p;  //console.log(p)
        // this._cate=this._cate.filter(g=>g.parid==='')
       });  
       this._caSer._getqoltipi().subscribe(list=>
         { 
            this.listqol=list; 
            this.filteredqol = this.listqol; 
-           console.log(this.listqol)                        
+         //  console.log(this.listqol)                        
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
-get qoltipi_name() { return this.qolForm.get('qoltipi_name'); }
-get gender_Id() { return this.qolForm.get('gender_Id'); }
+get qoltipiname() { return this.qolForm.get('qoltipiname'); }
+get genId() { return this.qolForm.get('genId'); }
 
 langu(lan:any){  this._lan=lan; }
 selgen(sel:any){ this._gen=sel;}
   _addqol() {
-    this.qol.qol_Id='';   
-    this.qol.qoltipi_name='';  
-    this.qol.gender_Id='';  
+    this.qol.qolId='';   
+    this.qol.qoltipiname='';  
+    this.qol.genId='';  
   }
   _cline(){ 
     this.qolForm = new FormGroup({         
-      qol_Id: new FormControl(''),
-      qoltipi_name: new FormControl(''),   
+      qolId: new FormControl(''),
+      qoltipiname: new FormControl(''),   
       });     
    }
    _editqol(ca:qoltipi){ 
    // console.log('12111')   
     // console.log(ca)  
-       this.qol.qol_Id=ca.qol_Id;
-       this.qol.qoltipi_name=ca.qoltipi_name; 
-       if(ca.gender_Id!=''){
-         this.gender=this._gender.find(x=>x.gender_Id==ca.gender_Id)!.gender_name; 
+       this.qol.qolId=ca.qolId;
+       this.qol.qoltipiname=ca.qoltipiname; 
+       if(ca.genId!=''){
+         this.gender=this._gender.find(x=>x.genId==ca.genId)!.genname; 
        }     
         
-       this.qol.gender_Id=ca.gender_Id;
+       this.qol.genId=ca.genId;
       // console.log( this.catname)        
      }
  onadd()
@@ -72,13 +72,13 @@ selgen(sel:any){ this._gen=sel;}
     if(this.qolForm.valid)  
     {
       let genderId=''
-       if(this.qolForm.value.gender_Id!=null){
-        this._gender.find(x=>x.gender_name==this.qolForm.value.gender_Id )!.gender_Id
+       if(this.qolForm.value.genId!=null){
+        this._gender.find(x=>x.genname==this.qolForm.value.genId )!.genname
        }
        var p={
-        qol_Id:this.qol.qol_Id  ,
-        qoltipi_name:this.qolForm.value.qoltipi_name, 
-        gender_Id: genderId     
+        qolId:this.qol.qolId  ,
+        qoltipiname:this.qolForm.value.qoltipiname, 
+        genId: genderId     
       }
        // console.log(p)
        this._caSer._posqoltipi(p).subscribe();       

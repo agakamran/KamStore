@@ -20,13 +20,13 @@ export class KumashtipiComponent implements OnInit {
   
   constructor( private _caSer: SettingsService,
      private notificationService: NotificationService) {
-     this.kum.kumash_Id="";
+     this.kum.kumashId="";
    }
 
    ngOnInit(): void {
     this.kumForm = new FormGroup({  
      // firma_id: new FormControl('', [Validators.required,Validators.maxLength(36)]),   
-     kumash_name: new FormControl('', [Validators.required,Validators.maxLength(50)]),
+     kumashname: new FormControl('', [Validators.required,Validators.maxLength(50)]),
   
         
     });  
@@ -39,24 +39,24 @@ export class KumashtipiComponent implements OnInit {
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
 
-get kumash_name() { return this.kumForm.get('kumash_name'); }
+get kumashname() { return this.kumForm.get('kumashname'); }
 
 langu(lan:any){  this._lan=lan; }
   _addkum() {
-    this.kum.kumash_Id='';   
-    this.kum.kumash_name='';    
+    this.kum.kumashId='';   
+    this.kum.kumashname='';    
   }
   _cline(){ 
     this.kumForm = new FormGroup({         
-      kumash_Id: new FormControl(''),
-      kumash_name: new FormControl(''),    
+      kumashId: new FormControl(''),
+      kumashname: new FormControl(''),    
       });     
    }
    _editkum(ca:kumashtipi){ 
     //console.log('12111')   
     // console.log(ca)  
-       this.kum.kumash_Id=ca.kumash_Id;
-       this.kum.kumash_name=ca.kumash_name;//this._page.find(x=>x.pid==ca.pId).pagename;
+       this.kum.kumashId=ca.kumashId;
+       this.kum.kumashname=ca.kumashname;//this._page.find(x=>x.pid==ca.pId).pagename;
       // this.fir.firma_telefon=ca.firma_telefon; 
       // this.fir.firma_unvan=ca.firma_unvan;
       // this.fir.voen=ca.voen,
@@ -70,8 +70,8 @@ langu(lan:any){  this._lan=lan; }
        //console.log('333')
       // console.log(this.firForm.value)
        var p={
-        kumash_Id:this.kum.kumash_Id  ,
-        kumash_name:this.kumForm.value.kumash_name,      
+        kumashId:this.kum.kumashId  ,
+        kumashname:this.kumForm.value.kumashname,      
       }
       //  console.log(p)
        this._caSer._poskumashtipi(p).subscribe();  

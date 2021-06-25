@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { NotificationService } from 'src/app/helpers/notification.service';
 import { MenuItem } from 'src/app/models/_menu';
-import { beden, gender, item_categoriy, item_color, item_desen, item_marka, item_materal, item_stil, kullanimAlani, kumashtipi, qelip, qoltipi, yaka } from 'src/app/models/_settings';
+import { beden, gender, _categoriy, _color, _desen, _marka, _materal,_stil, kullanimAlani, kumashtipi, qelip, qoltipi, yaka } from 'src/app/models/_settings';
 import { SettingsService } from 'src/app/services/settings.service';
 
 import { NavbarService } from 'src/app/services/navbar.service';
@@ -17,17 +17,17 @@ export class HazirlaComponent implements OnInit {
   //#region 
   listnav:MenuItem[] = []; 
   jsonlistnav:MenuItem[] = [];
-  listcol:item_color[] = [];
-  jsonlistcol:item_color[] = [];
-  listdes:item_desen[] = []; 
-  jsonlistdes:item_desen[] = [];
+  listcol:_color[] = [];
+  jsonlistcol:_color[] = [];
+  listdes:_desen[] = []; 
+  jsonlistdes:_desen[] = [];
 
-  listmar:item_marka[] = []; 
-  jsonlistmar:item_marka[] = [];   
-  listmat:item_materal[] = [];
-  jsonlistmat:item_materal[] = [];
-  liststil:item_stil[] = [];
-  jsonliststil:item_stil[] = [];
+  listmar:_marka[] = []; 
+  jsonlistmar:_marka[] = [];   
+  listmat:_materal[] = [];
+  jsonlistmat:_materal[] = [];
+  liststil:_stil[] = [];
+  jsonliststil:_stil[] = [];
   listkul:kullanimAlani[] = [];
   jsonlistkul:kullanimAlani[] = [];
   listkum:kumashtipi[] = []; 
@@ -37,8 +37,8 @@ export class HazirlaComponent implements OnInit {
   _gender: gender[]=[];
   jsonlistgen:gender[] = [];
 
-  listcat:item_categoriy[] = [];
-  jsonlistcat:item_categoriy[] = [];   
+  listcat:_categoriy[] = [];
+  jsonlistcat:_categoriy[] = [];   
   listqol:qoltipi[] = []; 
   jsonlistqol:qoltipi[] = [];  
   listyak:yaka[] = [];
@@ -66,8 +66,10 @@ export class HazirlaComponent implements OnInit {
     this._caSer._getgender().subscribe(p=>
     { 
         this._gender=p; 
+       // console.log(p)
         this._caSer._jsongender().subscribe( p=>{     
         this.jsonlistgen=p;
+       // console.log(p)
        // this.addgender();                                 
     })}, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
 
@@ -282,17 +284,17 @@ export class HazirlaComponent implements OnInit {
        // console.log(this._gender.find(x=>x.gender_name==item.gender_Id ).gender_Id)  
         var kn;
         let gendid=''
-        if(item.gender_Id!=''){
-          gendid=this._gender.find(x=>x.gender_name==item.gender_Id )!.gender_Id 
+        if(item.genId!=''){
+          gendid=this._gender.find(x=>x.genname==item.genId )!.genId 
         }
 
         var p={       
-          item_categoriy_Id:'' ,
-          item_categoriy_name:item.item_categoriy_name.trim(),
+          catId:'' ,
+          catname:item.catname.trim(),
           parid:item.parid,
-          gender_Id:gendid                
+          genId:gendid                
         }
-        //console.log(p) 
+       // console.log(p) 
         this._caSer._poscategoriy(p).subscribe(); 
       }     
      }
@@ -304,15 +306,15 @@ export class HazirlaComponent implements OnInit {
           var kn;
          // console.log(it)
           if(it.parid===''){kn=''}
-          else{kn=this.listcat.find(x=>x.item_categoriy_name==it.parid && x.gender_Id==it.gender_Id)?.item_categoriy_Id}
+          else{kn=this.listcat.find(x=>x.catname==it.parid && x.genId==it.genId)?.catId}
           let genderid=''
-          if(it.gender_Id!=''){
-          genderid= this._gender.find(x=>x.gender_Id==it.gender_Id )?.gender_Id
+          if(it.genId!=''){
+          genderid= this._gender.find(x=>x.genId==it.genId )?.genId
           }
           var ps={       
-            item_categoriy_Id:it.item_categoriy_Id  ,
-            item_categoriy_name:it.item_categoriy_name,
-            gender_Id: genderid,  
+            catId:it.catId  ,
+            catname:it.catname,
+            genId: genderid,  
             parid:kn,       
           } 
          // console.log(ps)
@@ -327,8 +329,8 @@ export class HazirlaComponent implements OnInit {
       for (let item of this.jsonlistdes) 
       {
        var p={
-        item_desen_Id:'' ,
-        item_desen_name:item.item_desen_name,      
+        desId:'' ,
+        desname:item.desname,      
         }
         //  console.log(p)
        this._caSer._positemdesen(p).subscribe();  
@@ -342,8 +344,8 @@ export class HazirlaComponent implements OnInit {
       for (let item of this.jsonlistqel) 
       {
        var p={
-        qelip_Id:'' ,
-        qelip_name:item.qelip_name,      
+        qelipId:'' ,
+        qelipname:item.qelipname,      
         }
         //  console.log(p)
        this._caSer._posqelip(p).subscribe();  
@@ -358,9 +360,9 @@ export class HazirlaComponent implements OnInit {
       for (let item of this.jsonlistkul) 
       {
        var p={
-        kulalan_Id:'' ,
+        kulalanId:'' ,
        // item_categoriy_Id:this.listcat.find(x=>x.item_categoriy_name===item.item_categoriy_Id).item_categoriy_Id, 
-        kullanim_name:item.kullanim_name    
+        kullanimname:item.kullanimname    
         }
         //  console.log(p)
        this._caSer._poskullanimAlani(p).subscribe();  
@@ -374,9 +376,9 @@ export class HazirlaComponent implements OnInit {
       for (let item of this.jsonlistkum) 
       {
        var p={
-        kumash_Id:'' ,
+        kumashId:'' ,
        // item_categoriy_Id:this.listcat.find(x=>x.item_categoriy_name===item.item_categoriy_Id).item_categoriy_Id, 
-       kumash_name:item.kumash_name    
+       kumashname:item.kumashname    
         }
         //  console.log(p)
        this._caSer._poskumashtipi(p).subscribe();  
@@ -390,9 +392,9 @@ export class HazirlaComponent implements OnInit {
       for (let item of this.jsonlistmar) 
       {
        var p={
-        item_marka_Id:'' ,
+        markaId:'' ,
        // item_categoriy_Id:this.listcat.find(x=>x.item_categoriy_name===item.item_categoriy_Id).item_categoriy_Id, 
-       item_marka_name:item.item_marka_name   
+       markaname:item.markaname   
         }
         //  console.log(p)
        this._caSer._positemmarka(p).subscribe();
@@ -407,9 +409,9 @@ export class HazirlaComponent implements OnInit {
       for (let item of this.jsonlistmat) 
       {
        var p={
-        item_materal_Id:'' ,
+        matId:'' ,
        // item_categoriy_Id:this.listcat.find(x=>x.item_categoriy_name===item.item_categoriy_Id).item_categoriy_Id, 
-       item_materal_name:item.item_materal_name   
+         matname:item.matname   
         }
         //  console.log(p)
        this._caSer._positemmateral(p).subscribe();  
@@ -423,9 +425,9 @@ export class HazirlaComponent implements OnInit {
       for (let item of this.jsonliststil) 
       {
        var p={
-        item_stil_Id:'' ,
+        stilId:'' ,
        // item_categoriy_Id:this.listcat.find(x=>x.item_categoriy_name===item.item_categoriy_Id).item_categoriy_Id, 
-       item_stil_name:item.item_stil_name   
+       stilname:item.stilname   
         }
         //  console.log(p)
        this._caSer._positemstil(p).subscribe();  
@@ -441,14 +443,14 @@ export class HazirlaComponent implements OnInit {
       for (let item of this.jsonlistqol) 
       {
         let gendid=''
-        if(item.gender_Id!=''){
-          gendid=this._gender.find(x=>x.gender_name==item.gender_Id)!.gender_Id
+        if(item.genId!=''){
+          gendid=this._gender.find(x=>x.genname==item.genId)!.genId
         }
        var p={
-        qol_Id:'' ,
+        qolId:'' ,
         //item_categoriy_Id:item.item_categoriy_Id, 
-        gender_Id:gendid, 
-        qoltipi_name:item.qoltipi_name    
+        genId:gendid, 
+        qoltipiname:item.qoltipiname    
         }
       //  console.log(p)
        this._caSer._posqoltipi(p).subscribe();  
@@ -463,10 +465,10 @@ export class HazirlaComponent implements OnInit {
       for (let item of this.jsonlistyak) 
       {
        var p={
-        yaka_Id:'' ,
-        gender_Id:this._gender.find(x=>x.gender_name==item.gender_Id)!.gender_Id, 
+        yakaId:'' ,
+        genId:this._gender.find(x=>x.genname==item.genId)!.genId, 
         //item_categoriy_Id:this.listcat.find(x=>x.item_categoriy_name===item.item_categoriy_Id).item_categoriy_Id, 
-        yaka_name:item.yaka_name  
+        yakaname:item.yakaname  
         }
        // console.log(p)
        this._caSer._posyaka(p).subscribe();  
@@ -483,12 +485,12 @@ export class HazirlaComponent implements OnInit {
       //  console.log(this.jsonlistbeden.filter(x=>x.ayakUz!=null).length)        
          let ge='';
          
-         if(item.gender_Id!=''){
-          ge=this._gender.find(x=>x.gender_name==item.gender_Id)!.gender_Id;
+         if(item.genId!=''){
+          ge=this._gender.find(x=>x.genname==item.genId)!.genId;
          }
             var p={
-            beden_Id:'' ,
-            beden:item.beden,
+            bedenId:'' ,
+            bedeni:item.bedeni,
             trEu:item.trEu,
             uk:item.uk,
             us:item.us,
@@ -500,8 +502,8 @@ export class HazirlaComponent implements OnInit {
             yaka:item.yaka,
             kot:item.kot,
             uzunluk:item.uzunluk,
-            item_categoriy_Id:this.listcat.find(x=>x.parid===null && x.item_categoriy_name===item.item_categoriy_Id && x.gender_Id===ge)!.item_categoriy_Id,
-            gender_Id:ge 
+            catId:this.listcat.find(x=>x.parid===null && x.catname===item.catId && x.genId===ge)!.catId,
+            genId:ge 
              
           }
           //console.log(p)
@@ -517,8 +519,8 @@ export class HazirlaComponent implements OnInit {
        for (let item of this.jsonlistgen) 
        {
          var p={
-           gender_Id:''  ,
-           gender_name:item.gender_name       
+           genId:''  ,
+           genname:item.genname       
          }
          this._caSer._postgender(p).subscribe(); 
        } 
@@ -532,9 +534,9 @@ export class HazirlaComponent implements OnInit {
        for (let item of this.jsonlistcol) 
        {
          var p={
-           item_color_Id:''  ,
-           item_color:item.item_color,
-           url_color:item.url_color     
+           colId:''  ,
+           colname:item.colname,
+           colurl:item.colurl     
          }
          this._caSer._poscolor(p).subscribe();  
         // console.log(item)

@@ -1,46 +1,46 @@
 [
     {
-        "item_desen_Id": "",
-        "item_desen_name": "3 Boyutlu"  
+        "desId": "",
+        "desname": "3 Boyutlu"  
     },
     {
-        "item_desen_Id": "",
-        "item_desen_name": "Baskılı"  
+        "desId": "",
+        "desname": "Baskılı"  
     },
     {
-        "item_desen_Id": "",
-        "item_desen_name": "Çiçekli"  
+        "desId": "",
+        "desname": "Çiçekli"  
     },
     {
-        "item_desen_Id": "",
-        "item_desen_name": "Çizgili"  
+        "desId": "",
+        "desname": "Çizgili"  
     },
     {
-        "item_desen_Id": "",
-        "item_desen_name": "Desenli"  
+        "desId": "",
+        "desname": "Desenli"  
     },
     {
-        "item_desen_Id": "",
-        "item_desen_name": "Dijital Baskı"  
+        "desId": "",
+        "desname": "Dijital Baskı"  
     },
     {
-        "item_desen_Id": "",
-        "item_desen_name": "Düz Renk"  
+        "desId": "",
+        "desname": "Düz Renk"  
     },
     {
-        "item_desen_Id": "",
-        "item_desen_name": "Ekose/Kareli"  
+        "desId": "",
+        "desname": "Ekose/Kareli"  
     },
     {
-        "item_desen_Id": "",
-        "item_desen_name": "Logolu"  
+        "desId": "",
+        "desname": "Logolu"  
     },
     {
-        "item_desen_Id": "",
-        "item_desen_name": "Nakışlı/İşlemeli"  
+        "desId": "",
+        "desname": "Nakışlı/İşlemeli"  
     },
     {
-        "item_desen_Id": "",
-        "item_desen_name": "Yazılı"  
+        "desId": "",
+        "desname": "Yazılı"  
     }
 ]

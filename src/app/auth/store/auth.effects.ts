@@ -33,6 +33,7 @@ export class AuthEffects {
             phoneNumber:res.phoneNumber,
             isEmailConfirmed:res.isEmailConfirmed,       
             photoUrl:res.photoUrl,
+            storpercent:res.percent,
             // providerId: res.additionalUserInfo.providerId,
             // isNewUser: res.additionalUserInfo.isNewUser
             token:res.token
@@ -91,6 +92,7 @@ export class AuthEffects {
         photoUrl: _user.photoUrl,
         phoneNumber:_user.phoneNumber,
         isEmailConfirmed:_user.isEmailConfirmed,
+        storpercent:_user.storpercent,
        // isNewUser: res.additionalUserInfo.isNewUser
         token:  _user.token
       };
@@ -114,6 +116,7 @@ export class AuthEffects {
             providerId: res.additionalUserInfo.providerId,
             photoUrl: res.user.photoURL || gravatarUrl,
             isNewUser: res.additionalUserInfo.isNewUser,
+            storpercent:res.user.storpercent,
             isAdmin: false,
             isOnline: true
           };
@@ -163,7 +166,8 @@ export class AuthEffects {
               email: authData.email,
               providerId: authData.providerData[0].providerId,
               photoUrl: authData.photoURL,
-              isEmailConfirmed:authData.isEmailConfirmed
+              isEmailConfirmed:authData.isEmailConfirmed,
+              storpercent:authData.storpercent
             };
             return new auth.LoginSuccess({ user });
           } else {
@@ -212,7 +216,7 @@ export class AuthEffects {
     ofType(auth.AuthActionTypes.UPDATE_PROFILE),
     map((action: auth.UpdateProfile) => action.payload),
     switchMap((payload: any) =>
-      this.authService.updateProfile(payload.displayName, payload.photoUrl,payload.phoneNumber,payload.isEmailConfirmed).pipe(
+      this.authService.updateProfile(payload.displayName, payload.photoUrl,payload.phoneNumber,payload.isEmailConfirmed,payload.storpercent).pipe(
         map( () => {
           const currentUser: any = this.authService.getCurrentUser();
             const updatedUser: any = {
@@ -222,7 +226,8 @@ export class AuthEffects {
               providerId: currentUser.providerData[0].providerId || null,
               phoneNumber: currentUser.phoneNumber || null,
               isEmailConfirmed: currentUser.isEmailConfirmed || false,
-              photoUrl: currentUser.photoURL || null
+              photoUrl: currentUser.photoURL || null,
+              storpercent: currentUser.storpercent || null
           };
           return new auth.UpdateProfileSuccess( { user: updatedUser });
         }),

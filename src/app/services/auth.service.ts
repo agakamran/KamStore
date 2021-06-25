@@ -104,9 +104,9 @@ export class AuthService {
   
   
   
-  updateProfile(displayName: string, photoUrl: string,phoneNumber:string,isEmailConfirmed:boolean  ) { 
+  updateProfile(displayName: string, photoUrl: string,phoneNumber:string,isEmailConfirmed:boolean,_storpercent:number  ) { 
     //var xx={displayName:displayName,photoUrl:photoUrl,phoneNumber:phoneNumber,isEmailConfirmed}
-  //  console.log("####"+xx)  
+  // console.log("####"+_storpercent)  
     return this.store.select(getUser).pipe(
       map(p=>{ 
           var user=p; 
@@ -116,7 +116,8 @@ export class AuthService {
               email: user.email , 
               photoUrl: photoUrl,
               phoneNumber: phoneNumber,           
-              isEmailConfirmed: isEmailConfirmed
+              isEmailConfirmed: isEmailConfirmed,
+              percent:_storpercent
           };
          
           return updatedUser;
@@ -125,7 +126,7 @@ export class AuthService {
         }}),
       flatMap((updatedUser : IndexViewModel) => {
          this.notif.success('::Submitted'); 
-        //  console.log(updatedUser)
+         console.log(updatedUser)
         return from(this.http.post(this.pathAPI +'profil',updatedUser))
           .pipe( catchError((err) =>
            {

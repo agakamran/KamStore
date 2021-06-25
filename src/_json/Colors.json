@@ -1,103 +1,103 @@
 [
     {
-      "item_color_Id": "",
-      "item_color": "Altın",
-      "url_color": "/altin-c+kadin+giyim"
+      "colId": "",
+      "colname": "Altın",
+      "colurl": "/altin-c+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Bej",
-      "url_color": "/bej+kadin+giyim"
+      "colId": "",
+      "colname": "Bej",
+      "colurl": "/bej+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Beyaz",
-      "url_color": "/beyaz+kadin+giyim"
+      "colId": "",
+      "colname": "Beyaz",
+      "colurl": "/beyaz+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Bordo",
-      "url_color": "/bordo+kadin+giyim"
+      "colId": "",
+      "colname": "Bordo",
+      "colurl": "/bordo+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Ekru",
-      "url_color": "/ekru+kadin+giyim"
+      "colId": "",
+      "colname": "Ekru",
+      "colurl": "/ekru+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Gri",
-      "url_color": "/gri+kadin+giyim"
+      "colId": "",
+      "colname": "Gri",
+      "colurl": "/gri+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Gümüş",
-      "url_color": "/gumus+kadin+giyim"
+      "colId": "",
+      "colname": "Gümüş",
+      "colurl": "/gumus+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Haki",
-      "url_color": "/haki+kadin+giyim"
+      "colId": "",
+      "colname": "Haki",
+      "colurl": "/haki+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Kahverengi",
-      "url_color": "/kahverengi+kadin+giyim"
+      "colId": "",
+      "colname": "Kahverengi",
+      "colurl": "/kahverengi+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Kırmızı",
-      "url_color": "/kirmizi-c+kadin+giyim"
+      "colId": "",
+      "colname": "Kırmızı",
+      "colurl": "/kirmizi-c+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Lacivert",
-      "url_color": "/lacivert+kadin+giyim"
+      "colId": "",
+      "colname": "Lacivert",
+      "colurl": "/lacivert+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Mavi",
-      "url_color": "/mavi-c+kadin+giyim"
+      "colId": "",
+      "colname": "Mavi",
+      "colurl": "/mavi-c+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Metalik",
-      "url_color": "/metalik+kadin+giyim"
+      "colId": "",
+      "colname": "Metalik",
+      "colurl": "/metalik+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Mor",
-      "url_color": "/mor+kadin+giyim"
+      "colId": "",
+      "colname": "Mor",
+      "colurl": "/mor+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Pembe",
-      "url_color": "/pembe+kadin+giyim"
+      "colId": "",
+      "colname": "Pembe",
+      "colurl": "/pembe+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Sarı",
-      "url_color": "/sari+kadin+giyim"
+      "colId": "",
+      "colname": "Sarı",
+      "colurl": "/sari+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Siyah",
-      "url_color": "/siyah+kadin+giyim"
+      "colId": "",
+      "colname": "Siyah",
+      "colurl": "/siyah+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Turkuaz",
-      "url_color": "/turkuaz+kadin+giyim"
+      "colId": "",
+      "colname": "Turkuaz",
+      "colurl": "/turkuaz+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Turuncu",
-      "url_color": "/turuncu+kadin+giyim"
+      "colId": "",
+      "colname": "Turuncu",
+      "colurl": "/turuncu+kadin+giyim"
     },
     {
-      "item_color_Id": "",
-      "item_color": "Yeşil",
-      "url_color": "/yesil+kadin+giyim"
+      "colId": "",
+      "colname": "Yeşil",
+      "colurl": "/yesil+kadin+giyim"
     }
   ]
   

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { itemdetail } from 'src/app/models/_settings';
+import { Component, Input, OnInit } from '@angular/core';
+import { product } from 'src/app/models/_settings';
+import { User } from 'src/app/models/_users';
+
 import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
@@ -9,9 +11,12 @@ import { SettingsService } from 'src/app/services/settings.service';
 })
 export class MainComponent implements OnInit {
 //https://www.next.com.az/en/style/st687677/792501#792501
-listitem:itemdetail[] = []; 
+private products: product[] = [];
+private categories: string[] = [];
+@Input() user: User;
+listitem:product[] = []; 
   constructor(private _caSer: SettingsService) { }
-
+  
   ngOnInit() {
     this._getit();
   }
@@ -25,7 +30,9 @@ listitem:itemdetail[] = [];
            //  this.mdbTable.setDataSource(this.listitem);
           //this.previous = this.mdbTable.getDataSource();
           }                         
-      }, error => console.error(error + 'Siz sistemə daxil olmalısınız!'));
+    }
+    , error => console.error(error + 'Siz sistemə daxil olmalısınız!')
+      );
     } 
 
 }

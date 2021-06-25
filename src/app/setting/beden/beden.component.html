@@ -502,7 +502,7 @@
                   </div>
                   <div class="col-sm-4">
                     <label for="Bədən name" class=""><i class="fas fa-tag prefix grey-text"></i>Bədən</label>
-                    <input type="text"  [(ngModel)]="bed.beden"   name="beden" placeholder=""  class="form-control" formControlName="beden" mdbInput> 
+                    <input type="text"  [(ngModel)]="bed.bedeni"   name="bedeni" placeholder=""  class="form-control" formControlName="bedeni" mdbInput> 
                 
                   </div>
                   <div class="col-sm-4">
@@ -516,15 +516,15 @@
                     <select [(ngModel)]="catname"  name="_cate" formControlName="catname" (change)="selcate($event.target.value)"                       
                          class="browser-default custom-select" >
                            <option >Choose</option>                                    
-                     <option *ngFor="let o of _page" [value]="o.item_categoriy_name" >{{o.item_categoriy_name}}</option>                                 
+                     <option *ngFor="let o of _page" [value]="o.item_catname" >{{o.catname}}</option>                                 
                    </select>                
                   </div>
                   <div class="col-sm-4">
                     <label for="formGroupExampleInput">Gender</label>
-                         <select [(ngModel)]="gender"  name="_gen" formControlName="gender_Id" (change)="selgen($event.target.value)"                       
+                         <select [(ngModel)]="gender"  name="_gen" formControlName="genId" (change)="selgen($event.target.value)"                       
                               class="browser-default custom-select" >
                                 <option >Choose</option>                                    
-                          <option *ngFor="let o of _gender" [value]="o.gender_name" >{{o.gender_name}}</option>                                 
+                          <option *ngFor="let o of _gender" [value]="o.genname" >{{o.genname}}</option>                                 
                         </select>                   
                   </div>  
                   <div class="col-sm-4">
@@ -549,7 +549,7 @@
                 <button type="button" class="close pull-right" aria-label="Close" (click)="delbed.hide()">
                   <span aria-hidden="true">×</span>
                 </button>
-                <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ bed.beden_Id }}</span></h4>
+                <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ bed.bedenId }}</span></h4>
               </div>
               <form  class="normal-form">           
               <div class="modal-footer">
@@ -576,7 +576,7 @@
           <thead>
             <tr>                
              <!-- <th class="text-center">Navid</th>-->
-             <th class="text-center">Beden</th>
+             <th class="text-center">Bedeni</th>
               <th class="text-center">TR/EY</th>    
               <th class="text-center">UK</th>    
               <th class="text-center">US</th>    
@@ -598,7 +598,7 @@
           <tbody *ngFor='let p of filteredbeden'>
             <tr>
              <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->  
-             <td class="pt-3-half" contenteditable="false">{{ p.beden }}</td>           
+             <td class="pt-3-half" contenteditable="false">{{ p.bedeni }}</td>           
               <td class="pt-3-half" contenteditable="false">{{ p.trEu }}</td>
               <td class="pt-3-half" contenteditable="false">{{ p.uk}}</td>    
               <td class="pt-3-half" contenteditable="false">{{ p.us}}</td>

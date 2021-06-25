@@ -19,8 +19,8 @@
                 <div class="modal-body" > 
                   <div class="row">
                     <div class="col-sm-12">
-                      <label for="gender_name" class=""><i class="fas fa-tag prefix grey-text"></i>Gender adi</label>
-                    <input type="text" [(ngModel)]="gen.gender_name" name="gender_name" placeholder="gender_name yazin" class="form-control" formControlName="gender_name" mdbInput>   
+                      <label for="genname" class=""><i class="fas fa-tag prefix grey-text"></i>Gender adi</label>
+                    <input type="text" [(ngModel)]="gen.genname" name="genname" placeholder="genname yazin" class="form-control" formControlName="genname" mdbInput>   
                     </div>
                    <!-- <div class="col-sm-6">
                       <label for="firma_unvan" class=""><i class="fas fa-tag prefix grey-text"></i>firma_unvan</label>
@@ -59,7 +59,7 @@
                   <button type="button" class="close pull-right" aria-label="Close" (click)="delgen.hide()">
                     <span aria-hidden="true">×</span>
                   </button>
-                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ gen.gender_name }}</span></h4>
+                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ gen.genname }}</span></h4>
                 </div>
                 <form  class="normal-form">           
                 <div class="modal-footer">
@@ -74,8 +74,8 @@
             <thead>
               <tr>                
                <!-- <th class="text-center">Navid</th>-->
-                <th class="text-center">gender_Id</th> 
-                <th class="text-center">gender_name</th>    
+                <th class="text-center">genId</th> 
+                <th class="text-center">genname</th>    
                 <!--<th class="text-center">firma_telefon</th>    
                 <th class="text-center">firma_unvan</th>    
                 <th class="text-center">firma_email</th>
@@ -87,8 +87,8 @@
             <tbody *ngFor='let p of filteredgen'>
               <tr>
                <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->
-                <td class="pt-3-half" contenteditable="true">{{ p.gender_Id }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.gender_name }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.genId }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.genname }}</td>
                <!-- <td class="pt-3-half" contenteditable="true">{{ p.firma_telefon}}</td>    
                 <td class="pt-3-half" contenteditable="true">{{ p.firma_unvan}}</td>
                 <td class="pt-3-half" contenteditable="true">{{ p.firma_email}}</td>  

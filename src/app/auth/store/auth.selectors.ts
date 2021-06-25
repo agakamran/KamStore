@@ -29,6 +29,10 @@ export const getId = createSelector(
   getUser,
   auth =>auth && auth.uid  
 );
+export const getpercent = createSelector(
+  getUser,
+  auth =>auth && auth.storpercent  
+);
 export const getemail = createSelector(
   getUser,
   auth =>auth && auth.email  

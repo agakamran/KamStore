@@ -3,9 +3,9 @@ import { HttpClient} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import { firma, gender, item_color, item_categoriy, beden,
-   item_desen, item_marka, item_materal, item_stil, kullanimAlani,
-    kumashtipi, qelip, qoltipi, yaka,  itemdetail, items_photo, item_sales, ShippingDetail } from '../models/_settings';
+import { firma, gender, _color, _categoriy, beden,
+   _desen, _marka, _materal, _stil, kullanimAlani,
+    kumashtipi, qelip, qoltipi, yaka,  product, prodphoto, _sales, shipper } from '../models/_settings';
 import * as datgender  from '../../_json/gender.json';   
 import * as datcate  from '../../_json/categori.json';
 import * as datacol  from '../../_json/Colors.json';
@@ -145,7 +145,7 @@ export class SettingsService {
   } 
    //--- ----------categiry
    
-   _jsonCate(): Observable<item_categoriy[]> {    
+   _jsonCate(): Observable<_categoriy[]> {    
      return of((datcate as any).default)   
     }
    _getcategoriy(): Observable<any>{      
@@ -162,11 +162,11 @@ export class SettingsService {
       }
     )); 
   } 
-  _poscategoriy(bo:item_categoriy):Observable<any> {        
+  _poscategoriy(bo:_categoriy):Observable<any> {        
     const body=JSON.stringify(bo);  
    // console.log('11sd')
-   // console.log(this.pathAPI + 'postcategoriy', body)
-    return this.http.post<item_categoriy>(this.pathAPI + 'postcategoriy', body)
+    console.log(this.pathAPI + 'postcategoriy', body)
+    return this.http.post<_categoriy>(this.pathAPI + 'postcategoriy', body)
        .pipe(
           map((data) => {
             //You can perform some transformation here
@@ -178,14 +178,14 @@ export class SettingsService {
          }
        ))
   }  
-  _delcategoriy(bo:item_categoriy) {   
+  _delcategoriy(bo:_categoriy) {   
    // const bod:MenuItem= { pid: id,pagename:'' }
     //console.log(id)
      return this.http.post(this.pathAPI + 'delcategoriy',bo )
     .pipe( catchError((err) => {  console.error(err);  throw err; }))
   }   
   //------------color
-  _jsonCol(): Observable<item_color[]> {   
+  _jsonCol(): Observable<_color[]> {   
    // console.log(datacol) 
     return of((datacol as any).default)   
    }
@@ -203,11 +203,11 @@ export class SettingsService {
       }
     )); 
   } 
-  _poscolor(bo:item_color):Observable<any> {        
+  _poscolor(bo:_color):Observable<any> {        
     const body=JSON.stringify(bo);  
    // console.log('11sd')
   //  console.log(this.pathAPI + 'postitemcolor', body)
-    return this.http.post<item_color>(this.pathAPI + 'postitemcolor', body)
+    return this.http.post<_color>(this.pathAPI + 'postitemcolor', body)
        .pipe(
           map((data) => {
             //You can perform some transformation here
@@ -219,14 +219,14 @@ export class SettingsService {
          }
        ))
   }  
-  _delcolor(bo:item_color) {   
+  _delcolor(bo:_color) {   
    // const bod:MenuItem= { pid: id,pagename:'' }
     //console.log(id)
      return this.http.post(this.pathAPI + 'delitemcolor',bo )
     .pipe( catchError((err) => {  console.error(err);  throw err; }))
   }   
   //-------------------- _desen
-  _jsondesen(): Observable<item_desen[]> {    
+  _jsondesen(): Observable<_desen[]> {    
     return of((datdesen as any).default)   
    }
   _getitemdesen(): Observable<any>{      
@@ -243,11 +243,11 @@ export class SettingsService {
       }
     )); 
   } 
-  _positemdesen(bo:item_desen):Observable<any> {        
+  _positemdesen(bo:_desen):Observable<any> {        
     const body=JSON.stringify(bo);  
    // console.log('11sd')
-   // console.log(this.pathAPI + 'postbeden', body)
-    return this.http.post<item_desen>(this.pathAPI + 'postitemdesen', body)
+    //console.log(this.pathAPI + 'postitemdesen', body)
+    return this.http.post<_desen>(this.pathAPI + 'postitemdesen', body)
        .pipe(
           map((data) => {
             //You can perform some transformation here
@@ -259,14 +259,14 @@ export class SettingsService {
          }
        ))
   }  
-  _delitemdesen(bo:item_desen) {   
+  _delitemdesen(bo:_desen) {   
    // const bod:MenuItem= { pid: id,pagename:'' }
     //console.log(id)
      return this.http.post(this.pathAPI + 'delitemdesen',bo )
     .pipe( catchError((err) => {  console.error(err);  throw err; }))
   } 
   //-------------------- marka
-  _jsonmarka(): Observable<item_marka[]> {    
+  _jsonmarka(): Observable<_marka[]> {    
     return of((datmarka as any).default)   
    }
   _getitemmarka(): Observable<any>{      
@@ -283,11 +283,11 @@ export class SettingsService {
       }
     )); 
   } 
-  _positemmarka(bo:item_marka):Observable<any> {        
+  _positemmarka(bo:_marka):Observable<any> {        
     const body=JSON.stringify(bo);  
    // console.log('11sd')
    // console.log(this.pathAPI + 'postbeden', body)
-    return this.http.post<item_marka>(this.pathAPI + 'postitemmarka', body)
+    return this.http.post<_marka>(this.pathAPI + 'postitemmarka', body)
        .pipe(
           map((data) => {
             //You can perform some transformation here
@@ -299,14 +299,14 @@ export class SettingsService {
          }
        ))
   }  
-  _delitemmarka(bo:item_marka) {   
+  _delitemmarka(bo:_marka) {   
    // const bod:MenuItem= { pid: id,pagename:'' }
     //console.log(id)
      return this.http.post(this.pathAPI + 'delitemmarka',bo )
     .pipe( catchError((err) => {  console.error(err);  throw err; }))
   } 
   //-------------------- materal
-  _jsonmaterial(): Observable<item_materal[]> {    
+  _jsonmaterial(): Observable<_materal[]> {    
     return of((datmater as any).default)   
    }
   _getitemmateral(): Observable<any>{      
@@ -323,11 +323,11 @@ export class SettingsService {
       }
     )); 
   } 
-  _positemmateral(bo:item_materal):Observable<any> {        
+  _positemmateral(bo:_materal):Observable<any> {        
     const body=JSON.stringify(bo);  
    // console.log('11sd')
    // console.log(this.pathAPI + 'postbeden', body)
-    return this.http.post<item_materal>(this.pathAPI + 'postitemmateral', body)
+    return this.http.post<_materal>(this.pathAPI + 'postitemmateral', body)
        .pipe(
           map((data) => {
             //You can perform some transformation here
@@ -339,14 +339,14 @@ export class SettingsService {
          }
        ))
   }  
-  _delitemmateral(bo:item_materal) {   
+  _delitemmateral(bo:_materal) {   
    // const bod:MenuItem= { pid: id,pagename:'' }
     //console.log(id)
      return this.http.post(this.pathAPI + 'delitemmateral',bo )
     .pipe( catchError((err) => {  console.error(err);  throw err; }))
   } 
   //-------------------- stil
-  _jsonstil(): Observable<item_stil[]> {    
+  _jsonstil(): Observable<_stil[]> {    
     return of((datstil as any).default)   
    }
   _getitemstil(): Observable<any>{      
@@ -363,11 +363,11 @@ export class SettingsService {
       }
     )); 
   } 
-  _positemstil(bo:item_stil):Observable<any> {        
+  _positemstil(bo:_stil):Observable<any> {        
     const body=JSON.stringify(bo);  
    // console.log('11sd')
    // console.log(this.pathAPI + 'postbeden', body)
-    return this.http.post<item_stil>(this.pathAPI + 'postitemstil', body)
+    return this.http.post<_stil>(this.pathAPI + 'postitemstil', body)
        .pipe(
           map((data) => {
             //You can perform some transformation here
@@ -379,7 +379,7 @@ export class SettingsService {
          }
        ))
   }  
-  _delitemstil(bo:item_stil) {   
+  _delitemstil(bo:_stil) {   
    // const bod:MenuItem= { pid: id,pagename:'' }
     //console.log(id)
      return this.http.post(this.pathAPI + 'delitemstil',bo )
@@ -639,32 +639,11 @@ export class SettingsService {
   upload(p:any,file: File) {   
     const formData: FormData = new FormData(); 
     //console.log('FFF') 
-    console.log(p.firma_Id) 
+    console.log(p.firmaId) 
     formData.append('file', file);     
-    formData.append('item_Id',p.item_Id);
-    formData.append('firma_Id',p.firma_Id);
-    formData.append('gender_Id',p.gender_Id);
-    /*formData.append('item_categoriy_Id',p.item_categoriy_Id);
-    formData.append('item_marka_Id',p.item_marka_Id);
-    formData.append('beden_Id',p.beden_Id);
-    formData.append('item_color_Id',p.item_color_Id);
-    formData.append('qelip_Id',p.qelip_Id);
-    formData.append('item_materal_Id',p.item_materal_Id);
-    formData.append('yaka_Id',p.yaka_Id);  
-    formData.append('qol_Id',p.qol_Id);
-    formData.append('item_stil_Id',p.item_stil_Id);
-    formData.append('item_desen_Id',p.item_desen_Id);  
-    formData.append('kulalan_Id',p.kulalan_Id);
-    formData.append('kumash_Id',p.kumash_Id);
-    formData.append('item_name',p.item_name);
-    formData.append('item_code',p.item_code);  
-    formData.append('item_price',p.item_price); 
-    formData.append('item_sales_price',p.item_sales_price);    
-    formData.append('item_quantity',p.item_quantity);  
-    formData.append('item_discount',p.item_discount);     
-    formData.append('item_hidden',p.item_hidden);
-    formData.append('item_delivery',p.item_delivery);
-    formData.append('qaime_date',p.qaime_date); */
+    formData.append('itemId',p.itemId);
+    formData.append('firmaId',p.firmaId);
+    formData.append('genId',p.genId);   
    console.log(formData)
    // console.log('SSSSSSSSS')
     return this.http.post(this.pathAPI+'postitemsphoto',formData).pipe(
@@ -678,7 +657,7 @@ export class SettingsService {
      }
    ))  
 }
-_positemdetail(bo:itemdetail):Observable<any> {        
+_positemdetail(bo:product):Observable<any> {        
     const body=JSON.stringify(bo);
     //console.log('1KKKKKKK')
     console.log(this.pathAPI + 'postitemdetail', body) 
@@ -694,7 +673,7 @@ _positemdetail(bo:itemdetail):Observable<any> {
        ))
 }  
 //--================================
-_delitemdetail(bo:itemdetail) {   
+_delitemdetail(bo:product) {   
      return this.http.post(this.pathAPI + 'delitemdetail',bo )
     .pipe( catchError((err) => {  console.error(err);  throw err; }))
 } 
@@ -710,9 +689,9 @@ _delitemdetail(bo:itemdetail) {
       }
     )); 
   } 
-   _positemsphoto(bo:items_photo):Observable<any> {        
+   _positemsphoto(bo:prodphoto):Observable<any> {        
     const body=JSON.stringify(bo);    
-    return this.http.post<items_photo>(this.pathAPI + 'postitemsphoto', body)
+    return this.http.post<prodphoto>(this.pathAPI + 'postitemsphoto', body)
        .pipe(
           map((data) => {
             //You can perform some transformation here
@@ -724,7 +703,7 @@ _delitemdetail(bo:itemdetail) {
          }
        ))
   }  
-  _delitemsphoto(bo:items_photo) {   
+  _delitemsphoto(bo:prodphoto) {   
    // const bod:MenuItem= { pid: id,pagename:'' }
     //console.log(id)
      return this.http.post(this.pathAPI + 'delitemsphoto',bo )
@@ -743,9 +722,9 @@ _delitemdetail(bo:itemdetail) {
       }
     )); 
   } 
-  _positemsales(bo:item_sales):Observable<any> {        
+  _positemsales(bo:_sales):Observable<any> {        
     const body=JSON.stringify(bo);  
-    return this.http.post<item_sales>(this.pathAPI + 'postitemsales', body)
+    return this.http.post<_sales>(this.pathAPI + 'postitemsales', body)
        .pipe(
           map((data) => {
             //You can perform some transformation here
@@ -757,7 +736,7 @@ _delitemdetail(bo:itemdetail) {
          }
        ))
   }  
-  _delitemsales(bo:item_sales) {   
+  _delitemsales(bo:_sales) {   
    // const bod:MenuItem= { pid: id,pagename:'' }
     //console.log(id)
      return this.http.post(this.pathAPI + 'delitemsales',bo )
@@ -775,9 +754,9 @@ _delitemdetail(bo:itemdetail) {
       }
     )); 
   } 
-  _posShippingDetail(bo:ShippingDetail):Observable<any> {        
+  _posShippingDetail(bo:shipper):Observable<any> {        
     const body=JSON.stringify(bo);  
-    return this.http.post<ShippingDetail>(this.pathAPI + 'postShippingDetail', body)
+    return this.http.post<shipper>(this.pathAPI + 'postShippingDetail', body)
        .pipe(
           map((data) => {
             //You can perform some transformation here
@@ -789,7 +768,7 @@ _delitemdetail(bo:itemdetail) {
          }
        ))
   }  
-  _delShippingDetail(bo:ShippingDetail) {   
+  _delShippingDetail(bo:shipper) {   
    // const bod:MenuItem= { pid: id,pagename:'' }
     //console.log(id)
      return this.http.post(this.pathAPI + 'delShippingDetail',bo )

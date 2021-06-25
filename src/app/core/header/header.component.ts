@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   @Output() public sidenavToggle = new EventEmitter();  
   public onToggleSidenav = () => { this.sidenavToggle.emit(); }
   _menu:MenuItem[];_childmenu:any;
-  _photoUrl=""
+  _photoUrl=''
   @Input() user: User;
   @Input() isLoggedIn: boolean;
   @Input() isLoading: boolean;
@@ -27,17 +27,16 @@ export class HeaderComponent implements OnInit {
   @Output() logout = new EventEmitter<User>();  
   constructor(private _aut:AuthService,private _caSer: NavbarService  ) { }
   ngOnInit() {
-   // console.log(this.user+'111111111111111')  
-     if(this._aut.getrole()!=undefined){//na='User' 
-         
+  //  console.log(this.user)
+  //  console.log('DD')
+     if(this._aut.getrole()!=undefined){//na='User'  
+            
     this._caSer._allmenu(this._aut.getrole()).subscribe( p=>{
        this._menu=p;        
-       this._childmenu=this._menu.filter(g=>!g.nisparent && g.pid!=null);       
-       // console.log(this._childmenu)
-       // console.log(this._menu)              
+       this._childmenu=this._menu.filter(g=>!g.nisparent && g.pid!=null);                 
      });
-    }
-    this._photoUrl=environment.apiUrl.replace('/api/','/')+this.user.photoUrl;
+     this._photoUrl=environment.apiUrl.replace('/api/','/')+this.user.photoUrl;
+    }         
   }
   onLogout() {  this.logout.emit(this.user); }
 }

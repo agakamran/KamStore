@@ -19,16 +19,16 @@
                 <div class="modal-body" > 
                   <div class="row">
                     <div class="col-sm-12">
-                        <label for="formGroupExampleInput">Categoriya</label>                             
-                        <select [(ngModel)]="gender"  name="_gen" formControlName="gender_Id" (change)="selgen($event.target.value)"                       
+                        <label for="formGroupExampleInput">Gender</label>                             
+                        <select [(ngModel)]="gender"  name="_gen" formControlName="genId" (change)="selgen($event.target.value)"                       
                         class="browser-default custom-select" >
                           <option >Choose</option>                                    
-                            <option *ngFor="let o of _gender" [value]="o.gender_name" >{{o.gender_name}}</option>                                 
+                            <option *ngFor="let o of _gender" [value]="o.genname" >{{o.genname}}</option>                                 
                         </select>                     
                     </div>
                     <div class="col-sm-12">
                       <label for="Qoltipi name" class=""><i class="fas fa-tag prefix grey-text"></i>Qoltipi name</label>
-                      <input type="text"  [(ngModel)]="qol.qoltipi_name"   name="qoltipi_name"  class="form-control" formControlName="qoltipi_name" placeholder="Qoltipi yazin" mdbInput> 
+                      <input type="text"  [(ngModel)]="qol.qoltipiname"   name="qoltipiname"  class="form-control" formControlName="qoltipiname" placeholder="Qoltipi yazin" mdbInput> 
                     </div>
                   </div>                       
                            
@@ -49,7 +49,7 @@
                   <button type="button" class="close pull-right" aria-label="Close" (click)="delqol.hide()">
                     <span aria-hidden="true">×</span>
                   </button>
-                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ qol.qoltipi_name }}</span></h4>
+                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ qol.qoltipiname }}</span></h4>
                 </div>
                 <form  class="normal-form">           
                 <div class="modal-footer">
@@ -66,7 +66,7 @@
                <!-- <th class="text-center">Navid</th>-->
                 <th class="text-center">Qol Id</th> 
                 <th class="text-center">Qoltipi name</th>  
-                <th class="text-center">Categoriy name</th>  
+                <th class="text-center">Gender name</th>  
                       
                 <th class="text-center">Sort</th>
                 <th class="text-center">Actions</th>
@@ -75,12 +75,12 @@
             <tbody *ngFor='let p of filteredqol'>
               <tr>
                <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->
-                <td class="pt-3-half" contenteditable="true">{{ p.qol_Id }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.qoltipi_name }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.item_categoriy_name }}</td>
-               <!-- <td class="pt-3-half" contenteditable="true">{{ p.firma_telefon}}</td>    
-                <td class="pt-3-half" contenteditable="true">{{ p.firma_unvan}}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.firma_email}}</td>  
+                <td class="pt-3-half" contenteditable="true">{{ p.qolId }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.qoltipiname }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.genId }}</td>
+               <!-- <td class="pt-3-half" contenteditable="true">{{ p.firmatelefon}}</td>    
+                <td class="pt-3-half" contenteditable="true">{{ p.firmaunvan}}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.firmaemail}}</td>  
                 <td class="pt-3-half" contenteditable="true">{{ p.voen}}</td>  -->
                 <td class="pt-3-half">
                   <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"

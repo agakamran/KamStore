@@ -20,7 +20,7 @@ export class KullanimalaniComponent implements OnInit {
   
   constructor( private _caSer: SettingsService,
      private notificationService: NotificationService) {
-     this.kul.kulalan_Id="";
+     this.kul.kulalanId="";
    }
 
    ngOnInit(): void {
@@ -43,8 +43,8 @@ get kullanim_name() { return this.kulForm.get('kullanim_name'); }
 
 langu(lan:any){  this._lan=lan; }
   _addkul() {
-    this.kul.kulalan_Id='';   
-    this.kul.kullanim_name='';    
+    this.kul.kulalanId='';   
+    this.kul.kullanimname='';    
   }
   _cline(){ 
     this.kulForm = new FormGroup({         
@@ -55,8 +55,8 @@ langu(lan:any){  this._lan=lan; }
    _editkul(ca:kullanimAlani){ 
     //console.log('12111')   
     // console.log(ca)  
-       this.kul.kulalan_Id=ca.kulalan_Id;
-       this.kul.kullanim_name=ca.kullanim_name;//this._page.find(x=>x.pid==ca.pId).pagename;
+       this.kul.kulalanId=ca.kulalanId;
+       this.kul.kullanimname=ca.kullanimname;//this._page.find(x=>x.pid==ca.pId).pagename;
       // this.fir.firma_telefon=ca.firma_telefon; 
       // this.fir.firma_unvan=ca.firma_unvan;
       // this.fir.voen=ca.voen,
@@ -70,8 +70,8 @@ langu(lan:any){  this._lan=lan; }
        //console.log('333')
       // console.log(this.firForm.value)
        var p={
-        kulalan_Id:this.kul.kulalan_Id  ,
-        kullanim_name:this.kulForm.value.kullanim_name,      
+        kulalanId:this.kul.kulalanId  ,
+        kullanimname:this.kulForm.value.kullanimname,      
       }
       //  console.log(p)
        this._caSer._poskullanimAlani(p).subscribe();  

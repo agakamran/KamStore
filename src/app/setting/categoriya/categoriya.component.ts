@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { item_categoriy, gender } from 'src/app/models/_settings';
+import { _categoriy, gender } from 'src/app/models/_settings';
 import { Lang } from 'src/app/models/_carts';
 import { SettingsService } from 'src/app/services/settings.service';
 import { NotificationService } from 'src/app/helpers/notification.service';
@@ -16,21 +16,21 @@ export class CategoriyaComponent implements OnInit {
   pageTitle='';  
   _lang:Lang[]=[{lid: '1', lname: 'Az'},{lid: '2', lname: 'En'},{lid: '3', lname: 'Ru'} ];  _lan='';
   catForm: FormGroup; 
-  listcat:item_categoriy[] = []; 
+  listcat:_categoriy[] = []; 
   //jsonlistcat:item_categoriy[] = [];
-  filteredcat: item_categoriy[]; 
-  cat:item_categoriy=new item_categoriy();
-  _catt: any[]; _cat:any; catname: string;
+  filteredcat: _categoriy[]; 
+  cat:_categoriy=new _categoriy();
+  _catt: any[]; _cat:any; _catname: string;
   _gender: gender[];_gen:any; gendername: string;
   constructor(private _caSer: SettingsService, private notificationService: NotificationService, private router:Router) {
-    this.cat.item_categoriy_Id="";
+    this.cat.catId="";
    }
    ngOnInit(): void {
     this.catForm = new FormGroup({ 
-      item_categoriy_Id: new FormControl('', [Validators.maxLength(36)]), 
+      catId: new FormControl('', [Validators.maxLength(36)]), 
      parid: new FormControl('',[Validators.maxLength(36)]),
-     gender_Id: new FormControl('', [Validators.required,Validators.maxLength(36)]),
-     item_categoriy_name: new FormControl('', [Validators.required,Validators.maxLength(50)]),       
+     genId: new FormControl('', [Validators.required,Validators.maxLength(36)]),
+     catname: new FormControl('', [Validators.required,Validators.maxLength(50)]),       
     });  
    
       this._caSer._getgender()
@@ -54,9 +54,9 @@ export class CategoriyaComponent implements OnInit {
          //  console.log(this._catt)                        
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
-   // get gender_name() { return this.catForm.get('gender_name'); }
-    get item_categoriy_Id() { return this.catForm.get('item_categoriy_Id'); }
-    get item_categoriy_name() { return this.catForm.get('item_categoriy_name'); }
+   // get genname() { return this.catForm.get('genname'); }
+    get catId() { return this.catForm.get('catId'); }
+    get catname() { return this.catForm.get('catname'); }
     get parid() { return this.catForm.get('parid'); }
     langu(lan:any){  this._lan=lan; }
     selgen(sel:any){ this._gen=sel;}
@@ -64,34 +64,34 @@ export class CategoriyaComponent implements OnInit {
     _yenile(){this.router.navigate(["/setting/categoriya"]); }
     _cline(){ 
       this.catForm = new FormGroup({  
-        item_categoriy_Id: new FormControl(''), 
-        item_categoriy_name: new FormControl(''),
-        gender_Id: new FormControl(''), 
-        gender_name: new FormControl(''),  
+        catId: new FormControl(''), 
+        catname: new FormControl(''),
+        genId: new FormControl(''), 
+        genname: new FormControl(''),  
         parid: new FormControl(''),   
         });       
      }
-    _editcat(ca:item_categoriy){ 
+    _editcat(ca:_categoriy){ 
       //  console.log(ca) 
       
-        this.cat.item_categoriy_Id=ca.item_categoriy_Id;
-        this.cat.item_categoriy_name=ca.item_categoriy_name; 
-        if(ca.gender_Id!=null){
-          this.gendername=this._gender.find(x=>x.gender_Id==ca.gender_Id)!.gender_name;
+        this.cat.catId=ca.catId;
+        this.cat.catname=ca.catname; 
+        if(ca.genId!=null){
+          this.gendername=this._gender.find(x=>x.genId==ca.genId)!.genname;
         }         
 
-        if(ca.parid===null){this.catname=''} 
+        if(ca.parid===null){this._catname=''} 
         else {
-          this.catname=this._catt.find(x=>x.item_categoriy_Id==ca.parid)!.item_categoriy_name;          
+          this._catname=this._catt.find(x=>x.catId==ca.parid)!.catname;          
         }        
-        this.cat.gender_Id=ca.gender_Id;       
+        this.cat.genId=ca.genId;       
       }
     _addcat()
     {
-    this.cat.gender_Id='';
-    this.cat.item_categoriy_Id='';
+    this.cat.genId='';
+    this.cat.catId='';
     this.cat.parid='';
-    this.cat.item_categoriy_name='';  
+    this.cat.catname='';  
    }  
  onadd()
   { 
@@ -100,15 +100,15 @@ export class CategoriyaComponent implements OnInit {
      
        var kn;
        if(this._cat===undefined){kn=''}
-       else{kn=this._catt.find(x=>x.item_categoriy_name==this._cat ).item_categoriy_Id}
+       else{kn=this._catt.find(x=>x.catname==this._cat ).catId}
        let genderId='';
-       if(this.catForm.value.gender_Id!=null){
-        this._gender.find(x=>x.gender_name==this.catForm.value.gender_Id )!.gender_Id
+       if(this.catForm.value.genId!=null){
+        this._gender.find(x=>x.genname==this.catForm.value.genId )!.genId
        }
        var p={       
-        item_categoriy_Id:this.cat.item_categoriy_Id  ,
-        item_categoriy_name:this.catForm.value.item_categoriy_name,
-        gender_Id:genderId ,  
+        catId:this.cat.catId  ,
+        catname:this.catForm.value.catname,
+        genId:genderId ,  
         parid:kn,       
       }
     
@@ -134,14 +134,14 @@ export class CategoriyaComponent implements OnInit {
     {
       for (let item of this.jsonlistcat) 
       {
-        console.log(this._catt.find(x=>x.item_categoriy_name==item.parid )?.item_categoriy_Id)
+        console.log(this._catt.find(x=>x.catname==item.parid )?.catId)
         var kn;
        // if(item.parid===''){kn=''}
-       // else{kn=this._catt.find(x=>x.item_categoriy_name==item.parid )?.item_categoriy_Id}
+       // else{kn=this._catt.find(x=>x.catname==item.parid )?.catId}
         var p={       
-          item_categoriy_Id:''  ,
-          item_categoriy_name:item.item_categoriy_name,
-          gender_Id:this._gender.find(x=>x.gender_name==item.gender_Id ).gender_Id ,  
+          catId:''  ,
+          catname:item.catname,
+          genId:this._gender.find(x=>x.genname==item.genId ).genId ,  
           parid:item.parid,       
         }
         //console.log(p) 
@@ -155,11 +155,11 @@ export class CategoriyaComponent implements OnInit {
           var kn;
          // console.log(it.parid)
           if(it.parid===''){kn=''}
-          else{kn=this._catt.find(x=>x.item_categoriy_name==it.parid && x.gender_Id==it.gender_Id)?.item_categoriy_Id}
+          else{kn=this._catt.find(x=>x.catname==it.parid && x.genId==it.genId)?.catId}
           var ps={       
-            item_categoriy_Id:it.item_categoriy_Id  ,
-            item_categoriy_name:it.item_categoriy_name,
-            gender_Id:this._gender.find(x=>x.gender_Id==it.gender_Id )?.gender_Id ,  
+            catId:it.catId  ,
+            catname:it.catname,
+            genId:this._gender.find(x=>x.genId==it.genId )?.genId ,  
             parid:kn,       
           }
           //console.log(ps) 

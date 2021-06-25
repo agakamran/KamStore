@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit {
   _role:IRole[]; _rol:any; 
   constructor(private _auth: AuthService, private _caSer: NavbarService,
      private notificationService: NotificationService) {
-     this.nav.nid="";
+    // this.nav.nid="";
    }
 
    ngOnInit(): void {
@@ -68,7 +68,7 @@ _yenile()
     });  
  }
 
-get navid() { return this.navForm.get('nid'); }
+//get nid() { return this.navForm.get('nid'); }
 //get parentid() { return this.navForm.get('pid'); }
 // get ntitle() { return this.navForm.get('ntitle'); }
 // get npath() { return this.navForm.get('npath'); }
@@ -79,7 +79,7 @@ selPage(sel:any){ this._pid=sel;}
 selrol(sel:any){ this._rol=sel;}
   _addnav()
   {
-   // this.nav.nid='';
+    this.nav.nid='';
     this.nav.pid='';
     this.nav.ntitle='';
     this.nav.npath='';
@@ -91,7 +91,7 @@ selrol(sel:any){ this._rol=sel;}
   }
   _cline(){ 
     this.navForm = new FormGroup({  
-      // navid: new FormControl(''),   
+       nid: new FormControl(''),   
        pid: new FormControl(''),
        ntitle: new FormControl(''),
        npath: new FormControl(''),     
@@ -188,32 +188,33 @@ selrol(sel:any){ this._rol=sel;}
          this._caSer._posmenu(p).subscribe();  
       }
     }
-    else
-    {
-      var kn;
-      for (let item of this.listnav) 
-      {
-        if(item.pid===''){kn=''}
-        else{
-          kn=this.listnav.find(x=>x.ntitle===item.pid )!.nid;
-       //   console.log('111')
-         // console.log(kn)
-        }
-         var pp={
-          nid:item.nid,
-          pid:kn,
-          ntitle:item.ntitle,
-          npath:item.npath,
-          nlan:item.nlan,
-          nrol:item.nrol,
-          nisparent:item.nisparent,
-          ncsay:item.ncsay,
-          nicon:item.nicon
-        }
-          console.log(pp)
-         this._caSer._posmenu(pp).subscribe();  
+    // else
+    // {
+      //var kn;
+      // for (let item of this.listnav) 
+      // {
+      //   console.log(item.pid)
+      //   if(item.pid===''){kn=''}
+      //   else{
+      //     kn=this.listnav.find(x=>x.ntitle===item.pid )?.nid;
+      //  //   console.log('111')
+      //     console.log(kn)
+      //   }
+      //    var pp={
+      //     nid:item.nid,
+      //     pid:kn,
+      //     ntitle:item.ntitle,
+      //     npath:item.npath,
+      //     nlan:item.nlan,
+      //     nrol:item.nrol,
+      //     nisparent:item.nisparent,
+      //     ncsay:item.ncsay,
+      //     nicon:item.nicon
+      //   }
+        //  console.log(pp)
+         //this._caSer._posmenu(pp).subscribe();  
       
-      }
-    }
+     // }
+    //}
   }
 }

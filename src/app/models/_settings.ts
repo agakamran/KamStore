@@ -1,20 +1,21 @@
 export class gender {        
-        gender_Id: string;       
-        gender_name: string;       
+        genId: string;       
+        genname: string;       
     }
 export class firma {
-    firma_Id?:string;
-    firma_name:string;
-    firma_telefon: string;
-    firma_unvan: string;
-    firma_email?: string;
+    storId?:string;
+    storname:string;
+    storphone: string;
+    storadress: string;
+    storemail?: string;
     userId?: string; 
-    voen?: number;
+    storvoen?: number;
+    storpercent?:number;
 }
 export class beden
 {    
-    beden_Id:string;
-    beden:string;
+    bedenId:string;
+    bedeni:string;
     trEu: string ; 
     uk: string ;
     us: string ;
@@ -27,108 +28,127 @@ export class beden
     kot: string ;
   //  kanvas : string ;   
     uzunluk: string ;    
-    item_categoriy_Id:string;  
-    gender_Id ?:string;    
+    catId:string;  
+    genId ?:string;    
 }
-export class item_categoriy
+export class _categoriy
 {   
-    item_categoriy_Id:string;   
-    item_categoriy_name:string;
+    catId:string;   
+    catname:string;
     parid?:string;
-    gender_Id:string;
+    genId:string;
 }
-export class item_color
+export class _color
 {
-    item_color_Id:string;
-    item_color:string;
-    url_color:string;
+    colId:string;
+    colname:string;
+    colurl:string;
 }
 export class yaka {      
-        yaka_Id: string;        
-        yaka_name: string;
-        gender_Id:string;
+        yakaId: string;        
+        yakaname: string;
+        genId:string;
     }
-export class item_desen{    
-    item_desen_Id:string;
-    item_desen_name:string;
+export class _desen{    
+    desId:string;
+    desname:string;
 }
-export class item_marka{    
-     item_marka_Id:string; 
-     item_marka_name:string;
+export class _marka{    
+     markaId:string; 
+     markaname:string;
 }
-export class item_materal{    
-    item_materal_Id:string;    
-    item_materal_name:string;
+export class _materal{    
+    matId:string;    
+    matname:string;
 }
-export class item_stil{
-   item_stil_Id:string;
-   item_stil_name:string;
+export class _stil{
+   stilId:string;
+   stilname:string;
 }
 export class kullanimAlani{    
-    kulalan_Id: string;    
-    kullanim_name:string;    
+    kulalanId: string;    
+    kullanimname:string;    
 }
 export class kumashtipi{    
-    kumash_Id: string;    
-    kumash_name: string;
+    kumashId: string;    
+    kumashname: string;
 }
 export class qelip{    
-    qelip_Id: string;    
-    qelip_name: string;
+    qelipId: string;    
+    qelipname: string;
 }
 export class qoltipi{   
-    qol_Id: string;
-    qoltipi_name: string;
-    gender_Id:string;
+    qolId: string;
+    qoltipiname: string;
+    genId:string;
 }
 //--------------------
-export class itemdetail{   
-     item_Id:string;      
-     firma_Id:string;   
-     gender_Id:string;   
-     item_categoriy_Id:string;    
-     item_marka_Id:string;    
-     beden_Id: string;  
-     item_color_Id:string;   
-     qelip_Id: string;   
-     item_materal_Id:string;   
-     yaka_Id:string;    
-     qol_Id:string ;    
-     item_stil_Id: string;    
-     item_desen_Id: string;   
-     kulalan_Id: string;    
-     kumash_Id: string;    
-     item_name:string;   
-     item_code: string;   
-     item_price:number;
-     item_sales_price:number;  
-     item_quantity:number;    
-     item_discount:number;    
-     item_hidden:boolean ;
-    item_delivery: boolean;
-    qaime_date: string;
+export class product{  
+    proId:string; 
+    genId:string; 
+    catId:string;        
+    markaId:string;    
+    bedenId: string;  
+    colId:string;   
+    qelipId: string; 
+    matId:string;   
+    yakaId:string;    
+    qolId:string ;    
+    stilId: string;    
+    desId: string;   
+    kulalanId: string;    
+    kumashId: string; 
+    prodname:string;   
+    barcode?: string;
+    storId:string ;              //magaza
+    boxquantity?:number;          //qutuda olan 
+    unitsinstock:number;        //anbarda olan       
+    buy_unitprice: number;     //birinin      alish
+    sell_unitprice:number;   //birinin      satish       
+    discount:number;          //скидка    
+    ModifiedDate: string;
+    Discontinued:boolean;       //Снято с производства    
+    opr:string;                //emeliyyat 
+    delivery?: boolean;        //chatdirilma
+     
 }
-export class items_photo{
-    item_photo_Id:string;
-    item_Id:string;
-    item_photo_url:string;
+export class orderdet  {
+        ordId:string; 
+        proId:string;
+        boxquantity:number;//qutuda
+        quantity:number;//количество  
+        unitprice:number;//Цена за единицу      alish  
+        discount:number;//скидка      
+        unitsinstock:number;//Единицы на складе    satish
+        unitsonorder:number;//Единицы по заказу
+        reorderlevel:number;//Уровень повторного заказа
+        opr ?:string;      //emeliyyat        
+        storId:string;
+        ormId:string;//order master
+        UserId:string;       
+    }
+
+export class prodphoto{
+    photoId:string;
+    proId:string;
+    photourl:string;
 }
 
 //--------------------
-export class item_sales{    
-    item_sales_Id:string;    
-    item_Id:string;    
-    item_sale_date:Date;
-    shipdet_Id:string;
+export class _sales{    
+    salesId:string;    
+    itemId:string;    
+    saledate:Date;
+    shipdetId:string;
 }
-export class ShippingDetail{    
+export class shipper{    
     shipdet_Id:string;   
     userId:string;
-    client_name:string;
-    client_sity:string;    
-    client_strit: string;
-    client_house:string;
-    client_flat:string;  
-    client_phone: string;    
-    client_email:string ;
+    clientname:string;
+    clientsity:string;    
+    clientstrit: string;
+    clienthouse:string;
+    clientflat:string;  
+    clientphone: string;    
+    clientemail:string ;
 }

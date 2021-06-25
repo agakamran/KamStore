@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NotificationService } from 'src/app/helpers/notification.service';
 import { SettingsService } from 'src/app/services/settings.service';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { beden, gender, item_categoriy } from 'src/app/models/_settings';
+import { beden, gender, _categoriy } from 'src/app/models/_settings';
 import { Lang } from 'src/app/models/_carts';
 import { flatMap } from 'rxjs/operators';
 @Component({
@@ -21,17 +21,17 @@ export class BedenComponent implements OnInit {
   bedkishi_Gey:beden[]; bedkishi_ayaq:beden[]; bedkishi_pant:beden[];
   _lang:Lang[]=[{lid: '1', lname: 'Az'},{lid: '2', lname: 'En'},{lid: '3', lname: 'Ru'} ];  _lan='';
   _gender: gender[];_gen:string; gender:string;
-  _page: item_categoriy[];_cate:any; catname: string; _pid:'';
+  _page: _categoriy[];_cate:any; catname: string; _pid:'';
   
   constructor( private _caSer: SettingsService,
     private notificationService: NotificationService) {
-    this.bed.beden_Id="";
+    this.bed.bedenId="";
   }
 
   ngOnInit(): void {
     this.bedenForm = new FormGroup({       
       beden_Id: new FormControl(''),
-      beden: new FormControl(''), 
+      bedeni: new FormControl(''), 
       trEu: new FormControl(''),
       uk: new FormControl(''),
       us: new FormControl(''),
@@ -45,7 +45,7 @@ export class BedenComponent implements OnInit {
       kanvas: new FormControl(''),
       uzunluk: new FormControl(''),      
       catname: new FormControl('', [Validators.required,Validators.maxLength(50)]),
-      gender_Id: new FormControl('', [Validators.required,Validators.maxLength(50)])        
+      genId: new FormControl('', [Validators.required,Validators.maxLength(50)])        
     });  
    
 
@@ -67,14 +67,14 @@ export class BedenComponent implements OnInit {
             console.log(list)         
             this.filteredbeden = this.listbeden; 
             this._listbeden=this.listbeden;
-            this._Qa=this._gender.find(x=>x.gender_name==='KADIN')!.gender_Id;
-            this._ki=this._gender.find(x=>x.gender_name==='ERKEK')!.gender_Id;  
+            this._Qa=this._gender.find(x=>x.genname==='KADIN')!.genId;
+            this._ki=this._gender.find(x=>x.genname==='ERKEK')!.genId;  
                                 
           }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
 
 }
-get beden_Id() {return this.bedenForm.get('beden_Id');};
-get beden() {return this.bedenForm.get('beden');};
+get beden_Id() {return this.bedenForm.get('bedenId');};
+get bedeni() {return this.bedenForm.get('bedeni');};
 get trEu() {return this.bedenForm.get('trEu');}; 
 get uk() {return this.bedenForm.get('uk');};
 get us() {return this.bedenForm.get('us');};
@@ -87,8 +87,8 @@ get yaka() {return this.bedenForm.get('yaka');};
 get kot() {return this.bedenForm.get('kot');};
 get kanvas () {return this.bedenForm.get('kanvas');};  
 get uzunluk() {return this.bedenForm.get('uzunluk');};   
-get item_categoriy_Id() {return this.bedenForm.get('item_categoriy_Id');}; 
-get gender_Id() {return this.bedenForm.get('gender_Id');};
+get catId() {return this.bedenForm.get('catId');}; 
+get genId() {return this.bedenForm.get('genId');};
 langu(lan:any){  this._lan=lan; }
 selcate(sel:any){ this._cate=sel;}
 selgen(sel:any){ this._gen=sel;}
@@ -97,27 +97,27 @@ _bedsize()
   //console.log( this._Qa)
   //console.log(this.bedQad_Gey)
   this._listbeden=this.listbeden;
-  this.bedQad_Gey=this._listbeden.filter(x=>x.beden!=null && x.uk!=null && x.us!=null && x.it!=null&& x.koks!=null&& x.bel!=null && x.gender_Id===this._Qa)
+  this.bedQad_Gey=this._listbeden.filter(x=>x.bedeni!=null && x.uk!=null && x.us!=null && x.it!=null&& x.koks!=null&& x.bel!=null && x.genId===this._Qa)
   this._listbeden=this.listbeden;
-  this.bedQad_ayaq=this._listbeden.filter(x=>x.trEu!=null && x.uk!=null&&x.us!=null&&x.ayakUz!=null&& x.gender_Id===this._Qa)
+  this.bedQad_ayaq=this._listbeden.filter(x=>x.trEu!=null && x.uk!=null&&x.us!=null&&x.ayakUz!=null&& x.genId===this._Qa)
   
   this._listbeden=this.listbeden;
-  this.bedQad_pant=this._listbeden.filter(x=>x.trEu!=null&& x.beden!=null&&x.bel!=null&& x.uk===null&& x.gender_Id===this._Qa)
+  this.bedQad_pant=this._listbeden.filter(x=>x.trEu!=null&& x.bedeni!=null&&x.bel!=null&& x.uk===null&& x.genId===this._Qa)
   this._listbeden=this.listbeden;
-  this.bedQad_kot=this._listbeden.filter(x=>x.trEu!=null&&x.bel!=null&& x.ichBacakBoyu!=null&& x.gender_Id===this._Qa)
+  this.bedQad_kot=this._listbeden.filter(x=>x.trEu!=null&&x.bel!=null&& x.ichBacakBoyu!=null&& x.genId===this._Qa)
   this._listbeden=this.listbeden;
-  this.bedkishi_Gey=this._listbeden.filter(x=>x.beden!=null&& x.trEu!=null && x.uk!=null&&x.koks!=null&& x.yaka!=null&& x.gender_Id===this._ki)//x.gender_name==='Qadın'           
+  this.bedkishi_Gey=this._listbeden.filter(x=>x.bedeni!=null&& x.trEu!=null && x.uk!=null&&x.koks!=null&& x.yaka!=null&& x.genId===this._ki)//x.genname==='Qadın'           
   this._listbeden=this.listbeden;
-  this.bedkishi_ayaq=this._listbeden.filter(x=>x.trEu!=null && x.uk!=null&&x.us!=null&&x.ayakUz!=null&& x.gender_Id===this._ki)
+  this.bedkishi_ayaq=this._listbeden.filter(x=>x.trEu!=null && x.uk!=null&&x.us!=null&&x.ayakUz!=null&& x.genId===this._ki)
   //console.log(this.bedkishi_ayaq)
   this._listbeden=this.listbeden;
-  this.bedkishi_pant=this._listbeden.filter(x=>x.kot!=null&&x.bel!=null&& x.gender_Id===this._ki)
+  this.bedkishi_pant=this._listbeden.filter(x=>x.kot!=null&&x.bel!=null&& x.genId===this._ki)
   //console.log(this.bedkishi_Gey)  
 }
   _addbed()
   {      
-    this.bed.beden_Id='';
-    this.bed.beden='';
+    this.bed.bedenId='';
+    this.bed.bedeni='';
     this.bed.trEu='';
     this.bed.uk='';
     this.bed.us='';
@@ -130,8 +130,8 @@ _bedsize()
     this.bed.kot='';
     //this.bed.kanvas='';
     this.bed.uzunluk=''; 
-    this.bed.item_categoriy_Id='';
-    this.bed.gender_Id=''; 
+    this.bed.catId='';
+    this.bed.genId=''; 
     
   }
   _cline(){ 
@@ -149,16 +149,16 @@ _bedsize()
       kot: new FormControl(''),  
       kanvas: new FormControl(''),
       uzunluk: new FormControl(''),
-      item_categoriy_Id: new FormControl(''),
-      gender_Id: new FormControl('')       
+      catId: new FormControl(''),
+      genId: new FormControl('')       
       });  
          
    }
    _editbed(ca:beden){ 
       // console.log('12111')   
       // console.log(ca)  
-       this.bed.beden_Id=ca.beden_Id;
-       this.bed.beden=ca.beden;
+       this.bed.bedenId=ca.bedenId;
+       this.bed.bedeni=ca.bedeni;
        this.bed.trEu=ca.trEu;
        this.bed.uk=ca.uk; 
        this.bed.us=ca.us;
@@ -171,36 +171,36 @@ _bedsize()
        this.bed.kot=ca.kot;
       // this.bed.kanvas=ca.kanvas;
        this.bed.uzunluk=ca.uzunluk;
-       if(ca.gender_Id!=''){
-         this.gender=this._gender.find(x=>x.gender_Id==ca.gender_Id)!.gender_name;
+       if(ca.genId!=''){
+         this.gender=this._gender.find(x=>x.genId==ca.genId)!.genname;
        }       
-       this.bed.gender_Id=ca.gender_Id;
-       if(ca.item_categoriy_Id!=''){
-         this.catname=this._page.find(x=>x.item_categoriy_Id==ca.item_categoriy_Id)!.item_categoriy_name; 
+       this.bed.genId=ca.genId;
+       if(ca.catId!=''){
+         this.catname=this._page.find(x=>x.catId==ca.catId)!.catname; 
        }
        
-       this.bed.item_categoriy_Id=ca.item_categoriy_Id;
-       if(ca.gender_Id!=null){
-         this.gender=this._gender.find(x=>x.gender_Id==ca.gender_Id)!.gender_name;
+       this.bed.catId=ca.catId;
+       if(ca.genId!=null){
+         this.gender=this._gender.find(x=>x.genId==ca.genId)!.genname;
        }
        
-      //this.bed.gender_Id=ca.gender_Id;
+      //this.bed.genId=ca.genId;
      }
  onadd()
   { 
     if(this.bedenForm.valid)  
     {
-       console.log('333')
-      // console.log(this.bed.gender_Id)
+     //  console.log('333')
+      // console.log(this.bed.genId)
       // console.log(this.gender)
       // console.log(this.bedenForm.value)
       let itemcatid=''
       if(this.catname!=''){
-       itemcatid=this._page.find(x=>x.item_categoriy_name==this.catname )!.item_categoriy_Id
+       itemcatid=this._page.find(x=>x.catname==this.catname )!.catId
       }
         var p={
-        beden_Id:this.bed.beden_Id  ,
-        beden:this.bed.beden,
+        bedenId:this.bed.bedenId  ,
+        bedeni:this.bed.bedeni,
         trEu:this.bedenForm.value.trEu,
         uk:this.bedenForm.value.uk,
         us:this.bedenForm.value.us,
@@ -213,8 +213,8 @@ _bedsize()
         kot:this.bedenForm.value.kot,
         kanvas:this.bedenForm.value.kanvas,
         uzunluk:this.bedenForm.value.uzunluk,
-        item_categoriy_Id:itemcatid,
-        gender_Id:this._gender.find(x=>x.gender_name==this.gender)!.gender_Id  
+        catId:itemcatid,
+        genId:this._gender.find(x=>x.genname==this.gender)!.genId  
          
       }
      // console.log('222222222')

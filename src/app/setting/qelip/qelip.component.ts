@@ -20,7 +20,7 @@ export class QelipComponent implements OnInit {
   
   constructor( private _caSer: SettingsService,
      private notificationService: NotificationService) {
-     this.qel.qelip_Id="";
+     this.qel.qelipId="";
    }
 
    ngOnInit(): void {
@@ -43,8 +43,8 @@ get qelip_name() { return this.qelForm.get('qelip_name'); }
 
 langu(lan:any){  this._lan=lan; }
   _addqel() {
-    this.qel.qelip_Id='';   
-    this.qel.qelip_name='';    
+    this.qel.qelipId='';   
+    this.qel.qelipname='';    
   }
   _cline(){ 
     this.qelForm = new FormGroup({         
@@ -55,8 +55,8 @@ langu(lan:any){  this._lan=lan; }
    _editqel(ca:qelip){ 
     //console.log('12111')   
     // console.log(ca)  
-       this.qel.qelip_Id=ca.qelip_Id;
-       this.qel.qelip_name=ca.qelip_name;//this._page.find(x=>x.pid==ca.pId).pagename;
+       this.qel.qelipId=ca.qelipId;
+       this.qel.qelipname=ca.qelipname;//this._page.find(x=>x.pid==ca.pId).pagename;
       // this.fir.firma_telefon=ca.firma_telefon; 
       // this.fir.firma_unvan=ca.firma_unvan;
       // this.fir.voen=ca.voen,
@@ -70,8 +70,8 @@ langu(lan:any){  this._lan=lan; }
        //console.log('333')
       // console.log(this.firForm.value)
        var p={
-        qelip_Id:this.qel.qelip_Id  ,
-        qelip_name:this.qelForm.value.qelip_name,      
+        qelipId:this.qel.qelipId  ,
+        qelipname:this.qelForm.value.qelipname,      
       }
       //  console.log(p)
        this._caSer._posqelip(p).subscribe();  

@@ -21,68 +21,68 @@
                   <div class="row">
                     <div class="col-sm-3">
                       <label for="formGroupExampleInput">Firma</label>
-                     <input readonly type="text" [(ngModel)]="item.firma_Id" name="item_name" placeholder="firma yazin" class="form-control" formControlName="firma_Id" mdbInput> 
-                      <!-- <select [(ngModel)]="firname"  name="_fir" formControlName="firma_Id" (change)="selfir($event.target.value)"                       
+                     <input readonly type="text" [(ngModel)]="item.storId" name="itemname" placeholder="firma yazin" class="form-control" formControlName="storId" mdbInput> 
+                      <!-- <select [(ngModel)]="firname"  name="_fir" formControlName="storId" (change)="selfir($event.target.value)"                       
                            class="browser-default custom-select" >
                              <option >Choose</option>                                    
-                       <option *ngFor="let o of _firma" [value]="o.firma_name" >{{o.firma_name}}</option>                                 
+                       <option *ngFor="let o of _firma" [value]="o.firmaname" >{{o.firmaname}}</option>                                 
                      </select>  -->
                      </div>  
                     <div class="col-sm-3">
                         <label for="formGroupExampleInput">Cinsi seçin</label>
-                        <select [(ngModel)]="gender"  name="_gen" formControlName="gender_Id" (change)="selgen($event.target.value)"                       
+                        <select [(ngModel)]="gender"  name="_gen" formControlName="genId" (change)="selgen($event.target.value)"                       
                              class="browser-default custom-select" >
                                <option >Choose</option>                                    
-                         <option *ngFor="let o of _gender" [value]="o.gender_name" >{{o.gender_name}}</option>                                 
+                         <option *ngFor="let o of _gender" [value]="o.genname" >{{o.genname}}</option>                                 
                        </select>    
                     </div>  
                     <div class="col-sm-3">
                         <label for="formGroupExampleInput">Categoriya seçin</label>
-                    <select [(ngModel)]="catname"  name="_cat" formControlName="item_categoriy_Id" (change)="selcate($event.target.value)"                       
+                    <select [(ngModel)]="catname"  name="_cat" formControlName="catId" (change)="selcate($event.target.value)"                       
                          class="browser-default custom-select" >
                            <option >Choose</option>                                    
-                     <option *ngFor="let o of _cate" [value]="o.item_categoriy_name" >{{o.item_categoriy_name}}</option>                                 
+                     <option *ngFor="let o of _cate" [value]="o.catname" >{{o.catname}}</option>                                 
                    </select>  
                       </div>                 
                       <div class="col-sm-3">
                         <label for="formGroupExampleInput">Marka seçin</label>
-                        <select [(ngModel)]="marname"  name="_mar" formControlName="item_marka_Id" (change)="selmar($event.target.value)"                       
+                        <select [(ngModel)]="marname"  name="_mar" formControlName="markaId" (change)="selmar($event.target.value)"                       
                              class="browser-default custom-select" >
                                <option >Choose</option>                                    
-                         <option *ngFor="let o of _marka" [value]="o.item_marka_name" >{{o.item_marka_name}}</option>                                 
+                         <option *ngFor="let o of _marka" [value]="o.markaname" >{{o.markaname}}</option>                                 
                        </select>  
                     </div> 
                     <div class="col-sm-3">  
                       <label for="formGroupExampleInput">Color seçin</label>
-                      <select [(ngModel)]="colname"  name="_col" formControlName="item_color_Id" (change)="selcol($event.target.value)"                       
+                      <select [(ngModel)]="colname"  name="_col" formControlName="colId" (change)="selcol($event.target.value)"                       
                            class="browser-default custom-select" >
                              <option >Choose</option>                                    
-                       <option *ngFor="let o of _color" [value]="o.item_color" >{{o.item_color}}</option>                                 
+                       <option *ngFor="let o of _color" [value]="o.colname" >{{o.colname}}</option>                                 
                      </select>                    
                     </div>  
                     <div class="col-sm-3">
                       <label for="formGroupExampleInput">Kullanim alani seçin</label>
-                      <select [(ngModel)]="kulname"  name="_kul" formControlName="kulalan_Id" (change)="selkull($event.target.value)"                       
+                      <select [(ngModel)]="kulname"  name="_kul" formControlName="kulalanId" (change)="selkull($event.target.value)"                       
                            class="browser-default custom-select" >
                              <option >Choose</option>                                    
-                       <option *ngFor="let o of _kullan" [value]="o.kullanim_name" >{{o.kullanim_name}}</option>                                 
+                       <option *ngFor="let o of _kullan" [value]="o.kullanimname" >{{o.kullanimname}}</option>                                 
                      </select>                     
                     </div>  
                     <div class="col-sm-3">
                         <label for="formGroupExampleInput">Stil seçin</label>
-                        <select [(ngModel)]="stilname"  name="_sti" formControlName="item_stil_Id" (change)="selstil($event.target.value)"                       
+                        <select [(ngModel)]="stilname"  name="_sti" formControlName="stilId" (change)="selstil($event.target.value)"                       
                              class="browser-default custom-select" >
                                <option >Choose</option>                                    
-                         <option *ngFor="let o of _stil" [value]="o.item_stil_name" >{{o.item_stil_name}}</option>                                 
+                         <option *ngFor="let o of _stil" [value]="o.stilname" >{{o.stilname}}</option>                                 
                        </select> 
                     </div>  
                     <div class="col-sm-3">
-                      <label for="Item code" class=""><i class="fas fa-tag prefix grey-text"></i>Malın code</label>
-                      <input type="text"  [(ngModel)]="item.item_code"   name="item_code"  class="form-control" formControlName="item_code" placeholder="" mdbInput> 
+                      <label for="Item barcode" class=""><i class="fas fa-tag prefix grey-text"></i>Malın barcode</label>
+                      <input type="text"  [(ngModel)]="item.barcode"   name="barcode"  class="form-control" formControlName="barcode" placeholder="" mdbInput> 
                     </div>                     
                     <div class="col-sm-3" *ngIf="_shomi"> 
                         <label for="formGroupExampleInput">Beden seçin</label>
-                        <select [(ngModel)]="bedname" id="_b"  name="_bed" formControlName="beden_Id" (change)="selbed($event.target.value)"                       
+                        <select [(ngModel)]="bedname" id="_b"  name="_bed" formControlName="bedenId" (change)="selbed($event.target.value)"                       
                              class="browser-default custom-select" >
                                <option >Choose</option>                                    
                          <option *ngFor="let o of _beden" [value]="o.trEu" >{{o.trEu}}</option>                                 
@@ -90,77 +90,80 @@
                     </div>  
                     <div class="col-sm-3" *ngIf="_shomi1">
                       <label for="formGroupExampleInput">Yaka seçin</label>
-                      <select [(ngModel)]="yakname" id="_y" name="_yak" formControlName="yaka_Id" (change)="selyaka($event.target.value)"                       
+                      <select [(ngModel)]="yakname" id="_y" name="_yak" formControlName="yakaId" (change)="selyaka($event.target.value)"                       
                            class="browser-default custom-select" >
                              <option >Choose</option>                                    
-                       <option *ngFor="let o of _yaka" [value]="o.yaka_name" >{{o.yaka_name}}</option>                                 
+                       <option *ngFor="let o of _yaka" [value]="o.yakaname" >{{o.yakaname}}</option>                                 
                      </select>                        
                     </div>  
                     <div class="col-sm-3" *ngIf="_shomi1">
                       <label for="formGroupExampleInput">Qol seçin</label>
-                      <select [(ngModel)]="qolname" id="_q"  name="_qol" formControlName="qol_Id" (change)="selqol($event.target.value)"                       
+                      <select [(ngModel)]="qolname" id="_q"  name="_qol" formControlName="qolId" (change)="selqol($event.target.value)"                       
                            class="browser-default custom-select" >
                              <option >Choose</option>                                    
-                       <option *ngFor="let o of _qoltipi" [value]="o.qoltipi_name" >{{o.qoltipi_name}}</option>                                 
+                       <option *ngFor="let o of _qoltipi" [value]="o.qoltipiname" >{{o.qoltipiname}}</option>                                 
                      </select>                        
                     </div>  
                     <div class="col-sm-3" *ngIf="_shomi1">
                       <label for="formGroupExampleInput">Kumaş tipi seçin</label>
-                      <select [(ngModel)]="kumname" id="_ku" name="_kum" formControlName="kumash_Id" (change)="selkumas($event.target.value)"                       
+                      <select [(ngModel)]="kumname" id="_ku" name="_kum" formControlName="kumashId" (change)="selkumas($event.target.value)"                       
                            class="browser-default custom-select" >
                              <option >Choose</option>                                    
-                       <option *ngFor="let o of _kumash" [value]="o.kumash_name" >{{o.kumash_name}}</option>                                 
+                       <option *ngFor="let o of _kumash" [value]="o.kumashname" >{{o.kumashname}}</option>                                 
                      </select>                       
                     </div> 
                     <div class="col-sm-3" *ngIf="_shomi1">
                       <label for="formGroupExampleInput">Qelip seçin</label>
-                      <select [(ngModel)]="qelname"  name="_qel" formControlName="qelip_Id" (change)="selqel($event.target.value)"                       
+                      <select [(ngModel)]="qelname"  name="_qel" formControlName="qelipId" (change)="selqel($event.target.value)"                       
                            class="browser-default custom-select" >
                              <option >Choose</option>                                    
-                       <option *ngFor="let o of _qelip" [value]="o.qelip_name" >{{o.qelip_name}}</option>                                 
+                       <option *ngFor="let o of _qelip" [value]="o.qelipname" >{{o.qelipname}}</option>                                 
                      </select>                       
                     </div>  
                     <div class="col-sm-3" *ngIf="_shomi1">
                       <label for="formGroupExampleInput">Material seçin</label>
-                      <select [(ngModel)]="matname"  name="_mat" formControlName="item_materal_Id" (change)="selmater($event.target.value)"                       
+                      <select [(ngModel)]="matname"  name="_mat" formControlName="matId" (change)="selmater($event.target.value)"                       
                            class="browser-default custom-select" >
                              <option >Choose</option>                                    
-                       <option *ngFor="let o of _mater" [value]="o.item_materal_name" >{{o.item_materal_name}}</option>                                 
+                       <option *ngFor="let o of _mater" [value]="o.matname" >{{o.matname}}</option>                                 
                      </select> 
                     </div> 
                     <div class="col-sm-3" *ngIf="_shomi1">
                       <label for="formGroupExampleInput">Disain seçin</label>
-                      <select [(ngModel)]="desname"  name="_des" formControlName="item_desen_Id" (change)="seldes($event.target.value)"                       
+                      <select [(ngModel)]="desname"  name="_des" formControlName="desId" (change)="seldes($event.target.value)"                       
                            class="browser-default custom-select" >
                              <option >Choose</option>                                    
-                       <option *ngFor="let o of _desen" [value]="o.item_desen_name" >{{o.item_desen_name}}</option>                                 
+                       <option *ngFor="let o of _desen" [value]="o.desname" >{{o.desname}}</option>                                 
                      </select>                       
                       </div>
                       <div class="col-sm-3">
                         <label for="item_delivery" class=""><i class="fas fa-tag prefix grey-text"></i>Malın çatdırılması</label>
-                        <input type="checkbox"  [(ngModel)]="item.item_delivery"   name="item_delivery"  class="form-control" formControlName="item_delivery" placeholder="" mdbInput> 
+                        <input type="checkbox"  [(ngModel)]="item.delivery"   name="delivery"  class="form-control" formControlName="delivery" placeholder="" mdbInput> 
                     </div>
                     <div class="col-sm-4">
-                      <label for="item_name" class=""><i class="fas fa-tag prefix grey-text"></i>Malın adı</label>
-                    <input type="text" [(ngModel)]="item.item_name" name="item_name" placeholder="" class="form-control" formControlName="item_name" mdbInput>   
+                      <label for="prodname" class=""><i class="fas fa-tag prefix grey-text"></i>Malın adı</label>
+                    <input type="text" [(ngModel)]="item.prodname" name="prodname" placeholder="" class="form-control" formControlName="prodname" mdbInput>   
                     </div>
                     <div class="col-sm-2">
-                        <label for="item_price" class=""><i class="fas fa-tag prefix grey-text"></i>Aliş price</label>
-                        <input type="number"  [(ngModel)]="item.item_price"   name="item_price"  class="form-control" formControlName="item_price" placeholder="" mdbInput> 
+                        <label for="buy_unitprice" class=""><i class="fas fa-tag prefix grey-text"></i>Aliş price</label>
+                        <input type="number"  [(ngModel)]="item.buy_unitprice"   name="buy_unitprice"  class="form-control" formControlName="buy_unitprice" placeholder="" mdbInput> 
                     </div>
                     <div class="col-sm-2">
-                        <label for="item_sales_price" class=""><i class="fas fa-tag prefix grey-text"></i>Satış price</label>
-                        <input type="number"  [(ngModel)]="item.item_sales_price"   name="item_sales_price"  class="form-control" formControlName="item_sales_price" placeholder="" mdbInput> 
+                        <label for="sell_unitprice" class=""><i class="fas fa-tag prefix grey-text"></i>Satış price</label>
+                        <input type="number"  [(ngModel)]="item.sell_unitprice"   name="sell_unitprice"  class="form-control" formControlName="sell_unitprice" placeholder="" mdbInput> 
+                    </div>  
+                    <div class="col-sm-2">
+                      <label for="unitsinstock" class=""><i class="fas fa-tag prefix grey-text"></i>Miqdarı</label>
+                      <input type="number"  [(ngModel)]="item.unitsinstock"   name="unitsinstock"  class="form-control" formControlName="unitsinstock" placeholder="" mdbInput> 
+                    </div>                  
+                    <div class="col-sm-2">
+                        <label for="unitsinstock" class=""><i class="fas fa-tag prefix grey-text"></i>Miqdarı</label>
+                        <input type="number"  [(ngModel)]="item.unitsinstock"   name="unitsinstock"  class="form-control" formControlName="unitsinstock" placeholder="" mdbInput> 
                     </div>
                     <div class="col-sm-2">
-                      <label for="item_discount" class=""><i class="fas fa-tag prefix grey-text"></i>Endirim %</label>
-                      <input type="number"  [(ngModel)]="item.item_discount"   name="item_discount"  class="form-control" formControlName="item_discount" placeholder="" mdbInput> 
+                      <label for="discount" class=""><i class="fas fa-tag prefix grey-text"></i>Endirim %</label>
+                      <input type="number"  [(ngModel)]="item.discount"   name="discount"  class="form-control" formControlName="discount" placeholder="" mdbInput> 
                    </div>
-                    <div class="col-sm-2">
-                        <label for="item_quantity" class=""><i class="fas fa-tag prefix grey-text"></i>Miqdarı</label>
-                        <input type="number"  [(ngModel)]="item.item_quantity"   name="item_quantity"  class="form-control" formControlName="item_quantity" placeholder="" mdbInput> 
-                    </div>
-                    
                     <div class="col-sm-12">                                          
                     <img *ngFor="let url of urls; let i = index" [src]="url" width="50" height="50" alt="" (click)="_delFiles(i)" class="img-fluid img-thumbnail">
                      <input type="file" [src]="imgsrc" formControlName="_file" accept=" image/* " multiple (change)="_selectFiles($event)" />                   
@@ -175,7 +178,7 @@
               </div>
             </div>
           </div> 
-          <!-----------------------------------=======================================================-----------------------------------[disabled]="!itemForm.valid"-------->
+          <!----=======================================================-----------[disabled]="!itemForm.valid"-------->
           <div mdbModal #delitem="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -183,7 +186,7 @@
                   <button type="button" class="close pull-right" aria-label="Close" (click)="delitem.hide()">
                     <span aria-hidden="true">×</span>
                   </button>
-                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ item.item_name }}</span></h4>
+                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ item.prodname }}</span></h4>
                 </div>
                 <form  class="normal-form">           
                 <div class="modal-footer">
@@ -213,32 +216,32 @@
             </thead>
             <tbody *ngFor='let p of listitem'>
               <tr>
-                <!-- 'firma_name','item_price','item_name','beden','gender_name','item_color','item_categoriy_name' -->
-                <td class="pt-3-half" contenteditable="true">{{ p.firma_name }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.item_name }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.item_price }}</td>                
+                <!-- 'firmaname','price','itemname','beden','genname','color','catname' -->
+                <td class="pt-3-half" contenteditable="true">{{ p.firmaname }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.itemname }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.price }}</td>                
                 <td class="pt-3-half" contenteditable="true">{{ p.beden }}</td>               
-                <td class="pt-3-half" contenteditable="true">{{ p.gender_name }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.item_color }}</td>                
-                <td class="pt-3-half" contenteditable="true">{{ p.item_categoriy_name }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.genname }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.color }}</td>                
+                <td class="pt-3-half" contenteditable="true">{{ p.catname }}</td>
                 
-                <!-- <td class="pt-3-half" contenteditable="true">{{ p.item_delivery }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.item_desen_name }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.item_discount }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.item_hidden }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.item_marka_name }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.item_materal_name }}</td>
+                <!-- <td class="pt-3-half" contenteditable="true">{{ p.delivery }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.desenname }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.discount }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.hidden }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.markaname }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.matname }}</td>
                
-                <td class="pt-3-half" contenteditable="true">{{ p.item_quantity }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.item_sales_price }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.item_stil_name }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.kullanim_name }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.kumash_name }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.qaime_date }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.qelip_name }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.qoltipi_name }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.unitsinstock }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.sell_unitprice }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.stilname }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.kullanimname }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.kumashname }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.qaimedate }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.qelipname }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.qoltipiname }}</td>
                 <td class="pt-3-half" contenteditable="true">{{ p.trEu }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.yaka_name }}</td> -->
+                <td class="pt-3-half" contenteditable="true">{{ p.yakaname }}</td> -->
                
                 <td class="pt-3-half">
                   <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"

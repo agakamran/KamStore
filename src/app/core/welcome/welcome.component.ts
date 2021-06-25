@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { product } from 'src/app/models/_settings';
 //import { NotificationService } from 'src/app/helpers/notification.service';
-import { itemdetail } from 'src/app/models/_settings';
+
 import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { SettingsService } from 'src/app/services/settings.service';
 })
 export class WelcomeComponent implements OnInit {
   //https://www.next.com.az/en/style/st687677/792501#792501
-  listitem:itemdetail[] = []; 
+  listitem:product[] = []; 
   
   constructor(private _caSer: SettingsService //, private noti: NotificationService 
     ) { }

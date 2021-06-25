@@ -20,7 +20,7 @@
                   <div class="row">
                     <div class="col-sm-12">
                       <label for="kullanimalani" class=""><i class="fas fa-tag prefix grey-text"></i>Kullanimalani</label>
-                    <input type="text" [(ngModel)]="kul.kullanim_name" name="kullanim_name" placeholder="kullanimalani yazin" class="form-control" formControlName="kullanim_name" mdbInput>   
+                    <input type="text" [(ngModel)]="kul.kullanimname" name="kullanimname" placeholder="kullanimalani yazin" class="form-control" formControlName="kullanimname" mdbInput>   
                     </div>
                    <!-- <div class="col-sm-6">
                       <label for="firma_unvan" class=""><i class="fas fa-tag prefix grey-text"></i>firma_unvan</label>
@@ -58,7 +58,7 @@
                   <button type="button" class="close pull-right" aria-label="Close" (click)="delkul.hide()">
                     <span aria-hidden="true">×</span>
                   </button>
-                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ kul.kullanim_name }}</span></h4>
+                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ kul.kullanimname }}</span></h4>
                 </div>
                 <form  class="normal-form">           
                 <div class="modal-footer">
@@ -86,8 +86,8 @@
             <tbody *ngFor='let p of filteredkul'>
               <tr>
                <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->
-                <td class="pt-3-half" contenteditable="true">{{ p.kulalan_Id }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.kullanim_name }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.kulalanId }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.kullanimname }}</td>
                <!-- <td class="pt-3-half" contenteditable="true">{{ p.firma_telefon}}</td>    
                 <td class="pt-3-half" contenteditable="true">{{ p.firma_unvan}}</td>
                 <td class="pt-3-half" contenteditable="true">{{ p.firma_email}}</td>  

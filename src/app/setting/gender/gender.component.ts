@@ -21,13 +21,12 @@ export class GenderComponent implements OnInit {
   
   constructor(private _caSer: SettingsService,
      private notificationService: NotificationService) {
-     this.gen.gender_Id="";
+     this.gen.genId="";
    }
 
    ngOnInit(): void {
     this.genForm = new FormGroup({     
-     gender_name: new FormControl('', [Validators.required,Validators.maxLength(50)])    
-        
+     genname: new FormControl('', [Validators.required,Validators.maxLength(50)])         
     });  
       //this._caSer._getfirma().subscribe( p=>{ this._page=p;console.log(p)});  
       this._caSer._getgender().subscribe(list=>
@@ -37,24 +36,23 @@ export class GenderComponent implements OnInit {
            //console.log(this.listgen)                        
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
-
-get gender_name() { return this.genForm.get('gender_name'); }
+get genname() { return this.genForm.get('genname'); }
 
 langu(lan:any){  this._lan=lan; }
   _addgen(){
-    this.gen.gender_name='';   
+    this.gen.genname='';   
   }
   _cline(){ 
     this.genForm = new FormGroup({  
        
-      gender_Id: new FormControl(''),
-      gender_name: new FormControl('')
+      genId: new FormControl(''),
+      genname: new FormControl('')
       });
      
    }
    _editgen(ca:gender){  
-       this.gen.gender_Id=ca.gender_Id;
-       this.gen.gender_name=ca.gender_name;//this._page.find(x=>x.pid==ca.pId).pagename;
+       this.gen.genId=ca.genId;
+       this.gen.genname=ca.genname;//this._page.find(x=>x.pid==ca.pId).pagename;
            
      }
  onadd()
@@ -62,22 +60,22 @@ langu(lan:any){  this._lan=lan; }
     if(this.genForm.valid)  
     {
        var p={
-        gender_Id:this.gen.gender_Id  ,
-        gender_name:this.genForm.value.gender_name
-        }
+             genId:this.gen.genId  ,
+             genname:this.genForm.value.genname
+            }
       //  console.log(p)
        this._caSer._postgender(p).subscribe();  
        //this._yenile(); 
        this._addgen(); 
        this._cline();   
-       this.notificationService.success('::Submitted successfully');                
+       this.notificationService.success('::Submitted successfully');         
                      
     }   
   } 
   ondel()
   {
         this.notificationService.warn('!Deleted successfully');     
-        this._caSer._delgender(this.gen).subscribe();  
+        this._caSer._delgender(this.gen).subscribe(); 
        
   } 
 

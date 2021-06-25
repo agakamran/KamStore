@@ -1,18 +1,18 @@
 [
     {
-        "kulalan_Id": "",
-        "kullanim_name": "Günlük"  
+        "kulalanId": "",
+        "kullanimname": "Günlük"  
     },
     {
-        "kulalan_Id": "",
-        "kullanim_name": "Outdoor"  
+        "kulalanId": "",
+        "kullanimname": "Outdoor"  
     },
     {
-        "kulalan_Id": "",
-        "kullanim_name": "Spor"  
+        "kulalanId": "",
+        "kullanimname": "Spor"  
     },
     {
-        "kulalan_Id": "",
-        "kullanim_name": "Toparlayıcı / Küçültücü"  
+        "kulalanId": "",
+        "kullanimname": "Toparlayıcı / Küçültücü"  
     }
 ]

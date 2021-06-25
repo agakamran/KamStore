@@ -1,22 +1,22 @@
 [
     {
-        "item_stil_Id": "",
-        "item_stil_name": "Casual"       
+        "stilId": "",
+        "stilname": "Casual"       
     },
     {
-        "item_stil_Id": "",
-        "item_stil_name": "Gece"       
+        "stilId": "",
+        "stilname": "Gece"       
     },    
     {
-        "item_stil_Id": "",
-        "item_stil_name": "Klasik"       
+        "stilId": "",
+        "stilname": "Klasik"       
     },
     {
-        "item_stil_Id": "",
-        "item_stil_name": "Sokak Stili"       
+        "stilId": "",
+        "stilname": "Sokak Stili"       
     },
     {
-        "item_stil_Id": "",
-        "item_stil_name": "Trend"       
+        "stilId": "",
+        "stilname": "Trend"       
     }
 ]

@@ -1,108 +1,108 @@
 [
     {
-        "item_materal_Id": "",
-        "item_materal_name": "%100 Organik Pamuk"       
+        "matId": "",
+        "matname": "%100 Organik Pamuk"       
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": " %100 Polyester"       
+        "matId": "",
+        "matname": " %100 Polyester"       
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Akrilik"       
+        "matId": "",
+        "matname": "Akrilik"       
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Bambu"       
+        "matId": "",
+        "matname": "Bambu"       
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Denim"       
+        "matId": "",
+        "matname": "Denim"       
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Hakiki Deri"       
+        "matId": "",
+        "matname": "Hakiki Deri"       
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "İpek Tivil"       
+        "matId": "",
+        "matname": "İpek Tivil"       
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Keten"       
+        "matId": "",
+        "matname": "Keten"       
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Kumaş"       
+        "matId": "",
+        "matname": "Kumaş"       
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Likra"       
+        "matId": "",
+        "matname": "Likra"       
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Mikro Polyester"             
+        "matId": "",
+        "matname": "Mikro Polyester"             
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Modal"              
+        "matId": "",
+        "matname": "Modal"              
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Pamuk"               
+        "matId": "",
+        "matname": "Pamuk"               
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Pamuk-Elastan"              
+        "matId": "",
+        "matname": "Pamuk-Elastan"              
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Pamuk-Polyester"                
+        "matId": "",
+        "matname": "Pamuk-Polyester"                
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Pamuk-Polyester-Elastan"             
+        "matId": "",
+        "matname": "Pamuk-Polyester-Elastan"             
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Pamuklu"              
+        "matId": "",
+        "matname": "Pamuklu"              
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Polar"                 
+        "matId": "",
+        "matname": "Polar"                 
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Poliamid"              
+        "matId": "",
+        "matname": "Poliamid"              
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Poliüretan"            
+        "matId": "",
+        "matname": "Poliüretan"            
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Polyester"                 
+        "matId": "",
+        "matname": "Polyester"                 
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Tencel"
+        "matId": "",
+        "matname": "Tencel"
              
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Viskon"               
+        "matId": "",
+        "matname": "Viskon"               
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Viskoz"                 
+        "matId": "",
+        "matname": "Viskoz"                 
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Yün"
+        "matId": "",
+        "matname": "Yün"
                
     },
     {
-        "item_materal_Id": "",
-        "item_materal_name": "Yünlü"
+        "matId": "",
+        "matname": "Yünlü"
     }
 ]

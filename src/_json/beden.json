@@ -1,7 +1,7 @@
 [
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"48",
         "uk":"14",
         "us":"15",
@@ -13,12 +13,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"ERKEK"
+        "catId":"Ayakkabı",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"36",
         "uk":"3",
         "us":"6",
@@ -30,12 +30,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"KADIN"
+        "catId":"Ayakkabı",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":"XXXL",
+        "bedenId":"",
+        "bedeni":"XXXL",
         "trEu":"50",
         "uk":"40",
         "us":null,
@@ -47,12 +47,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":"XXL",
+        "bedenId":"",
+        "bedeni":"XXL",
         "trEu":"44",
         "uk":"16",
         "us":"12",
@@ -64,12 +64,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"KADIN"
+        "catId":"Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"43",
         "uk":"9",
         "us":"10",
@@ -81,12 +81,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"ERKEK"
+        "catId":"Ayakkabı",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"50",
         "uk":null,
         "us":null,
@@ -98,12 +98,12 @@
         "ichBacakBoyu":null,
         "kot":"W40",
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"İç Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":"XS",
+        "bedenId":"",
+        "bedeni":"XS",
         "trEu":"34",
         "uk":"6",
         "us":"2",
@@ -115,12 +115,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"KADIN"
+        "catId":"Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":"XXXL",
+        "bedenId":"",
+        "bedeni":"XXXL",
         "trEu":"46",
         "uk":"18",
         "us":"14",
@@ -132,12 +132,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"KADIN"
+        "catId":"Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"40",
         "uk":"7",
         "us":"10",
@@ -149,12 +149,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"KADIN"
+        "catId":"Ayakkabı",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"38",
         "uk":"4",
         "us":"5",
@@ -166,12 +166,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"ERKEK"
+        "catId":"Ayakkabı",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":"XXL",
+        "bedenId":"",
+        "bedeni":"XXL",
         "trEu":"44",
         "uk":null,
         "us":null,
@@ -183,12 +183,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"28",
         "uk":null,
         "us":null,
@@ -200,12 +200,12 @@
         "ichBacakBoyu":"34-36",
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":"XXXL",
+        "bedenId":"",
+        "bedeni":"XXXL",
         "trEu":"46",
         "uk":null,
         "us":null,
@@ -217,12 +217,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"35",
         "uk":"2",
         "us":"5",
@@ -234,12 +234,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"KADIN"
+        "catId":"Ayakkabı",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"40",
         "uk":null,
         "us":null,
@@ -251,12 +251,12 @@
         "ichBacakBoyu":"79-84",
         "kot":"W30",
         "uzunluk":"L34",
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"İç Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"41",
         "uk":"8",
         "us":"11",
@@ -268,12 +268,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"KADIN"
+        "catId":"Ayakkabı",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":"L",
+        "bedenId":"",
+        "bedeni":"L",
         "trEu":"44",
         "uk":"34",
         "us":null,
@@ -285,12 +285,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"43",
         "uk":null,
         "us":null,
@@ -302,12 +302,12 @@
         "ichBacakBoyu":null,
         "kot":"W32",
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"İç Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"37",
         "uk":"4",
         "us":"7",
@@ -319,12 +319,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"KADIN"
+        "catId":"Ayakkabı",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"43",
         "uk":null,
         "us":null,
@@ -336,12 +336,12 @@
         "ichBacakBoyu":null,
         "kot":"W33",
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"İç Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"32",
         "uk":null,
         "us":null,
@@ -353,12 +353,12 @@
         "ichBacakBoyu":"36-38",
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":"S",
+        "bedenId":"",
+        "bedeni":"S",
         "trEu":"36",
         "uk":"8",
         "us":"4",
@@ -370,12 +370,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"KADIN"
+        "catId":"Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"44",
         "uk":null,
         "us":null,
@@ -387,12 +387,12 @@
         "ichBacakBoyu":null,
         "kot":"W34",
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"İç Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"42",
         "uk":"8",
         "us":"9",
@@ -404,12 +404,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"ERKEK"
+        "catId":"Ayakkabı",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"39",
         "uk":"6",
         "us":"9",
@@ -421,12 +421,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"KADIN"
+        "catId":"Ayakkabı",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":"L",
+        "bedenId":"",
+        "bedeni":"L",
         "trEu":"40",
         "uk":"12",
         "us":"8",
@@ -438,12 +438,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"KADIN"
+        "catId":"Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"41",
         "uk":null,
         "us":null,
@@ -455,12 +455,12 @@
         "ichBacakBoyu":"84-89",
         "kot":"W31",
         "uzunluk":"L36",
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"İç Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"40",
         "uk":"6",
         "us":"7",
@@ -472,12 +472,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"ERKEK"
+        "catId":"Ayakkabı",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":"L",
+        "bedenId":"",
+        "bedeni":"L",
         "trEu":"40",
         "uk":null,
         "us":null,
@@ -489,12 +489,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":"XXS",
+        "bedenId":"",
+        "bedeni":"XXS",
         "trEu":"32",
         "uk":"4",
         "us":"0",
@@ -506,12 +506,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"KADIN"
+        "catId":"Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"30",
         "uk":null,
         "us":null,
@@ -523,12 +523,12 @@
         "ichBacakBoyu":"34-36",
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":"M",
+        "bedenId":"",
+        "bedeni":"M",
         "trEu":"42",
         "uk":"32",
         "us":null,
@@ -540,12 +540,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":"XL",
+        "bedenId":"",
+        "bedeni":"XL",
         "trEu":"42",
         "uk":"14",
         "us":"10",
@@ -557,12 +557,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"KADIN"
+        "catId":"Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":"M",
+        "bedenId":"",
+        "bedeni":"M",
         "trEu":"38",
         "uk":"10",
         "us":"6",
@@ -574,12 +574,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"KADIN"
+        "catId":"Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"38",
         "uk":"5",
         "us":"8",
@@ -591,12 +591,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"KADIN"
+        "catId":"Ayakkabı",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"46",
         "uk":null,
         "us":null,
@@ -608,12 +608,12 @@
         "ichBacakBoyu":null,
         "kot":"W36",
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"İç Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"41",
         "uk":"7",
         "us":"8",
@@ -625,12 +625,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"ERKEK"
+        "catId":"Ayakkabı",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":"XL",
+        "bedenId":"",
+        "bedeni":"XL",
         "trEu":"46",
         "uk":"36",
         "us":null,
@@ -642,12 +642,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"25",
         "uk":null,
         "us":null,
@@ -659,12 +659,12 @@
         "ichBacakBoyu":"32-34",
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":"XXL",
+        "bedenId":"",
+        "bedeni":"XXL",
         "trEu":"48",
         "uk":"38",
         "us":null,
@@ -676,12 +676,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"26",
         "uk":null,
         "us":null,
@@ -693,12 +693,12 @@
         "ichBacakBoyu":"34-36",
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":"XS",
+        "bedenId":"",
+        "bedeni":"XS",
         "trEu":"38",
         "uk":"28",
         "us":null,
@@ -710,12 +710,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":"S",
+        "bedenId":"",
+        "bedeni":"S",
         "trEu":"40",
         "uk":"30",
         "us":null,
@@ -727,12 +727,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":"XL",
+        "bedenId":"",
+        "bedeni":"XL",
         "trEu":"42",
         "uk":null,
         "us":null,
@@ -744,12 +744,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"27",
         "uk":null,
         "us":null,
@@ -761,12 +761,12 @@
         "ichBacakBoyu":"34-36",
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"45",
         "uk":"11",
         "us":"12",
@@ -778,12 +778,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"ERKEK"
+        "catId":"Ayakkabı",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":"S",
+        "bedenId":"",
+        "bedeni":"S",
         "trEu":36,
         "uk":null,
         "us":null,
@@ -795,12 +795,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"39",
         "uk":"5",
         "us":"6",
@@ -812,12 +812,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"ERKEK"
+        "catId":"Ayakkabı",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"48",
         "uk":null,
         "us":null,
@@ -829,12 +829,12 @@
         "ichBacakBoyu":null,
         "kot":"W38",
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"İç Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"31",
         "uk":null,
         "us":null,
@@ -846,12 +846,12 @@
         "ichBacakBoyu":"36-38",
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"29",
         "uk":null,
         "us":null,
@@ -863,12 +863,12 @@
         "ichBacakBoyu":"34-36",
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"44",
         "uk":"10",
         "us":"11",
@@ -880,12 +880,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"ERKEK"
+        "catId":"Ayakkabı",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":"M",
+        "bedenId":"",
+        "bedeni":"M",
         "trEu":"38",
         "uk":null,
         "us":null,
@@ -897,12 +897,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"24",
         "uk":null,
         "us":null,
@@ -914,12 +914,12 @@
         "ichBacakBoyu":"32-34",
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"KADIN"
+        "catId":"İç Giyim",
+        "genId":"KADIN"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"39",
         "uk":null,
         "us":null,
@@ -931,12 +931,12 @@
         "ichBacakBoyu":"74-79",
         "kot":"W29",
         "uzunluk":"L32",
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"İç Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"47",
         "uk":"13",
         "us":"14",
@@ -948,12 +948,12 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"ERKEK"
+        "catId":"Ayakkabı",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"38",
         "uk":null,
         "us":null,
@@ -965,12 +965,12 @@
         "ichBacakBoyu":"69-74",
         "kot":"W28",
         "uzunluk":"L30",
-        "item_categoriy_Id":"İç Giyim",
-        "gender_Id":"ERKEK"
+        "catId":"İç Giyim",
+        "genId":"ERKEK"
      },
      {
-        "beden_Id":"",
-        "beden":null,
+        "bedenId":"",
+        "bedeni":null,
         "trEu":"46",
         "uk":"12",
         "us":"13",
@@ -982,7 +982,7 @@
         "ichBacakBoyu":null,
         "kot":null,
         "uzunluk":null,
-        "item_categoriy_Id":"Ayakkabı",
-        "gender_Id":"ERKEK"
+        "catId":"Ayakkabı",
+        "genId":"ERKEK"
      }
   ]

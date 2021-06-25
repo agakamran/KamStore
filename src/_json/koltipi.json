@@ -1,93 +1,93 @@
 [
     {
-        "qol_Id": "",
-        "qoltipi_name": "Askılı",
-        "gender_Id":"KADIN"        
+        "qolId": "",
+        "qoltipiname": "Askılı",
+        "genId":"KADIN"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Geniş / Yarasa",
-        "gender_Id":"KADIN"        
+        "qolId": "",
+        "qoltipiname": "Geniş / Yarasa",
+        "genId":"KADIN"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Kısa",
-        "gender_Id":"KADIN"        
+        "qolId": "",
+        "qoltipiname": "Kısa",
+        "genId":"KADIN"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Kısa Kol",
-        "gender_Id":"KADIN"        
+        "qolId": "",
+        "qoltipiname": "Kısa Kol",
+        "genId":"KADIN"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Kolsuz",
-        "gender_Id":"KADIN"        
+        "qolId": "",
+        "qoltipiname": "Kolsuz",
+        "genId":"KADIN"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Omzu açık",
-        "gender_Id":"KADIN"        
+        "qolId": "",
+        "qoltipiname": "Omzu açık",
+        "genId":"KADIN"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Truvakar Kol",
-        "gender_Id":"KADIN"        
+        "qolId": "",
+        "qoltipiname": "Truvakar Kol",
+        "genId":"KADIN"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Uzun",
-        "gender_Id":"KADIN"        
+        "qolId": "",
+        "qoltipiname": "Uzun",
+        "genId":"KADIN"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Uzun Kol",
-        "gender_Id":"KADIN"        
+        "qolId": "",
+        "qoltipiname": "Uzun Kol",
+        "genId":"KADIN"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Volanlı",
-        "gender_Id":"KADIN"        
+        "qolId": "",
+        "qoltipiname": "Volanlı",
+        "genId":"KADIN"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Askılı",
-        "gender_Id":"ERKEK"        
+        "qolId": "",
+        "qoltipiname": "Askılı",
+        "genId":"ERKEK"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Geniş / Yarasa",
-        "gender_Id":"ERKEK"        
+        "qolId": "",
+        "qoltipiname": "Geniş / Yarasa",
+        "genId":"ERKEK"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Katlamalı",
-        "gender_Id":"ERKEK"        
+        "qolId": "",
+        "qoltipiname": "Katlamalı",
+        "genId":"ERKEK"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Kısa",
-        "gender_Id":"ERKEK"        
+        "qolId": "",
+        "qoltipiname": "Kısa",
+        "genId":"ERKEK"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Kısa Kol",
-        "gender_Id":"ERKEK"        
+        "qolId": "",
+        "qoltipiname": "Kısa Kol",
+        "genId":"ERKEK"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Kolsuz",
-        "gender_Id":"ERKEK"        
+        "qolId": "",
+        "qoltipiname": "Kolsuz",
+        "genId":"ERKEK"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Uzun",
-        "gender_Id":"ERKEK"        
+        "qolId": "",
+        "qoltipiname": "Uzun",
+        "genId":"ERKEK"        
     },
     {
-        "qol_Id": "",
-        "qoltipi_name": "Uzun Kol",
-        "gender_Id":"ERKEK"        
+        "qolId": "",
+        "qoltipiname": "Uzun Kol",
+        "genId":"ERKEK"        
     }
 ]
 

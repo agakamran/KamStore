@@ -20,7 +20,7 @@
                   <div class="row">
                     <div class="col-sm-12">
                       <label for="Qelip name" class=""><i class="fas fa-tag prefix grey-text"></i>Qelip name</label>
-                    <input type="text" [(ngModel)]="qel.qelip_name" name="qelip_name" placeholder="Qelip name yazin" class="form-control" formControlName="qelip_name" mdbInput>   
+                    <input type="text" [(ngModel)]="qel.qelipname" name="qelipname" placeholder="Qelip name yazin" class="form-control" formControlName="qelipname" mdbInput>   
                     </div>
                    <!-- <div class="col-sm-6">
                       <label for="firma_unvan" class=""><i class="fas fa-tag prefix grey-text"></i>firma_unvan</label>
@@ -58,7 +58,7 @@
                   <button type="button" class="close pull-right" aria-label="Close" (click)="delqel.hide()">
                     <span aria-hidden="true">×</span>
                   </button>
-                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ qel.qelip_name }}</span></h4>
+                  <h4 class="modal-title w-100" id="myModalLabel"><span>Del {{ qel.qelipname }}</span></h4>
                 </div>
                 <form  class="normal-form">           
                 <div class="modal-footer">
@@ -74,7 +74,7 @@
               <tr>                
                <!-- <th class="text-center">Navid</th>-->
                 <th class="text-center">Qelip Id</th> 
-                <th class="text-center">Qelip_name</th>    
+                <th class="text-center">Qelipname</th>    
                 <!--<th class="text-center">firma_telefon</th>    
                 <th class="text-center">firma_unvan</th>    
                 <th class="text-center">firma_email</th>
@@ -86,11 +86,11 @@
             <tbody *ngFor='let p of filteredqel'>
               <tr>
                <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->
-                <td class="pt-3-half" contenteditable="true">{{ p.qelip_Id }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.qelip_name }}</td>
-               <!-- <td class="pt-3-half" contenteditable="true">{{ p.firma_telefon}}</td>    
-                <td class="pt-3-half" contenteditable="true">{{ p.firma_unvan}}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.firma_email}}</td>  
+                <td class="pt-3-half" contenteditable="true">{{ p.qelipId }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.qelipname }}</td>
+               <!-- <td class="pt-3-half" contenteditable="true">{{ p.firmatelefon}}</td>    
+                <td class="pt-3-half" contenteditable="true">{{ p.firmaunvan}}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.firmaemail}}</td>  
                 <td class="pt-3-half" contenteditable="true">{{ p.voen}}</td>  -->
                 <td class="pt-3-half">
                   <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"

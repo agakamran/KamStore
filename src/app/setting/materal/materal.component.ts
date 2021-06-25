@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { item_materal } from 'src/app/models/_settings';
+import { _materal } from 'src/app/models/_settings';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Lang } from 'src/app/models/_carts';
 import { SettingsService } from 'src/app/services/settings.service';
@@ -12,21 +12,21 @@ import { NotificationService } from 'src/app/helpers/notification.service';
 })
 export class MateralComponent implements OnInit {
   matForm: FormGroup; 
-  listmat:item_materal[] = []; 
-  filteredmat: item_materal[];
-  mat:item_materal=new item_materal(); 
+  listmat:_materal[] = []; 
+  filteredmat: _materal[];
+  mat:_materal=new _materal(); 
   _lang:Lang[]=[{lid: '1', lname: 'Az'},{lid: '2', lname: 'En'},{lid: '3', lname: 'Ru'} ];  _lan='';
-  _mat: item_materal[];  _pid:'';
+  _mat: _materal[];  _pid:'';
   
   constructor( private _caSer: SettingsService,
      private notificationService: NotificationService) {
-     this.mat.item_materal_Id="";
+     this.mat.matId="";
    }
 
    ngOnInit(): void {
     this.matForm = new FormGroup({  
      // firma_id: new FormControl('', [Validators.required,Validators.maxLength(36)]),   
-     item_materal_name: new FormControl('', [Validators.required,Validators.maxLength(50)]),
+     matname: new FormControl('', [Validators.required,Validators.maxLength(50)]),
   
         
     });  
@@ -39,29 +39,29 @@ export class MateralComponent implements OnInit {
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
 
-get item_materal_name() { return this.matForm.get('item_materal_name'); }
+get matname() { return this.matForm.get('matname'); }
 
 langu(lan:any){  this._lan=lan; }
   _addmat()
   {
-    this.mat.item_materal_Id='';   
-    this.mat.item_materal_name=''; 
+    this.mat.matId='';   
+    this.mat.matname=''; 
    
   }
   _cline(){ 
     this.matForm = new FormGroup({  
        
-      item_materal_Id: new FormControl(''),
-      item_materal_name: new FormControl(''),
+      matId: new FormControl(''),
+      matname: new FormControl(''),
     
       });
      
    }
-   _editmat(ca:item_materal){ 
+   _editmat(ca:_materal){ 
     //console.log('12111')   
      console.log(ca)  
-       this.mat.item_materal_Id=ca.item_materal_Id;
-       this.mat.item_materal_name=ca.item_materal_name;//this._page.find(x=>x.pid==ca.pId).pagename;
+       this.mat.matId=ca.matId;
+       this.mat.matname=ca.matname;//this._page.find(x=>x.pid==ca.pId).pagename;
       // this.fir.firma_telefon=ca.firma_telefon; 
       // this.fir.firma_unvan=ca.firma_unvan;
       // this.fir.voen=ca.voen,
@@ -75,8 +75,8 @@ langu(lan:any){  this._lan=lan; }
        //console.log('333')
       // console.log(this.firForm.value)
        var p={
-        item_materal_Id:this.mat.item_materal_Id  ,
-        item_materal_name:this.matForm.value.item_materal_name,
+        matId:this.mat.matId  ,
+        matname:this.matForm.value.matname,
        
       
       }
