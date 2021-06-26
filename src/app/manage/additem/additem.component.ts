@@ -4,7 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 //import { MdbTableDirective } from 'angular-bootstrap-md';
 import { forkJoin, Observable } from 'rxjs';
-import { getemail, getId} from 'src/app/auth/store/auth.selectors';
+import { getemail, getId, getpercent} from 'src/app/auth/store/auth.selectors';
 //import { flatMap } from 'rxjs/operators';
 import { NotificationService } from 'src/app/helpers/notification.service';
 import { Lang } from 'src/app/models/_carts';
@@ -54,7 +54,7 @@ export class AdditemComponent implements OnInit {
   _kumash: kumashtipi[];_kum:any; kumname: string;
   _kumash1: kumashtipi[];
   _kullan: kullanimAlani[];_kul:any; kulname: string;
-  _shomi:boolean=false;_shomi1:boolean=false;
+  _shomi:boolean=true;_shomi1:boolean=true;
   //#endregion
   //#endregion
   searchText: string = '';
@@ -110,7 +110,7 @@ export class AdditemComponent implements OnInit {
       desenId: new FormControl('', [Validators.maxLength(36)]),
       kulalanId: new FormControl('', [Validators.required,Validators.maxLength(36)]),
       kumashId: new FormControl('', [Validators.maxLength(36)]), 
-
+      desId:new FormControl('', [Validators.maxLength(36)]), 
       bedenId: new FormControl('', [Validators.maxLength(36)]), 
       colId: new FormControl('', [Validators.required,Validators.maxLength(36)]),    
       prodname: new FormControl('', [Validators.required,Validators.maxLength(36)]),    
@@ -343,11 +343,12 @@ selkumas(sel:any){ this._kum=sel;}
     this.item.prodname=''; 
     this.item.barcode='';    
     this.item.buy_unitprice=0;
-    this.item.sell_unitprice=0; 
-    this.item.unitsinstock=0;
-    this.item.discount=0;
-    this.item.Discontinued=false;
-    this.item.delivery=false;
+    this.item.sell_unitprice=0;
+    this.item.boxquantity=1; 
+    this.item.unitsinstock=1;
+    this.item.discount=0;  //skidka
+    this.item.Discontinued=false; //satishdan chixarilib
+    this.item.delivery=false; //dastavka
     this.item.ModifiedDate='';
     this.selectedFiles = [];
     this.urls = [];
@@ -437,6 +438,7 @@ _selectFiles(event:any)
      event.srcElement.percentage = null;
    }
  } 
+
  async _uploadFiles() {
 // console.log('33')  
 //console.log(this.itemForm.value.item_delivery)
@@ -519,14 +521,29 @@ _selectFiles(event:any)
     this.notificationService.success('::Submitted successfully'); 
   }    
 _getit(){
-  
-  this._caSer._getitemdetail(this._Id).subscribe(list=>
-  {   
+    this._caSer._getitemdetail(this._Id).subscribe(list=>
+    {   
         if(list!=[]){
           this.listitem=list;
+       // alert(this.listitem)
          //  this.mdbTable.setDataSource(this.listitem);
         //this.previous = this.mdbTable.getDataSource();
-        }                         
-    }, error => console.error(error + 'Siz sistemə daxil olmalısınız!'));
-  }  
+        }    
+                             
+   }, error => console.error(error + 'Siz sistemə daxil olmalısınız!'));
+  } 
+  _bayunit(event:string){
+    let per:number;
+    this._store.select(getpercent).subscribe(k=>{  per=k;   })
+    this.item.sell_unitprice= Number.parseFloat(event) +  (Number.parseFloat(event)* per/100);
+    this.barkod();
+    
+   }
+   barkod(){
+     if(this.listitem!=null){
+       // alert('g')
+     }
+     //alert(this.listitem)
+     this.item.barcode=this. item.storId.substring(0,3)+'_00000000'+1;
+   } 
 }
