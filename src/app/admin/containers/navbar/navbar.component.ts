@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
   listnav:MenuItem[] = []; 
   jsonlistnav:MenuItem[] = [];
   filterednav: MenuItem[];
-  nav:MenuItem=new MenuItem(); 
+  nav:MenuItem; 
   _page: any[]; _pid:'';  ppnav:any=''
   _role:IRole[]; _rol:any; 
   constructor(private _auth: AuthService, private _caSer: NavbarService,

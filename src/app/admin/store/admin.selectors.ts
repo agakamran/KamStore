@@ -17,7 +17,6 @@ export const getSelectedUser = createSelector(
   getUsersList,
   (usersList: any, uid: string) => usersList.filter( (user: any) => user.uid === uid)[0]
 );
-
 export const getUserProjects = createSelector(
   getAdminState,
   (admin: any, uid: string) => {

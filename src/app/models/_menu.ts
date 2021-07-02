@@ -1,4 +1,4 @@
-export class MenuItem {
+export interface MenuItem {
     nid:string;
     pid?:string;
     ntitle: string;

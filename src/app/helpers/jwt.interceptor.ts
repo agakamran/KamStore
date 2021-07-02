@@ -23,7 +23,7 @@ export class JwtInterceptor implements HttpInterceptor {
             request = request.clone({setHeaders : { }})
         }
         else { 
-            //console.log('bbbbbb')
+           // console.log('bbbbbb')
             request = request.clone({setHeaders : { 'Content-Type': 'application/json',
             'Access-Control-Allow-Methods': '*'  }}) 
         }

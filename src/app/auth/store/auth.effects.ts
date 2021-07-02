@@ -21,10 +21,8 @@ export class AuthEffects {
   loginAction$ = this.actions$.pipe(
     ofType(auth.AuthActionTypes.LOGIN_REQUESTED),
     map((action: auth.LoginRequested) => action.payload),
-    switchMap(payload =>
-      this.authService.signInWithEmailAndPassword(payload).pipe(
-        map((res: any) => {   
-          //console.log(res)
+    switchMap(payload => this.authService.signInWithEmailAndPassword(payload).pipe(
+        map((res: any) => {  
           const user = {
             uid: res.uid,
             displayName: res.displayName,
@@ -34,16 +32,13 @@ export class AuthEffects {
             isEmailConfirmed:res.isEmailConfirmed,       
             photoUrl:res.photoUrl,
             storpercent:res.percent,
-            // providerId: res.additionalUserInfo.providerId,
-            // isNewUser: res.additionalUserInfo.isNewUser
             token:res.token
           };
          // console.log(user)
           if(user!=undefined){
             this.noti.success('::Təbriklər');
-          }
-          
-          return new auth.LoginSuccess( {user });
+          }          
+          return new auth.LoginSuccess( { user });
         }),
         tap(() => this.router.navigateByUrl('')),
         catchError(error => of(new auth.AuthError({ error })))

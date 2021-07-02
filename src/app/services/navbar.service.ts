@@ -37,9 +37,10 @@ export class NavbarService {
     return of((datmenu as any).default)   
    }
   
-  _allmenu(pra:string): Observable<any>{  
+  _allmenu(pra:any): Observable<any>{  
     
     const body=JSON.stringify(pra);
+    //console.log('kkk')
     //console.log(body)
    // console.log(body.toString())   
     return this.http.post<any>(this.pathAPI +'_getnavbar',body)
