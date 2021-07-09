@@ -1,25 +1,28 @@
-import { createSelector, createFeatureSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+
+
 import { MenusState } from './menus.state';
 
+export const MenuState =createFeatureSelector<MenusState>('menus');
 
-export const getMenusState = createFeatureSelector<MenusState>('menus');
-
-
+export const getMenuData   = createSelector(
+  
+  MenuState,
+  state => state.menudata
+);
 export const getLoading = createSelector(
-  getMenusState,
+  MenuState,
   state => state.menuloading
 );
 
 export const getLoaded = createSelector(
-  getMenusState,
+  MenuState,
   state => state.menuloaded
+  
 );
 
-export const getMenuData   = createSelector(
-  getMenusState,
-  state => state.menudata
-);
+
 export const getError  = createSelector(
-  getMenusState,
+  MenuState,
   state => state.error
 );

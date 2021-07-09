@@ -16,7 +16,7 @@ export class initMenu  implements Action {
 export class MenuSuccess implements Action {
   readonly type = MenusActionTypes.MENU_SUCCESS;
   //constructor(public payload: { user: User }) {}
-  constructor(public payload: { menudata: MenuItem []}) {}
+  constructor(public payload: { menudata: MenuItem []}) {}//console.log(payload.menudata)
 }
 
 export class MenuFailed  implements Action {

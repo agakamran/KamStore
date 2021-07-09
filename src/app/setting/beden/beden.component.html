@@ -513,10 +513,10 @@
                 <div class="row">
                   <div class="col-sm-4">
                     <label for="formGroupExampleInput">Categoriya</label>
-                    <select [(ngModel)]="catname"  name="_cate" formControlName="catname" (change)="selcate($event.target.value)"                       
+                    <select [(ngModel)]="catgo"  name="_cate" formControlName="catname" (change)="selcate($event.target.value)"                       
                          class="browser-default custom-select" >
                            <option >Choose</option>                                    
-                     <option *ngFor="let o of _page" [value]="o.item_catname" >{{o.catname}}</option>                                 
+                     <option *ngFor="let o of _page" [value]="o.catname" >{{o.catname}}</option>                                 
                    </select>                
                   </div>
                   <div class="col-sm-4">
@@ -611,8 +611,8 @@
               <td class="pt-3-half" contenteditable="false">{{ p.kot}}</td>
             <!--  <td class="pt-3-half" contenteditable="false">{{ p.kanvas}}</td>-->
               <td class="pt-3-half" contenteditable="false">{{ p.uzunluk}}</td>
-              <td class="pt-3-half" contenteditable="false">{{ p.item_categoriy_name}}</td>
-              <td class="pt-3-half" contenteditable="false">{{ p.gender_name}}</td>             
+              <td class="pt-3-half" contenteditable="false">{{ p.catname}}</td>
+              <td class="pt-3-half" contenteditable="false">{{ p.genname}}</td>             
               <td class="pt-3-half">
                 <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
                       aria-hidden="true"></i></a></span>

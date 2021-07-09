@@ -21,7 +21,7 @@ export class BedenComponent implements OnInit {
   bedkishi_Gey:beden[]; bedkishi_ayaq:beden[]; bedkishi_pant:beden[];
   _lang:Lang[]=[{lid: '1', lname: 'Az'},{lid: '2', lname: 'En'},{lid: '3', lname: 'Ru'} ];  _lan='';
   _gender: gender[];_gen:string; gender:string;
-  _page: _categoriy[];_cate:any; catname: string; _pid:'';
+  _page: _categoriy[];_cate:any; catgo: string; _pid:'';
   
   constructor( private _caSer: SettingsService,
     private notificationService: NotificationService) {
@@ -64,7 +64,7 @@ export class BedenComponent implements OnInit {
         ).subscribe(list=>
           { 
             this.listbeden=list;  
-            console.log(list)         
+            //console.log(list)         
             this.filteredbeden = this.listbeden; 
             this._listbeden=this.listbeden;
             this._Qa=this._gender.find(x=>x.genname==='KADIN')!.genId;
@@ -151,8 +151,7 @@ _bedsize()
       uzunluk: new FormControl(''),
       catId: new FormControl(''),
       genId: new FormControl('')       
-      });  
-         
+      });          
    }
    _editbed(ca:beden){ 
       // console.log('12111')   
@@ -175,28 +174,24 @@ _bedsize()
          this.gender=this._gender.find(x=>x.genId==ca.genId)!.genname;
        }       
        this.bed.genId=ca.genId;
-       if(ca.catId!=''){
-         this.catname=this._page.find(x=>x.catId==ca.catId)!.catname; 
+      // console.log(ca.catId)
+       if(ca.catId!=null){
+         this.catgo=this._page.find(x=>x.catId==ca.catId)!.catname;       
        }
-       
+      // console.log(this.catname)
        this.bed.catId=ca.catId;
        if(ca.genId!=null){
          this.gender=this._gender.find(x=>x.genId==ca.genId)!.genname;
        }
-       
-      //this.bed.genId=ca.genId;
      }
  onadd()
   { 
     if(this.bedenForm.valid)  
     {
-     //  console.log('333')
-      // console.log(this.bed.genId)
-      // console.log(this.gender)
       // console.log(this.bedenForm.value)
       let itemcatid=''
-      if(this.catname!=''){
-       itemcatid=this._page.find(x=>x.catname==this.catname )!.catId
+      if(this.catgo!=''){
+       itemcatid=this._page.find(x=>x.catname==this.catgo )!.catId
       }
         var p={
         bedenId:this.bed.bedenId  ,

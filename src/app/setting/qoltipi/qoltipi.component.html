@@ -63,8 +63,8 @@
           <table class="table table-bordered table-responsive-md table-striped text-center"  *ngIf='listqol && listqol.length'>
             <thead>
               <tr>                
-               <!-- <th class="text-center">Navid</th>-->
-                <th class="text-center">Qol Id</th> 
+               <!-- <th class="text-center">Navid</th>
+                <th class="text-center">Qol Id</th> -->
                 <th class="text-center">Qoltipi name</th>  
                 <th class="text-center">Gender name</th>  
                       
@@ -74,10 +74,10 @@
             </thead>
             <tbody *ngFor='let p of filteredqol'>
               <tr>
-               <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->
-                <td class="pt-3-half" contenteditable="true">{{ p.qolId }}</td>
+               <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.qolId }}</td>-->
                 <td class="pt-3-half" contenteditable="true">{{ p.qoltipiname }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.genId }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.genname }}</td>
                <!-- <td class="pt-3-half" contenteditable="true">{{ p.firmatelefon}}</td>    
                 <td class="pt-3-half" contenteditable="true">{{ p.firmaunvan}}</td>
                 <td class="pt-3-half" contenteditable="true">{{ p.firmaemail}}</td>  

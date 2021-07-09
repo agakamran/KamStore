@@ -26,7 +26,7 @@ export class DesenComponent implements OnInit {
    ngOnInit(): void {
     this.desForm = new FormGroup({  
      // firma_id: new FormControl('', [Validators.required,Validators.maxLength(36)]),   
-     desenname: new FormControl('', [Validators.required,Validators.maxLength(50)]),
+     desname: new FormControl('', [Validators.required,Validators.maxLength(50)]),
   
         
     });  
@@ -35,7 +35,7 @@ export class DesenComponent implements OnInit {
         { 
            this.listdes=list; 
            this.filtereddes = this.listdes; 
-           console.log(this.listdes)                        
+           //console.log(this.listdes)                        
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
 

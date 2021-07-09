@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { MenuItem } from 'src/app/models/_menu';
 import { NotificationService } from 'src/app/helpers/notification.service';
 import { NavbarService } from 'src/app/services/navbar.service';
 import { Lang } from 'src/app/models/_carts';
 import { IRole } from 'src/app/models/_role';
-import { AuthService } from 'src/app/services/auth.service';
+//import { AuthService } from 'src/app/services/auth.service';
+import { Store } from '@ngrx/store';
+import { getMenuData } from 'src/app/core/store/menus.selectors';
 
 
 
@@ -21,14 +23,24 @@ export class NavbarComponent implements OnInit {
   listnav:MenuItem[] = []; 
   jsonlistnav:MenuItem[] = [];
   filterednav: MenuItem[];
-  nav:MenuItem; 
+  nav:MenuItem=new MenuItem();; 
   _page: any[]; _pid:'';  ppnav:any=''
   _role:IRole[]; _rol:any; 
-  constructor(private _auth: AuthService, private _caSer: NavbarService,
-     private notificationService: NotificationService) {
-    // this.nav.nid="";
-   }
 
+  get ordersFormArray() {
+    return this.navForm.controls.orders as FormArray;
+  }
+  constructor(private store$: Store,//private _auth: AuthService,
+     private _caSer: NavbarService,
+     private notificationService: NotificationService,private formBuilder: FormBuilder) {
+      this.navForm = this.formBuilder.group({
+        orders: new FormArray([])
+      });
+      this.addCheckboxes();
+   }
+   private addCheckboxes() {
+    this._role.forEach(() => this.ordersFormArray.push(new FormControl(false)));
+  }
    ngOnInit(): void {
     this.navForm = new FormGroup({  
      // navid: new FormControl('', [Validators.required,Validators.maxLength(36)]),   
@@ -52,28 +64,28 @@ export class NavbarComponent implements OnInit {
     }
 _yenile()
 {
-  let rol=this._auth.getrole();
-  this._caSer._allmenu(rol).subscribe( p=>{     
+
+ // let rol=this._auth.getrole();
+ // this._caSer._allmenu(rol).subscribe( p=>{  
+    this.store$.select(getMenuData).subscribe(p=>{    
     this.listnav=p;
     this.filterednav = this.listnav; 
     this._page=this.listnav;
     this._page = this._page.filter(f=>f.pid===null && f.nisparent===true) 
-
+    if(this.listnav.length===0){
     this._caSer._jsonmenu().subscribe( p=>{     
-      this.jsonlistnav=p;
-      console.log()
-      this.addmenu();     
-   })
+          this.jsonlistnav=p;
+        // console.log(this.listnav.length)
+        //  this.addmenu();     
+      })
+    }
+   
    // console.log(this._page)
     });  
  }
+ 
 
-//get nid() { return this.navForm.get('nid'); }
-//get parentid() { return this.navForm.get('pid'); }
-// get ntitle() { return this.navForm.get('ntitle'); }
-// get npath() { return this.navForm.get('npath'); }
-// get nlan() { return this.navForm.get('nlan'); }
-// get nicon() { return this.navForm.get('nicon'); }
+
 langu(lan:any){  this._lan=lan; }
 selPage(sel:any){ this._pid=sel;}
 selrol(sel:any){ this._rol=sel;}
@@ -117,7 +129,7 @@ selrol(sel:any){ this._rol=sel;}
        this.nav.nrol=ca.nrol;
        this.nav.nisparent=ca.nisparent;
        this.nav.ncsay=ca.ncsay;
-       
+       console.log(ca.nrol)  
      }
  onadd()
   { 
@@ -184,7 +196,7 @@ selrol(sel:any){ this._rol=sel;}
           nisparent:item.nisparent,
           ncsay:item.ncsay,
           nicon:item.nicon}
-         // console.log(p)
+          //console.log('77')
          this._caSer._posmenu(p).subscribe();  
       }
     }

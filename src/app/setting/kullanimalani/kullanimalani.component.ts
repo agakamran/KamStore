@@ -26,7 +26,7 @@ export class KullanimalaniComponent implements OnInit {
    ngOnInit(): void {
     this.kulForm = new FormGroup({  
      // firma_id: new FormControl('', [Validators.required,Validators.maxLength(36)]),   
-     kullanim_name: new FormControl('', [Validators.required,Validators.maxLength(50)]),
+     kullanimname: new FormControl('', [Validators.required,Validators.maxLength(50)]),
   
         
     });  
@@ -35,11 +35,11 @@ export class KullanimalaniComponent implements OnInit {
         { 
            this.listkul=list; 
            this.filteredkul = this.listkul; 
-           console.log(this.listkul)                        
+          // console.log(this.listkul)                        
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
 
-get kullanim_name() { return this.kulForm.get('kullanim_name'); }
+get kullanimname() { return this.kulForm.get('kullanimname'); }
 
 langu(lan:any){  this._lan=lan; }
   _addkul() {
@@ -48,8 +48,8 @@ langu(lan:any){  this._lan=lan; }
   }
   _cline(){ 
     this.kulForm = new FormGroup({         
-      kulalan_Id: new FormControl(''),
-      kullanim_name: new FormControl(''),    
+      kulalanId: new FormControl(''),
+      kullanimname: new FormControl(''),    
       });     
    }
    _editkul(ca:kullanimAlani){ 
@@ -87,6 +87,4 @@ langu(lan:any){  this._lan=lan; }
         this._caSer._delkullanimAlani(this.kul).subscribe();  
        // this._yenile();
   } 
-
-
 }

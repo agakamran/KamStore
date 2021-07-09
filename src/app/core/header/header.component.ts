@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-//import { Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
+//import { Observable } from 'rxjs';
 //import { Observable } from 'rxjs';
 //import { getUser } from 'src/app/auth/store/auth.selectors';
 //import { StorageService } from 'src/app/helpers/storage.service';
@@ -12,6 +11,7 @@ import { NavbarService } from 'src/app/services/navbar.service';
 import { environment } from 'src/environments/environment';
 import { getMenuData } from '../store/menus.selectors';
 import * as actions from '../store/menus.actions';                         
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -28,30 +28,29 @@ export class HeaderComponent implements OnInit {
   @Input() isLoading: boolean;
   @Input() isAdmin: boolean;
   @Output() logout = new EventEmitter<User>(); 
-  menudata$: Observable<MenuItem[]> = this.store$.pipe(select(getMenuData)); 
-  constructor(private _aut:AuthService,private _caSer: NavbarService ,
-    private store$: Store ) { }
+  //menudata$: Observable<MenuItem[]>
+  constructor(private store$: Store,private _aut:AuthService,private _caSer: NavbarService) { }
   ngOnInit() {
     //var gg ;
-     if(this._aut.getrole()!=undefined){//na='User' 
-     // console.log('11')
-    // console.log(this._aut.getrole())
+   // console.log(this._aut.getrole())
+     if(this._aut.getrole()!=undefined){    
       this.store$.dispatch(new actions.initMenu(this._aut.getrole())); 
-    //  this.menudata$.subscribe( f => {
-     
-    //    console.log(f) ;
-      // console.log('111') ;
-    // });
-    //  //console.log(gg) ;     
-      
-
-    // this._caSer._allmenu(this._aut.getrole()).subscribe( p=>{
-    //    this._menu=p;        
-    //    this._childmenu=this._menu.filter(g=>!g.nisparent && g.pid!=null);                 
-    //  });
+      // this.menudata$.subscribe(p=>{
+      //   if(p!=null){
+      //      console.log(p)         
+      //   }    
+      // })
+      this.store$.select(getMenuData).subscribe(k=>{ 
+        this._menu=k; //console.log(k) 
+        this._childmenu=this._menu.filter(g=>!g.nisparent && g.pid!=null);
+        //console.log('111') ;
+      })
+      // this._caSer._allmenu(this._aut.getrole()).subscribe( p=>{
+      // this._menu=p;        
+      // this._childmenu=this._menu.filter(g=>!g.nisparent && g.pid!=null);                 
+      // });
      this._photoUrl=environment.apiUrl.replace('/api/','/')+this.user.photoUrl;
     }         
   }
   onLogout() {  this.logout.emit(this.user); }
 }
-

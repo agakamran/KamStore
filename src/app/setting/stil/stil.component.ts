@@ -35,7 +35,7 @@ export class StilComponent implements OnInit {
         { 
            this.liststil=list; 
            this.filteredstil = this.liststil; 
-           console.log(this.liststil)                        
+         //  console.log(this.liststil)                        
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
 

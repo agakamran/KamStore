@@ -36,7 +36,7 @@ export class QoltipiComponent implements OnInit {
         { 
            this.listqol=list; 
            this.filteredqol = this.listqol; 
-         //  console.log(this.listqol)                        
+          // console.log(this.listqol)                        
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
 get qoltipiname() { return this.qolForm.get('qoltipiname'); }

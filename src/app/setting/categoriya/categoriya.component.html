@@ -73,8 +73,8 @@
           <table class="table table-bordered table-responsive-md table-striped text-center"  *ngIf='listcat && listcat.length'>
             <thead>
               <tr>                
-               <!-- <th class="text-center">Navid</th>-->
-                <th class="text-center">Categoriy Id</th> 
+               <!-- <th class="text-center">Navid</th>
+                <th class="text-center">Categoriy Id</th> -->
                 <th class="text-center">Parent Categoriy</th> 
                 <th class="text-center">Categoriy name</th>  
                 <th class="text-center">Gender name</th>  
@@ -85,8 +85,8 @@
             </thead>
             <tbody *ngFor='let p of filteredcat'>
               <tr>
-               <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->
-                <td class="pt-3-half" contenteditable="true">{{ p.catId }}</td>
+               <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.catId }}</td>-->
                 <td class="pt-3-half" contenteditable="true">{{ p.parid }}</td>
                 <td class="pt-3-half" contenteditable="true">{{ p.catname }}</td>
                 <td class="pt-3-half" contenteditable="true">{{ p.genname }}</td>

@@ -35,7 +35,7 @@ export class MateralComponent implements OnInit {
         { 
            this.listmat=list; 
            this.filteredmat = this.listmat; 
-           console.log(this.listmat)                        
+          // console.log(this.listmat)                        
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
 

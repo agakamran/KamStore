@@ -6,6 +6,8 @@ import { getUser, getIsLoggedIn, getIsLoading, getIsAdmin } from './auth/store/a
 
 import * as fromAuth from './auth/store/auth.actions';
 import { User } from './models/_users';
+import { MenuItem } from './models/_menu';
+import { getMenuData } from './core/store/menus.selectors';
 //import { StorageService } from './helpers/storage.service';
 
 @Component({
@@ -19,15 +21,15 @@ export class AppComponent implements OnInit {
   isLoggedIn$: Observable<boolean>;
   isLoading$: Observable<boolean>;
   isAdmin$: Observable<boolean>;
-
+  menudata$: Observable<MenuItem[]> 
   constructor(private store: Store<AppState>) {}
 
-  ngOnInit() {
-   
+  ngOnInit() {   
     this.user$ = this.store.select(getUser);    
     this.isLoggedIn$ = this.store.select(getIsLoggedIn);
     this.isLoading$ = this.store.select(getIsLoading);    
     this.isAdmin$ = this.store.select(getIsAdmin);
+    this.menudata$ = this.store.select(getMenuData); 
     /* this.user$.subscribe(p=>{
        if(p!=null){
           console.log(p!.uid)
@@ -35,6 +37,11 @@ export class AppComponent implements OnInit {
        }
      
      })*/
+    //  this.menudata$.subscribe(p=>{
+    //   if(p!=null){
+    //      console.log(p)         
+    //   }    
+    // })
     //console.log(this.st.getToken())
     //console.log(this.st.getrole())
   }

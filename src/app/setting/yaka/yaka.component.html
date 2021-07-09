@@ -63,8 +63,8 @@
           <table class="table table-bordered table-responsive-md table-striped text-center"  *ngIf='listyak && listyak.length'>
             <thead>
               <tr>                
-               <!-- <th class="text-center">Navid</th>-->
-                <th class="text-center">yaka Id</th> 
+               <!-- <th class="text-center">Navid</th>
+                <th class="text-center">yaka Id</th> -->
                 <th class="text-center">yaka name</th>  
                 <th class="text-center">Gender name</th>  
                       
@@ -74,10 +74,10 @@
             </thead>
             <tbody *ngFor='let p of filteredyak'>
               <tr>
-               <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>-->
-                <td class="pt-3-half" contenteditable="true">{{ p.yakaId }}</td>
+               <!--   <td class="pt-3-half" contenteditable="true">{{ p.navid }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.yakaId }}</td>-->
                 <td class="pt-3-half" contenteditable="true">{{ p.yakaname }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.genId }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.genname }}</td>
                <!-- <td class="pt-3-half" contenteditable="true">{{ p.firma_telefon}}</td>    
                 <td class="pt-3-half" contenteditable="true">{{ p.firma_unvan}}</td>
                 <td class="pt-3-half" contenteditable="true">{{ p.firma_email}}</td>  

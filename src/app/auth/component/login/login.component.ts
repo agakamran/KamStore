@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
      // console.warn(this.loginForm.value)
       this.store.dispatch(new actions.LoginRequested(this.loginForm.value));
-     
+       
        this.router.navigateByUrl('exem/exem');
     }
   }

@@ -17,14 +17,8 @@ import { NavbarComponent } from './containers/navbar/navbar.component';
 import { MDBmaterialModule } from 'src/app/mdbmaterial/mdbmaterial.module';
 import { SharedModule } from '../manage/shared/shared.module';
 
-
-
 @NgModule({
-  declarations: [AdminsListComponent,AdminComponent,UsersListComponent,
-     UserComponent, UserDetailComponent,RoleListComponent, NavbarComponent
-         // CartListComponent, AddPageComponent, AddvideoComponent
-        ],
-  imports: [
+  imports: [  
     CommonModule,     
     AdminRoutingModule,
     MDBmaterialModule,
@@ -34,8 +28,15 @@ import { SharedModule } from '../manage/shared/shared.module';
     ReactiveFormsModule,
     FormsModule,
     StoreModule.forFeature('admin', fromAdmin.adminReducer),
-   // EffectsModule.forFeature([AdminEffects])
+   // EffectsModule.forFeature([AdminEffects])    
   ],
-  providers:[],schemas: [ NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA ]
+  declarations: [
+    AdminsListComponent,AdminComponent,UsersListComponent,
+    UserComponent, UserDetailComponent,RoleListComponent, NavbarComponent
+        // CartListComponent, AddPageComponent, AddvideoComponent
+  ],
+  exports: [ ],
+  providers:[],schemas: [ NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA ]  
 })
-export class AdminModule { }
+export class AdminModule {  
+}

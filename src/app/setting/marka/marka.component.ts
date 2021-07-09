@@ -35,7 +35,7 @@ export class MarkaComponent implements OnInit {
         { 
            this.listmar=list; 
            this.filteredmar = this.listmar; 
-           console.log(this.listmar)                        
+          // console.log(this.listmar)                        
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
 

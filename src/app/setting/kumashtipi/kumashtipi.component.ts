@@ -35,7 +35,7 @@ export class KumashtipiComponent implements OnInit {
         { 
            this.listkum=list; 
            this.filteredkum = this.listkum; 
-           console.log(this.listkum)                        
+           //console.log(this.listkum)                        
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
 

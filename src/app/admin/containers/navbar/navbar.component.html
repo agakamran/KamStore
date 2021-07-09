@@ -35,8 +35,17 @@
                       <input type="checkbox"  [(ngModel)]="nav.nisparent"   name="nisparent"  class="form-check-input" formControlName="nisparent" mdbInput> 
                    </div>
                   </div>                    
-                 
-                     <div class="row"> 
+                  <div class="row"> 
+                    <div class="col-sm-4">
+                      <label for="formGroupExampleInput">Roles permitted</label>
+                       <!-- <select [(ngModel)]="nav.nrol"  name="_rol" formControlName="nrol" (change)="selrol($event.target.value)"                       
+                            class="browser-default custom-select" >
+                              <option >Choose page</option>                                    
+                        <option *ngFor="let o of _role" [value]="o.name" >{{o.name}}</option>                                 
+                      </select> -->
+                      <label formArrayName="nrol" *ngFor="let order of _role; let i = index" >
+                      <input type="checkbox" [formControlName]="nrol">  {{_role[i].name}}   </label>
+                  </div>
                      <div class="col-sm-4">
                       <div class="form-group" >
                         <label for="formGroupLang">Language Cart</label>
@@ -46,14 +55,7 @@
                         </select>
                       </div>
                     </div> 
-                    <div class="col-sm-4">
-                        <label for="formGroupExampleInput">Roles</label>
-                         <select [(ngModel)]="nav.nrol"  name="_rol" formControlName="nrol" (change)="selrol($event.target.value)"                       
-                              class="browser-default custom-select" >
-                                <option >Choose page</option>                                    
-                          <option *ngFor="let o of _role" [value]="o.name" >{{o.name}}</option>                                 
-                        </select>
-                    </div>
+                   
                     <div class="col-sm-4">
                       <label for="formGroupExampleInput">ParentId</label>
                         <select [(ngModel)]="ppnav" name="_pid" formControlName="npid" (change)="selPage($event.target.value)"
@@ -107,12 +109,12 @@
                 <!--  <th *ngFor="let head of headElements; let i = index" [mdbTableSort]="listnav" [sortBy]="headElements[i]"
                    scope="col">{{head | titlecase}} <mdb-icon fas icon="sort"></mdb-icon>
                  </th> -->
-               <!--  <th class="text-center">Parentid</th> 
+                <th class="text-center">Parentid</th> 
                   <th class="text-center">Title</th>    
                   <th class="text-center">Path</th>    
                   <th class="text-center">Language</th>    
-                  <th class="text-center">Role</th>      
-                  <th class="text-center">Actions</th>-->
+                  <th class="text-center">Role permitted</th>      
+                  <th class="text-center">Actions</th>
                  
                 </tr>
               </thead>

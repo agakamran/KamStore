@@ -26,7 +26,7 @@ export class QelipComponent implements OnInit {
    ngOnInit(): void {
     this.qelForm = new FormGroup({  
      // firma_id: new FormControl('', [Validators.required,Validators.maxLength(36)]),   
-     qelip_name: new FormControl('', [Validators.required,Validators.maxLength(50)]),
+     qelipname: new FormControl('', [Validators.required,Validators.maxLength(50)]),
   
         
     });  
@@ -35,11 +35,11 @@ export class QelipComponent implements OnInit {
         { 
            this.listqel=list; 
            this.filteredqel = this.listqel; 
-           console.log(this.listqel)                        
+          // console.log(this.listqel)                        
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     }
 
-get qelip_name() { return this.qelForm.get('qelip_name'); }
+get qelipname() { return this.qelForm.get('qelipname'); }
 
 langu(lan:any){  this._lan=lan; }
   _addqel() {
@@ -48,8 +48,8 @@ langu(lan:any){  this._lan=lan; }
   }
   _cline(){ 
     this.qelForm = new FormGroup({         
-      qelip_Id: new FormControl(''),
-      qelip_name: new FormControl(''),    
+      qelipId: new FormControl(''),
+      qelipname: new FormControl(''),    
       });     
    }
    _editqel(ca:qelip){ 

@@ -18,19 +18,20 @@ export class MenusEffects {
     private navbarService: NavbarService,
     private store$: Store<AppState>) {}
 
- // menuStorage$ = createEffect(() => this.actions$.pipe(
-   //      ofType<menu.initMenu>(menu.MenusActionTypes.INIT),
-       // withLatestFrom(
-      //  this.store$.pipe(select(getLoaded)),
-      //  this.store$.pipe(select(getLoading))
-  //  ),
-  //   filter(([_, loaded, loading]) => !loaded && loading),
-  //   switchMap(() => this.navbarService._allmenu(payload).pipe(
-  //     map(menudata => menu.MenuSuccess({menudata})),
-  //     catchError(error => of(new menu.MenuError({ error })))      
-   //  ))
- // ));
-
+    // saveAuthDataToLocalStorage$ = createEffect(() => this.actions$.pipe(
+    //   ofType(initMenu),
+    //   withLatestFrom(
+    //     this.store$.pipe(select(getLoaded)),
+    //     this.store$.pipe(select(getLoading))
+    //   ),
+    //   filter(([_, loaded, loading]) => !loaded && loading),
+    //   switchMap(() => this.adminMenuService.getMenu().pipe(
+    //     map(data => initMenuSuccess({data})),
+    //     catchError(error => of(
+    //       initMenuFailed({serverError: error.serverError})
+    //     ))
+    //   ))
+    // ));
   @Effect()
   menuAction$ = this.actions$.pipe(
     ofType<menu.initMenu>(menu.MenusActionTypes.INIT),
@@ -43,7 +44,7 @@ export class MenusEffects {
     
     switchMap(payload => this.navbarService._allmenu(payload).pipe(
       map((res: any) => {    
-       // console.log(res)
+        //console.log(res)
         return new menu.MenuSuccess( { menudata:res } );
       }),
      // tap(() => this.router.navigateByUrl('')),

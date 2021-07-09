@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -12,8 +12,8 @@ import { MDBmaterialModule } from '../mdbmaterial/mdbmaterial.module';
 import { MaterialModule } from '../material/material.module';
 import { OnitemComponent } from './onitem/onitem.component';
 import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
 import * as fromMenus from './store/Menus.reducer';
+import { EffectsModule } from '@ngrx/effects';
 import { MenusEffects } from './store/menus.effects';
 @NgModule({
   imports: [
@@ -21,8 +21,8 @@ import { MenusEffects } from './store/menus.effects';
     RouterModule,
     MDBmaterialModule,
     MaterialModule,  
-     StoreModule.forFeature('menus', fromMenus.menusReducer),
-     EffectsModule.forFeature([MenusEffects])
+    StoreModule.forFeature('menus', fromMenus.menusReducer),
+    EffectsModule.forFeature([MenusEffects])    
   ],
   declarations: [
     HeaderComponent,
@@ -41,6 +41,7 @@ import { MenusEffects } from './store/menus.effects';
     WelcomeComponent,
     MainComponent,
     HomeComponent,
-  ]
+  ],
+  providers:[],schemas: [ NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class CoreModule {}
