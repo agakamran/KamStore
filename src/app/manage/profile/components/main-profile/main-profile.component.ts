@@ -30,7 +30,7 @@ export class MainProfileComponent implements OnInit {
       storpercent: new FormControl(this.user.storpercent),
       isEmailConfirmed: new FormControl(this.user.isEmailConfirmed)      
     });  
-   console.log(this.user.storpercent)
+ //  console.log(this.user.storpercent)
     this._photoUrl=this.user.photoUrl;
     this._phoneNumber=this.user.phoneNumber;  
     this._storpercent=this.user.storpercent;  

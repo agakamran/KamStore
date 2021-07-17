@@ -28,8 +28,8 @@ export class NavbarService {
       }
     )); 
   } 
-  _getrole (): Observable<IRole[]> {    
-    return this.http.get<IRole[]>(this.pathAPI+ '_getRoles' )
+  _getrole (_Id:any): Observable<IRole[]> {    //'GetCart?id='+pra
+    return this.http.get<IRole[]>(this.pathAPI+ '_getRoles?use='+_Id )
     .pipe( catchError((err) => {  console.error(err);  throw err; }  ))
     
    }
@@ -75,6 +75,17 @@ export class NavbarService {
     .pipe( catchError((err) => {  console.error(err);  throw err; }))
   } 
   //---------------------------------------------
+  _allnrol(rol:string): Observable<any>{  
+    return this.http.get<any>(this.pathAPI +'_getnrol?rol='+rol)
+   .pipe(map((data)=>{
+     return data;
+   }),
+     catchError((err) => {
+       console.error(err);
+       throw err;
+     }
+   )); 
+ } 
   _allnavrol(): Observable<any>{  
      return this.http.get<any>(this.pathAPI +'_getnavrol')
     .pipe(map((data)=>{
@@ -101,10 +112,13 @@ export class NavbarService {
          }
        ))
   }  
-  _delnavrol(bo:NavbarRole) {   
+  _delnavrol(bo:string,neyi:string) {   
    // const bod:MenuItem= { pid: id,pagename:'' }
     //console.log(id)
-     return this.http.post(this.pathAPI + '_delnavrol',bo )
+    var yol="";
+    if(neyi==="rol"){yol='_delnrol?nr='+bo;}
+    else{yol='_delnavrol?nr='+bo;}
+     return this.http.get(this.pathAPI + yol )
     .pipe( catchError((err) => {  console.error(err);  throw err; }))
   } 
 }

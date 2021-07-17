@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
-import { MenuItem } from 'src/app/models/_menu';
+import { Component, OnInit} from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MenuItem, NavbarRole } from 'src/app/models/_menu';
 import { NotificationService } from 'src/app/helpers/notification.service';
 import { NavbarService } from 'src/app/services/navbar.service';
 import { Lang } from 'src/app/models/_carts';
@@ -8,6 +8,9 @@ import { IRole } from 'src/app/models/_role';
 //import { AuthService } from 'src/app/services/auth.service';
 import { Store } from '@ngrx/store';
 import { getMenuData } from 'src/app/core/store/menus.selectors';
+import { AppState } from 'src/app/reducers';
+import { getId } from 'src/app/auth/store/auth.selectors';
+
 
 
 
@@ -24,23 +27,16 @@ export class NavbarComponent implements OnInit {
   jsonlistnav:MenuItem[] = [];
   filterednav: MenuItem[];
   nav:MenuItem=new MenuItem();; 
+  _Id="";
   _page: any[]; _pid:'';  ppnav:any=''
   _role:IRole[]; _rol:any; 
-
-  get ordersFormArray() {
-    return this.navForm.controls.orders as FormArray;
-  }
-  constructor(private store$: Store,//private _auth: AuthService,
-     private _caSer: NavbarService,
-     private notificationService: NotificationService,private formBuilder: FormBuilder) {
-      this.navForm = this.formBuilder.group({
-        orders: new FormArray([])
-      });
-      this.addCheckboxes();
+  
+  constructor(private store$: Store, private _caSer: NavbarService,//private _auth: AuthService,
+     private noti: NotificationService,private store: Store<AppState>//,private fb: FormBuilder
+     ) {  
+     
    }
-   private addCheckboxes() {
-    this._role.forEach(() => this.ordersFormArray.push(new FormControl(false)));
-  }
+  
    ngOnInit(): void {
     this.navForm = new FormGroup({  
      // navid: new FormControl('', [Validators.required,Validators.maxLength(36)]),   
@@ -51,19 +47,23 @@ export class NavbarComponent implements OnInit {
       nrol: new FormControl('', [Validators.required,Validators.maxLength(50)]),
       nisparent: new FormControl(false),
       ncsay: new FormControl(1),
-
       nlan: new FormControl('', [Validators.required,Validators.maxLength(2)])
     });  
      // this._caSer._getmenu().subscribe( p=>{ this._page=p;//console.log(p)
      // });  
-      this._caSer._getrole().subscribe(list=>
-        { 
-              this._role=list;                          
+     this.store.select(getId).subscribe(k=>{   this._Id=k;   })
+      this._caSer._getrole(this._Id).subscribe(list=> { 
+              this._role=list;  
+              for (var i = 0; i < this._role.length; i++) {   this._role[i].isChecked=false;      }
+              // console.log(this._role)                        
         }, error => console.error(error + 'Siz sistemə daxil olmalısınız!'));        
-      this._yenile();
-    }
-_yenile()
-{
+      this._yenile();      
+      }
+      get selectedCheckboxList() {
+        return this._role.filter(item => item.isChecked);
+      }
+   _yenile()
+   {
 
  // let rol=this._auth.getrole();
  // this._caSer._allmenu(rol).subscribe( p=>{  
@@ -78,13 +78,44 @@ _yenile()
         // console.log(this.listnav.length)
         //  this.addmenu();     
       })
-    }
-   
+    }   
    // console.log(this._page)
     });  
- }
+   }
+ //--------------
+ checkedEvnt(val) {   for(let i =0;i < this._role.length;i++) { this._role[i].isChecked = val;  }   }
+ //-------------------------------------------------------------------------------
+  onChangeRole(userRole:any, val) {
+    if(val){  
+        for (var i = 0; i < this._role.length; i++) { 
+           if(this._role[i].name===userRole){
+            this._role[i].isChecked=true;                    
+          }
+        }
+      }
+    else{
+      for (var i = 0; i < this._role.length; i++) { 
+        if(this._role[i].name===userRole){
+         this._role[i].isChecked=false;                    
+       }
+      }           
+     }      
+      this._caSer._delnavrol(this.nav.nid,'').subscribe();        
+       for (var i = 0; i < this._role.length; i++) {
+        
+        if(this._role[i].isChecked==true){
+          var nrs=new NavbarRole();
+          nrs.nrid="";
+          nrs.RoleId=this._role[i].id;
+          nrs.nid=this.nav.nid;
+         this._caSer._addnavrol(nrs).subscribe();;
+         }         
+       } 
+      // console.log(this._role)
+   // console.log(this.checkboxlist);
+  }
  
-
+ //--------------
 
 langu(lan:any){  this._lan=lan; }
 selPage(sel:any){ this._pid=sel;}
@@ -100,6 +131,7 @@ selrol(sel:any){ this._rol=sel;}
     this.nav.nrol='';
     this.nav.ncsay=1;
     this.nav.nisparent=false;
+    for (var i = 0; i < this._role.length; i++) { this._role[i].isChecked=false;    } 
   }
   _cline(){ 
     this.navForm = new FormGroup({  
@@ -125,56 +157,59 @@ selrol(sel:any){ this._rol=sel;}
        this.nav.pid=ca.pid;
        this.nav.nlan=ca.nlan; 
        this.nav.ntitle=ca.ntitle;
-       this.nav.npath=ca.npath;
-       this.nav.nrol=ca.nrol;
+       this.nav.npath=ca.npath;      
        this.nav.nisparent=ca.nisparent;
-       this.nav.ncsay=ca.ncsay;
-       console.log(ca.nrol)  
+       this.nav.ncsay=ca.ncsay; 
+       this.nav.nrol=ca.nrol;
+       console.log(this._role)  
+       for (var i = 0; i < this._role.length; i++) { this._role[i].isChecked=false;    } 
+       for (var i = 0; i < this._role.length; i++) {         
+          this._role[i].isChecked=false;
+              if(this._role[i].name===ca.name){
+               this._role[i].isChecked=true;            
+        }
+       }
+       console.log(this._role)     
      }
- onadd()
+  onadd()
   { 
     if(this.navForm.valid)  
     {
-       console.log(this._page.find(x=>x.npid==this._pid ))
+      // console.log(this._page.find(x=>x.npid==this._pid ))
       // console.log(this.navForm.value.npid)
-       console.log(this._rol)
-       console.log(this._pid)     
+      //  console.log(this._rol)
+       console.log(this.navForm.value)     
       var kn;
       if(this.navForm.value.npid===undefined){kn=''}
       else{
         var gg=this._page.find(x=>x.ntitle==this.navForm.value.npid)
-        if(gg!=null){kn=gg!.nid;}
-        
-      // console.log('111')
-       //console.log(kn)
+        if(gg!=null){kn=gg!.nid;}        
       }
-      // let rr=this._role.find(x=>x.name===this._rol)?.id;
-      // if(rr===this.navForm.value.nrol){ rr=this.navForm.value.nrol; }
-     
-     // let pp=this._page.find(x=>x.ntitle==this._pid)!.nid;
-    //  if(pp===this.navForm.value.npath){ pp=this.navForm.value.npath; }
+       
        var p={
         nid:this.nav.nid,
         pid:kn,
         ntitle:this.navForm.value.ntitle,
         npath:this.navForm.value.npath,
         nlan:this.navForm.value.nlan,
-        nrol:this.navForm.value.nrol,
+        nrol:(this.navForm.value.nrol).toString(),
         nisparent:this.navForm.value.nisparent,
         ncsay:this.navForm.value.ncsay,
-        nicon:this.navForm.value.nicon}
-       //console.log(p)
-       this._caSer._posmenu(p).subscribe();  
+        nicon:this.navForm.value.nicon }
+       console.log(p)
+       this._caSer._posmenu(p).subscribe(); 
+      // console.log(this._role) 
+      
        this._yenile(); 
        this._addnav(); 
        this._cline();   
-       this.notificationService.success('::Submitted successfully');                
+       this.noti.success('::Submitted successfully');                
                      
     }   
   } 
   ondel()
   {
-        this.notificationService.warn('!Deleted successfully');     
+        this.noti.warn('!Deleted successfully');     
         this._caSer._delmenu(this.nav).subscribe();  
         this._yenile();
   } 

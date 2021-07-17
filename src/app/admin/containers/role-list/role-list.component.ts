@@ -6,6 +6,9 @@ import { RolesService } from 'src/app/services/roles.service';
 import { AppState } from 'src/app/reducers';
 import { Store } from '@ngrx/store';
 import { getIsAdmin } from 'src/app/auth/store/auth.selectors';
+import { getMenuData } from 'src/app/core/store/menus.selectors';
+import { NavbarRole, NavRole } from 'src/app/models/_menu';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 
 @Component({
@@ -15,10 +18,8 @@ import { getIsAdmin } from 'src/app/auth/store/auth.selectors';
 })
 export class RoleListComponent implements OnInit {
 
-  constructor(public _kamService: RolesService, public store: Store<AppState>,
-  private notificationService: NotificationService,
-  
-  ) {  }  
+  constructor(private store$: Store,public _kamService: RolesService, public store: Store<AppState>,
+    private _caSer: NavbarService,private noti: NotificationService ) {  }  
   //----------------------  
   id:string='';name:string;
   editform:FormGroup;
@@ -26,7 +27,11 @@ export class RoleListComponent implements OnInit {
   ToAdd: string[]=[];
   usrol:IRoleEdit= new IRoleEdit();
   //---------------------
+   narol:NavRole[]=[];
+   //listnav:MenuItem[]=[];
+  //-------------------------
   addform: FormGroup; 
+  
   listrole:IRole[] = []; 
   filteredrole: IRole[];
   _listFilter: any;  
@@ -44,7 +49,10 @@ export class RoleListComponent implements OnInit {
   this.addform = new FormGroup({  id:new FormControl(''), name: new FormControl('',[Validators.required])});
   this.editform= new FormGroup({  RoleId:new FormControl(null), RoleName:new FormControl('',Validators.required),
                                   IdsToAdd:new FormControl([]), IdsToDelete:new FormControl([]) });   
-   //------------------------------------------------------  
+   //--------------------------------------------------------------------------------------------- 
+   this._caSer._allnrol("Op").subscribe(list => { 
+    this.narol = list;           
+} , error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
     this.store.select(getIsAdmin).subscribe(k=>{
       if(k) 
       {// console.log(k)
@@ -55,8 +63,7 @@ export class RoleListComponent implements OnInit {
          }, error => console.error(error + 'Siz sistemə daxil olmalısınız!'));                   
       }
      // else{}
-    })   
-     
+    })      
   } 
     //-----------------yeni-----------------------------
     _ToAdd(ToAd:any){
@@ -93,13 +100,13 @@ export class RoleListComponent implements OnInit {
         {
             // console.log('geldi')
               this._kamService._CreateRole(this.addform.value)       
-              this.notificationService.success('::Submitted successfully');    
+              this.noti.success('::Submitted successfully');    
               this.addform.reset();        
         }   
     }  
     ondel()
     {
-          this.notificationService.warn('!Deleted successfully');     
+          this.noti.warn('!Deleted successfully');     
           this._kamService._delRol(this.id).subscribe();  
     }
     _delrole(_id:any) {              
@@ -109,4 +116,72 @@ export class RoleListComponent implements OnInit {
           this.name=_id.name;  
         }         
     } 
+    //---------Edit Permishin---------------------
+    _editnav(_id:any)
+    {
+      //console.log('SS')
+      for (var i = 0; i < this.narol.length; i++) {  this.narol[i].isChecked=false;  }
+      //console.log(this.narol)
+      if(_id.id!='') 
+      {
+        this.id=_id.id;
+        this.name=_id.name;       
+        for (var i = 0; i < this.narol.length; i++) { 
+          if(this.narol[i].name==this.name){
+             this.narol[i].isChecked=true;            
+          }
+            
+          }
+       // console.log(this.id) 
+      }      
+    } 
+    //--------------
+    checkedEvnt(val) {   for(let i =0;i < this.narol.length;i++) { this.narol[i].isChecked = val;  }   }
+ //-------------------------------------------------------------------------------
+  onChangeRole(userRole:any, val) {
+    //console.log(userRole)
+    if(val){  
+        for (var i = 0; i < this.narol.length; i++) { 
+           if(this.narol[i].nid===userRole){
+            this.narol[i].isChecked=true;                    
+          }
+        }
+      }
+    else{
+      for (var i = 0; i < this.narol.length; i++) { 
+        if(this.narol[i].nid===userRole){
+         this.narol[i].isChecked=false;                    
+       }
+      }           
+     }      
+     this._caSer._delnavrol(this.id,'rol').subscribe();        
+     for (var i = 0; i < this.narol.length; i++) {
+      
+      if(this.narol[i].isChecked==true){
+        var nrs=new NavbarRole();
+        nrs.nrid="";
+        nrs.RoleId=this.narol[i].roleId;
+        nrs.nid=this.narol[i].nid;
+       this._caSer._addnavrol(nrs).subscribe();;
+       }         
+     } 
+  } 
+  // onpermitedit()
+  //   {
+  //     console.log(this.narol)
+  //    this._caSer._delnavrol(this.id,'rol').subscribe();        
+  //      for (var i = 0; i < this.narol.length; i++) {
+        
+  //       if(this.narol[i].isChecked==true){
+  //        // console.log('Geldi')
+  //         var nrs=new NavbarRole();
+  //         nrs.nrid="";
+  //         nrs.RoleId=this.narol[i].roleId;
+  //         nrs.nid=this.narol[i].nid;
+  //        this._caSer._addnavrol(nrs).subscribe();;
+  //        }         
+  //      } 
+  //     //console.log(this.narol)
+  //   }
+ //-------------- 
 }

@@ -1,6 +1,7 @@
 export class IRole {  
     id: string;    
-    name: string;       
+    name: string;
+    isChecked:boolean ;       
 }
 export class IRoleEdit { 
     Role: string;

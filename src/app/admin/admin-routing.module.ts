@@ -4,6 +4,7 @@ import { AdminsListComponent } from './containers/admins-list/admins-list.compon
 import { AdminComponent } from './containers/admin/admin.component';
 import { RoleListComponent } from './containers/role-list/role-list.component';
 import { NavbarComponent } from './containers/navbar/navbar.component';
+import { PermittedComponent } from './containers/permitted/permitted.component';
 // import { CartListComponent } from './containers/cart-list/cart-list.component';
 // import { AddPageComponent } from './containers/add-page/add-page.component';
 // import { AddvideoComponent } from './containers/addvideo/addvideo.component';
@@ -22,16 +23,15 @@ const routes: Routes = [
            { path: 'role',       component: RoleListComponent},    
            { path: 'addmen' ,    component: NavbarComponent }, 
            { path: 'admin' ,    component: AdminComponent },        
-          // { path: 'cartlar' ,   component: CartListComponent },
+           { path: 'permitted' ,   component: PermittedComponent },
           // { path: 'addpage' ,   component: AddPageComponent },
-          // { path: 'addvideo' ,  component: AddvideoComponent },
-          
-         // { path: 'menurole' ,  component: NavroleComponent },
-         // { path: 'settings' ,  component: SettingsComponent },
+          // { path: 'addvideo' ,  component: AddvideoComponent },          
+          // { path: 'menurole' ,  component: NavroleComponent },
+          // { path: 'settings' ,  component: SettingsComponent },
           //{ path: 'settings/gender' ,  component: GenderComponent },
-        //{ path: 'LoginWith2fa/:id' ,  component: LoginWith2faComponent },
-        //{ path: 'LoginWithRecovery' ,  component: LoginWithRecoveryCodeComponent }         
-        //ConfirmEmail?userId=d1c80c0a-f231-4a8e-8761-125c4e676d7f&code=
+          //{ path: 'LoginWith2fa/:id' ,  component: LoginWith2faComponent },
+          //{ path: 'LoginWithRecovery' ,  component: LoginWithRecoveryCodeComponent }         
+          //ConfirmEmail?userId=d1c80c0a-f231-4a8e-8761-125c4e676d7f&code=
         ]
       }
     ]

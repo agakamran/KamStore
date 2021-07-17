@@ -35,7 +35,7 @@ _getrole (): Observable<IRole[]> {
  }
  _CreateRole(XX:IRole): Promise<any>
  {
-    const bod:IRole= { id: XX.id, name:XX.name    }        
+    const bod:any= { id: XX.id, name:XX.name    }        
       return this.http.post( this.pathAPI + '_CreateRole', bod).toPromise() 
       .then(response => {
           let result = response as RequestResult;              
@@ -43,7 +43,7 @@ _getrole (): Observable<IRole[]> {
       }).catch( catchError((err) => {  console.error(err);  throw err;}));    
   }
   _delRol(id:string) {   
-    const bod:IRole= { id: id, name:'' }
+    const bod:any= { id: id, name:'' }
     //console.log(id)
      return this.http.post(this.pathAPI + '_DeleteRole',bod )
     .pipe( catchError((err) => {  console.error(err);  throw err; }))

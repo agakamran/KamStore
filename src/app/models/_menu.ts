@@ -10,6 +10,7 @@ export class MenuItem {
     ink?:string;
     nisparent?:boolean;
     name?:string;
+    
 }
 
 export class NavbarRole {
@@ -17,7 +18,13 @@ export class NavbarRole {
     nid:string;   
     RoleId: string;    
 }
-
+export class NavRole {
+    nid:string;
+    roleId:string;
+    name:string;
+    ntitle:string;
+    isChecked?:boolean =false;
+}
 export interface IMenujson {
     NavId: string;
     navtext: string;

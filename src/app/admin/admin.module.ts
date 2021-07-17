@@ -16,9 +16,12 @@ import { NavbarComponent } from './containers/navbar/navbar.component';
 
 import { MDBmaterialModule } from 'src/app/mdbmaterial/mdbmaterial.module';
 import { SharedModule } from '../manage/shared/shared.module';
+import { PermittedComponent } from './containers/permitted/permitted.component';
+//import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
-  imports: [  
+  imports: [
+   // NgMultiSelectDropDownModule,  
     CommonModule,     
     AdminRoutingModule,
     MDBmaterialModule,
@@ -32,7 +35,7 @@ import { SharedModule } from '../manage/shared/shared.module';
   ],
   declarations: [
     AdminsListComponent,AdminComponent,UsersListComponent,
-    UserComponent, UserDetailComponent,RoleListComponent, NavbarComponent
+    UserComponent, UserDetailComponent,RoleListComponent, NavbarComponent, PermittedComponent
         // CartListComponent, AddPageComponent, AddvideoComponent
   ],
   exports: [ ],

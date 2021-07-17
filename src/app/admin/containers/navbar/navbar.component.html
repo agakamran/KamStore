@@ -1,5 +1,5 @@
 <div class="card">
-    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Add / Edit / Delete Menu</h3>
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Add/Edit/Delete Menu</h3>
     <div class="card-body">
       <div id="table" class="table-editable">
         
@@ -36,17 +36,24 @@
                    </div>
                   </div>                    
                   <div class="row"> 
-                    <div class="col-sm-4">
+                    <div class="col-sm-5">
                       <label for="formGroupExampleInput">Roles permitted</label>
-                       <!-- <select [(ngModel)]="nav.nrol"  name="_rol" formControlName="nrol" (change)="selrol($event.target.value)"                       
+                     <!-- <select [(ngModel)]="nav.nrol"  name="_rol" formControlName="nrol" (change)="selrol($event.target.value)"                       
                             class="browser-default custom-select" >
                               <option >Choose page</option>                                    
                         <option *ngFor="let o of _role" [value]="o.name" >{{o.name}}</option>                                 
                       </select> -->
-                      <label formArrayName="nrol" *ngFor="let order of _role; let i = index" >
-                      <input type="checkbox" [formControlName]="nrol">  {{_role[i].name}}   </label>
+                      <ul class="list-group">
+                        <li class="list-group-item"><input type="checkbox" (click)="checkedEvnt($event.target.checked)"  name="unal"/>Check All</li>
+                        <li class="list-group-item" *ngFor="let item of _role; let i=index">
+                          <input type="checkbox"  [checked]="item.isChecked"  (change)="onChangeRole(item.name, $event.target.checked)" formControlName="nrol" >
+                            {{item.name}} <!--[(ngModel)]="item.isChecked"  [checked]="item.isChecked" [ngModelOptions]="{standalone: true}"-->
+                        </li>
+                      </ul>
+                    <!--  <input [(ngModel)]="role.checked" [ngModelOptions]="{standalone: true}" type="checkbox" (change)="validateUserRole(role, $event,role.roleName)"> 
+                       <pre>{{this.selectedCheckboxList | json}}</pre>                -->
                   </div>
-                     <div class="col-sm-4">
+                     <div class="col-sm-3">
                       <div class="form-group" >
                         <label for="formGroupLang">Language Cart</label>
                         <select [(ngModel)]="nav.nlan" name="_lan"  formControlName="nlan" (change)="langu($event.target.value)" class="browser-default custom-select">
@@ -124,7 +131,7 @@
                   <td class="pt-3-half" contenteditable="true">{{ p.ntitle }}</td>
                   <td class="pt-3-half" contenteditable="true">{{ p.npath}}</td>    
                   <td class="pt-3-half" contenteditable="true">{{ p.nlan}}</td>
-                  <td class="pt-3-half" contenteditable="true">{{ p.nrol}}</td>  
+                  <td class="pt-3-half" contenteditable="true">{{ p.name}}</td>  
                   <td>
                     <span class="table-remove">
                       <button type="button" (click)="addnav.show()" (click)="_editnav(p)" class="btn btn-info btn-sm my-0">
