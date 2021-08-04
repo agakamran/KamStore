@@ -6,9 +6,9 @@ import { RolesService } from 'src/app/services/roles.service';
 import { AppState } from 'src/app/reducers';
 import { Store } from '@ngrx/store';
 import { getIsAdmin } from 'src/app/auth/store/auth.selectors';
-import { getMenuData } from 'src/app/core/store/menus.selectors';
-import { NavbarRole, NavRole } from 'src/app/models/_menu';
+import { MenuItem, NavbarRole, NavRole } from 'src/app/models/_menu';
 import { NavbarService } from 'src/app/services/navbar.service';
+import { getMenuData } from 'src/app/core/store/menus.selectors';
 
 
 @Component({
@@ -18,7 +18,7 @@ import { NavbarService } from 'src/app/services/navbar.service';
 })
 export class RoleListComponent implements OnInit {
 
-  constructor(private store$: Store,public _kamService: RolesService, public store: Store<AppState>,
+  constructor(public _kamService: RolesService, public store: Store<AppState>,private store$: Store,
     private _caSer: NavbarService,private noti: NotificationService ) {  }  
   //----------------------  
   id:string='';name:string;
@@ -27,8 +27,9 @@ export class RoleListComponent implements OnInit {
   ToAdd: string[]=[];
   usrol:IRoleEdit= new IRoleEdit();
   //---------------------
-   narol:NavRole[]=[];
-   //listnav:MenuItem[]=[];
+   //narol:NavRole[]=[];
+   listnav:MenuItem[]=[];
+   nnrol:MenuItem[]=[];
   //-------------------------
   addform: FormGroup; 
   
@@ -50,9 +51,17 @@ export class RoleListComponent implements OnInit {
   this.editform= new FormGroup({  RoleId:new FormControl(null), RoleName:new FormControl('',Validators.required),
                                   IdsToAdd:new FormControl([]), IdsToDelete:new FormControl([]) });   
    //--------------------------------------------------------------------------------------------- 
-   this._caSer._allnrol("Op").subscribe(list => { 
-    this.narol = list;           
-} , error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
+   this._caSer._getmenu().subscribe(list => { 
+    this.listnav = list;           
+   } , error => console.error(error + 'Siz sistemə daxil olmalısınız!')); 
+  
+  // this.store$.select(getMenuData).subscribe(p=>{
+  //   this.listnav=p
+  //   // console.log('112')
+  //    //console.log(this.listnav)
+  // //  for (var i = 0; i < this.listnav.length; i++)  {this.listnav[i].isChecked=false }
+  //   console.log(this.listnav)
+  // })
     this.store.select(getIsAdmin).subscribe(k=>{
       if(k) 
       {// console.log(k)
@@ -119,69 +128,58 @@ export class RoleListComponent implements OnInit {
     //---------Edit Permishin---------------------
     _editnav(_id:any)
     {
-      //console.log('SS')
-      for (var i = 0; i < this.narol.length; i++) {  this.narol[i].isChecked=false;  }
-      //console.log(this.narol)
-      if(_id.id!='') 
-      {
-        this.id=_id.id;
-        this.name=_id.name;       
-        for (var i = 0; i < this.narol.length; i++) { 
-          if(this.narol[i].name==this.name){
-             this.narol[i].isChecked=true;            
-          }
-            
-          }
-       // console.log(this.id) 
-      }      
+      this.id=_id.id;
+      this.name=_id.name; 
+      for (var i = 0; i < this.listnav.length; i++)  {this.listnav[i].isChecked=false }
+      this._caSer._allnrol(_id.name).subscribe(list=>
+      { 
+           this. nnrol=list;  
+           //console.log(this.nnrol)    
+           for (var j = 0; j < this.nnrol.length; j++) 
+           {
+            //  console.log(this.nnrol) 
+            //  console.log(this.nnrol[j].nid)
+            //  console.log(this.listnav) 
+              for (var i = 0; i < this.listnav.length; i++) 
+              { 
+                //console.log(this.listnav[i].nid +'='+this.nnrol[j].nid +'='+ this.listnav[i].id 
+              //  +'='+ this.nnrol[j].id)
+
+               if(this.listnav[i].nid===this.nnrol[j].nid //&& this.listnav[i].id===this.nnrol[j].id
+                )
+                {
+                  //console.log(this.listnav[i].isChecked)
+                  this.listnav[i].isChecked=true;
+                 // console.log(i)  
+                 // console.log(this.listnav)         
+                } 
+              } 
+            }
+           
+      }, error => console.error(error + 'Siz ')); 
+     // console.log(this.listnav)
+     //  console.log('SS')
+    
     } 
-    //--------------
-    checkedEvnt(val) {   for(let i =0;i < this.narol.length;i++) { this.narol[i].isChecked = val;  }   }
- //-------------------------------------------------------------------------------
-  onChangeRole(userRole:any, val) {
-    //console.log(userRole)
-    if(val){  
-        for (var i = 0; i < this.narol.length; i++) { 
-           if(this.narol[i].nid===userRole){
-            this.narol[i].isChecked=true;                    
+  //------------------------------------------------------------
+    checkedEvnt(val) {   for(let i =0;i < this.listnav.length;i++) { this.listnav[i].isChecked = val;  }   }
+  //-------------------------------------------------------------------------------
+  onChangeRole(nid:any, val){
+    if(val){ 
+            var nrs=new NavbarRole();
+            nrs.nrid="";
+            nrs.RoleId=this.id;
+            nrs.nid=nid;
+            this._caSer._addnavrol(nrs).subscribe(); 
           }
-        }
-      }
-    else{
-      for (var i = 0; i < this.narol.length; i++) { 
-        if(this.narol[i].nid===userRole){
-         this.narol[i].isChecked=false;                    
-       }
-      }           
-     }      
-     this._caSer._delnavrol(this.id,'rol').subscribe();        
-     for (var i = 0; i < this.narol.length; i++) {
-      
-      if(this.narol[i].isChecked==true){
-        var nrs=new NavbarRole();
-        nrs.nrid="";
-        nrs.RoleId=this.narol[i].roleId;
-        nrs.nid=this.narol[i].nid;
-       this._caSer._addnavrol(nrs).subscribe();;
-       }         
-     } 
-  } 
-  // onpermitedit()
-  //   {
-  //     console.log(this.narol)
-  //    this._caSer._delnavrol(this.id,'rol').subscribe();        
-  //      for (var i = 0; i < this.narol.length; i++) {
-        
-  //       if(this.narol[i].isChecked==true){
-  //        // console.log('Geldi')
-  //         var nrs=new NavbarRole();
-  //         nrs.nrid="";
-  //         nrs.RoleId=this.narol[i].roleId;
-  //         nrs.nid=this.narol[i].nid;
-  //        this._caSer._addnavrol(nrs).subscribe();;
-  //        }         
-  //      } 
-  //     //console.log(this.narol)
-  //   }
+      else{
+           var nrs=new NavbarRole();
+            nrs.nrid="";
+            nrs.RoleId=this.id;
+            nrs.nid=nid;
+            this._caSer._delnavrol(nrs).subscribe();                   
+       } 
+      } 
+ 
  //-------------- 
 }

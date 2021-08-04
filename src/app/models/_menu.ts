@@ -10,7 +10,8 @@ export class MenuItem {
     ink?:string;
     nisparent?:boolean;
     name?:string;
-    
+    isChecked?:boolean ;
+    id?:string;
 }
 
 export class NavbarRole {

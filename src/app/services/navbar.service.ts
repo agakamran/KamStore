@@ -39,11 +39,10 @@ export class NavbarService {
   
   _allmenu(pra:any): Observable<any>{  
     
-    const body=JSON.stringify(pra);
-    //console.log('kkk')
-    //console.log(body)
-   // console.log(body.toString())   
-    return this.http.post<any>(this.pathAPI +'_getnavbar',body)
+   // const body=JSON.stringify(pra);
+   // console.log(pra)
+    
+    return this.http.post<any>(this.pathAPI +'_getnavbar',[pra])
     .pipe(map((data)=>{
       return data;
     }),
@@ -112,13 +111,13 @@ export class NavbarService {
          }
        ))
   }  
-  _delnavrol(bo:string,neyi:string) {   
+  _delnavrol(bo:any) {   
    // const bod:MenuItem= { pid: id,pagename:'' }
     //console.log(id)
-    var yol="";
-    if(neyi==="rol"){yol='_delnrol?nr='+bo;}
-    else{yol='_delnavrol?nr='+bo;}
-     return this.http.get(this.pathAPI + yol )
+    // var yol="";
+    // if(neyi==="rol"){yol='_delnrol?nr='+bo;}
+    // else{yol='_delnavrol?nr='+bo;}
+     return this.http.post(this.pathAPI + '_delnavrol',bo )
     .pipe( catchError((err) => {  console.error(err);  throw err; }))
   } 
 }

@@ -67,9 +67,9 @@
             <form  class="normal-form" >
             <div class="modal-body">          
               <div class="form-outline">
-                <input type="checkbox" (click)="checkedEvnt($event.target.checked)"  name="unal"/>Check All
+                <!-- <input type="checkbox" (click)="checkedEvnt($event.target.checked)"  name="unal"/>Check All -->
               </div>               
-              <div class="form-check form-check-inline" *ngFor="let item of narol; let i=index">
+              <div class="form-check form-check-inline" *ngFor="let item of listnav; let i=index">
                 <input [checked]="item.isChecked" (change)="onChangeRole(item.nid, $event.target.checked)" class="form-check-input" type="checkbox"/>
                   <label class="form-check-label" for="inlineCheckbox1">{{item.ntitle}}</label>
               </div>               

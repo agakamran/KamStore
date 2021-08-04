@@ -5,8 +5,7 @@ import { MenusState } from './menus.state';
 
 export const MenuState =createFeatureSelector<MenusState>('menus');
 
-export const getMenuData   = createSelector(
-  
+export const getMenuData   = createSelector(  
   MenuState,
   state => state.menudata
 );

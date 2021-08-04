@@ -2,19 +2,17 @@ import { formatDate } from '@angular/common';
 import { Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-//import { MdbTableDirective } from 'angular-bootstrap-md';
 import { forkJoin, Observable } from 'rxjs';
 import { getemail, getId, getpercent} from 'src/app/auth/store/auth.selectors';
-//import { flatMap } from 'rxjs/operators';
 import { NotificationService } from 'src/app/helpers/notification.service';
 import { Lang } from 'src/app/models/_carts';
 import { beden, firma, gender, product, prodphoto, _categoriy, _color, _desen, _marka, _materal, _stil, kullanimAlani, kumashtipi, qelip, qoltipi, yaka } from 'src/app/models/_settings';
-
 import { AppState } from 'src/app/reducers';
 import { SettingsService } from 'src/app/services/settings.service';
-//import { UploadFilesService } from 'src/app/services/upload-files-service.service';
 import { environment } from 'src/environments/environment';
-
+//import { UploadFilesService } from 'src/app/services/upload-files-service.service';
+//import { flatMap } from 'rxjs/operators';
+//import { MdbTableDirective } from 'angular-bootstrap-md';
 @Component({
   selector: 'app-additem',
   templateUrl: './additem.component.html',
@@ -59,7 +57,7 @@ export class AdditemComponent implements OnInit {
   //#endregion
   searchText: string = '';
   previous: string;
-  headElements = ['firmaname','_name','_buy_unitprice','beden','genname','_color','_catname',
+  headElements = ['firmaname','_name','_buy_unitprice','genname','_color','_catname',
 
   // '_delivery','_desenname','_discount','_hidden','_markaname','_materalname','_unitsinstock','_sales_price','_stil_name','kullanim_name',
   // 'kumash_name','qaime_date','qelip_name','qoltipi_name','trEu','yaka_name'
@@ -190,6 +188,7 @@ _ref(){
           this._desen1=des; 
           this._kullan=kul; 
           this._kumash1=kum; 
+         // console.log(bed)
         },
         error=>{console.error(error + 'Siz sistemə daxil olmalısınız!')  }
       ) 
@@ -203,21 +202,23 @@ selgen(sel:any){
 selcate(sel:any){ 
   this._cat=sel; 
   this._yaka=this._qoltipi=this._kumash= this._qelip=this._mater=this._desen=[]; 
-  
+ // console.log(this._beden1)
+ // console.log(this._cate1.find(t=>t.catname===sel &&  t.genId=== this._gender.find(x=>x.genname===this._gen)!.genId))
   this._beden=this._beden1.filter(x=>x.genId===(this._gender.find(x=>x.genname===this._gen)!.genId)&&
-  x.catId===this._cate1.find(t=>t.catname===sel && 
-  t.genId=== this._gender.find(x=>x.genname===this._gen)!.genId)!.parid); 
+  x.catId===this._cate1.find(t=>t.catname===sel &&  t.genId=== this._gender.find(x=>x.genname===this._gen)!.genId)!.parid); 
   //console.log(this._beden)
  // console.warn(this._beden.length);
  this._shomi=false;this._shomi1=false;
   if(this._beden.length>0)
   {
     // _b.disabled =false;
-    this._shomi=true;   
+    this._shomi=true;  
+   // console.log('ZX') 
     // console.warn(this._beden.length);
     if(this._cate1.find(r=>r.catId===this._cate1.find(t=>t.catname===sel && 
       t.genId=== this._gender.find(x=>x.genname===this._gen)!.genId)!.parid)!.catname==='Giyim')
       {    
+       // console.log('AAAA') 
         this._shomi1=true;
          this._yaka=this._yaka1.filter(x=>x.genId===this._gender.find(x=>x.genname===this._gen)!.genId);
          this._qoltipi=this._qoltipi1.filter(x=>x.genId===this._gender.find(x=>x.genname===this._gen)!.genId);
@@ -225,7 +226,7 @@ selcate(sel:any){
          this._qelip=this._qelip1;
          this._mater=this._mater1;
          this._desen=this._desen1;
-        // console.log(this._qelip1)       
+       //  console.log(this._qelip1)       
        // console.warn(this._shomi);
       }      
   }
@@ -312,7 +313,7 @@ selkumas(sel:any){ this._kum=sel;}
       }     
   }     
  async ondel() {
-   console.log(this.item)
+  // console.log(this.item)
    var phot = await this._caSer._getitemsphoto(this.item.proId).toPromise() as prodphoto[] ;
    //shekili silir
    for (let item of phot) {  await this._caSer._delitemsphoto(item).toPromise(); }
@@ -438,7 +439,12 @@ _selectFiles(event:any)
      event.srcElement.percentage = null;
    }
  } 
-
+ colors:string[]=[];
+ onChangeColor(cid:string,val:boolean){
+   if(val){ this.colors.push(cid) }
+   else{this.colors= this.colors.filter(item => item !== cid);}
+ console.log(this.colors)
+ }
  async _uploadFiles() {
 // console.log('33')  
 //console.log(this.itemForm.value.item_delivery)
@@ -479,10 +485,11 @@ _selectFiles(event:any)
   if(this.itemForm.value.markaId!=undefined){
    itemmarkid=this._marka.find(g=>g.markaname===this.itemForm.value.markaId)!.markaId }
    var itemcolid='';
-   if(this.itemForm.value.colId!=undefined)
-   {
-     //console.log(this.itemForm.value.colId)
-    itemcolid= this._color.find(h=>h.colname===this.itemForm.value.colId)!.colId}
+  //  if(this.itemForm.value.colId!=undefined)
+  //  {
+  //    //console.log(this.itemForm.value.colId)
+  //   itemcolid= this._color.find(h=>h.colname===this.itemForm.value.colId)!.colId
+  // }
 
    var itemstilid='';
    if(this.itemForm.value.stilId!=undefined){
@@ -492,22 +499,23 @@ _selectFiles(event:any)
    if(this.itemForm.value.kulalanId!=undefined){
     itemkulid= this._kullan.find(h=>h.kullanimname===this.itemForm.value.kulalanId)!.kulalanId
    }
-   if(_itm===undefined){_itm='';}
-     var p={
-       proId:_itm ,genId:geni,catId:itemcatid,markaId:itemmarkid, bedenId:bed,colId:itemcolid,qelipId:qel, matId:mat,
-      yakaId:yak,qolId:qol, stilId:itemstilid,desId:des,kulalanId:itemkulid, kumashId:kum,
-      storId:this.item.storId,prodname:this.itemForm.value.prodname,  barcode:this.itemForm.value.barcode,       
-      boxquantity:this.itemForm.value.boxquantity,unitsinstock:this.itemForm.value.unitsinstock,
-      buy_unitprice:this.itemForm.value.buy_unitprice, sell_unitprice:this.itemForm.value.sell_unitprice,
-      discount:this.itemForm.value.discount,ModifiedDate:new Date().toISOString(),Discontinued:false,opr:'Add',
-      delivery:this.itemForm.value.delivery
-    }  
-    //console.log(p) 
-    //console.log('SS')     
-    let itm = await this._caSer._positemdetail(p).toPromise() as product
+   for(let j=0;j<this.colors.length;j++){   
+      if(_itm===undefined){_itm='';}
+        var p={
+          proId:_itm ,genId:geni,catId:itemcatid,markaId:itemmarkid, bedenId:bed,colId:this.colors[j],qelipId:qel, matId:mat,
+          yakaId:yak,qolId:qol, stilId:itemstilid,desId:des,kulalanId:itemkulid, kumashId:kum,
+          storId:this.item.storId,prodname:this.itemForm.value.prodname,  barcode:this.itemForm.value.barcode,       
+          boxquantity:this.itemForm.value.boxquantity,unitsinstock:this.itemForm.value.unitsinstock,
+          buy_unitprice:this.itemForm.value.buy_unitprice, sell_unitprice:this.itemForm.value.sell_unitprice,
+          discount:this.itemForm.value.discount,ModifiedDate:new Date().toISOString(),Discontinued:false,opr:'Add',
+          delivery:this.itemForm.value.delivery
+        }  
+        // console.log(p) 
+        // console.log('SS')     
+        let itm = await this._caSer._positemdetail(p).toPromise() as product
 
-    var _p={ proId:itm.proId , storId:itm.proId, genId:this.itemForm.value.genId } 
-    
+        var _p={ proId:itm.proId , storId:itm.storId, genId:this.itemForm.value.genId } 
+    //console.log(_p) 
     var phot = await this._caSer._getitemsphoto(_p.proId).toPromise() as prodphoto[] ;
     //shekili silir
     for (let item of phot) {  await this._caSer._delitemsphoto(item).toPromise(); }
@@ -515,6 +523,7 @@ _selectFiles(event:any)
     for (let i = 0; i < this.selectedFiles.length; i++)  { 
        await this._caSer.upload(_p, this.selectedFiles[i]).toPromise()
     }
+  }
     this._additem(); 
     this._getit();    
     this._cline();   
@@ -525,11 +534,10 @@ _getit(){
     {   
         if(list!=[]){
           this.listitem=list;
-       // alert(this.listitem)
+      // console.log(this.listitem)
          //  this.mdbTable.setDataSource(this.listitem);
         //this.previous = this.mdbTable.getDataSource();
-        }    
-                             
+        }                                
    }, error => console.error(error + 'Siz sistemə daxil olmalısınız!'));
   } 
   _bayunit(event:string){

@@ -641,8 +641,8 @@ export class SettingsService {
     //console.log('FFF') 
     console.log(p.firmaId) 
     formData.append('file', file);     
-    formData.append('itemId',p.itemId);
-    formData.append('firmaId',p.firmaId);
+    formData.append('proId',p.proId);
+    formData.append('firmaId',p.storId);
     formData.append('genId',p.genId);   
    console.log(formData)
    // console.log('SSSSSSSSS')

@@ -52,14 +52,7 @@
                          <option *ngFor="let o of _marka" [value]="o.markaname" >{{o.markaname}}</option>                                 
                        </select>  
                     </div> 
-                    <div class="col-sm-3">  
-                      <label for="formGroupExampleInput">Color seçin</label>
-                      <select [(ngModel)]="colname"  name="_col" formControlName="colId" (change)="selcol($event.target.value)"                       
-                           class="browser-default custom-select" >
-                             <option >Choose</option>                                    
-                       <option *ngFor="let o of _color" [value]="o.colname" >{{o.colname}}</option>                                 
-                     </select>                    
-                    </div>  
+                     
                     <div class="col-sm-3">
                       <label for="formGroupExampleInput">Kullanim alani seçin</label>
                       <select [(ngModel)]="kulname"  name="_kul" formControlName="kulalanId" (change)="selkull($event.target.value)"                       
@@ -76,10 +69,7 @@
                          <option *ngFor="let o of _stil" [value]="o.stilname" >{{o.stilname}}</option>                                 
                        </select> 
                     </div>  
-                    <div class="col-sm-3">
-                      <label for="Item barcode" class=""><i class="fas fa-tag prefix grey-text"></i>Malın barcode</label>
-                      <input type="text"  [(ngModel)]="item.barcode"   name="barcode"  class="form-control" formControlName="barcode" placeholder="" mdbInput> 
-                    </div>                     
+                                    
                     <div class="col-sm-3" *ngIf="_shomi"> 
                         <label for="formGroupExampleInput">Beden seçin</label>
                         <select [(ngModel)]="bedname" id="_b"  name="_bed" formControlName="bedenId" (change)="selbed($event.target.value)"                       
@@ -137,9 +127,21 @@
                      </select>                       
                       </div>
                       <div class="col-sm-3">
-                        <label for="item_delivery" class=""><i class="fas fa-tag prefix grey-text"></i>Malın çatdırılması</label>
+                        <label for="Item barcode" class=""><i class="fas fa-tag prefix grey-text"></i>Malın barcode</label>
+                        <input type="text"  [(ngModel)]="item.barcode"   name="barcode"  class="form-control" formControlName="barcode" placeholder="" mdbInput> 
+                      </div>    
+                      <div class="col-sm-2">
+                        <label for="item_delivery" class=""><i class="fas fa-tag prefix grey-text"></i>Çatdırılması</label>
                         <input type="checkbox"  [(ngModel)]="item.delivery"   name="delivery"  class="form-control" formControlName="delivery" placeholder="" mdbInput> 
-                    </div>                    
+                    </div>  
+                    <div class="col-sm-2">
+                      <label for="discount" class=""><i class="fas fa-tag prefix grey-text"></i>Endirim %</label>
+                      <input type="number"  [(ngModel)]="item.discount"   name="discount"  class="form-control" formControlName="discount" placeholder="" mdbInput> 
+                     </div>
+                     <div class="col-sm-2">
+                      <label for="Discontinued" class=""><i class="fas fa-tag prefix grey-text"></i>Satishdan çıxar</label>
+                      <input type="checkbox"  [(ngModel)]="item.Discontinued"   name="Discontinued"  class="form-control" formControlName="Discontinued" placeholder="" mdbInput> 
+                   </div>                  
                     <div class="col-sm-4">
                       <label for="prodname" class=""><i class="fas fa-tag prefix grey-text"></i>Malın adı</label>
                     <input type="text" [(ngModel)]="item.prodname" name="prodname" placeholder="" class="form-control" formControlName="prodname" mdbInput>   
@@ -159,16 +161,21 @@
                     <div class="col-sm-2">
                         <label for="unitsinstock" class=""><i class="fas fa-tag prefix grey-text"></i>Miqdarı</label>
                         <input type="number"  [(ngModel)]="item.unitsinstock"   name="unitsinstock"  class="form-control" formControlName="unitsinstock" placeholder="" mdbInput> 
-                    </div>
-                    
-                   <div class="col-sm-2">
-                    <label for="discount" class=""><i class="fas fa-tag prefix grey-text"></i>Endirim %</label>
-                    <input type="number"  [(ngModel)]="item.discount"   name="discount"  class="form-control" formControlName="discount" placeholder="" mdbInput> 
-                   </div>
-                   <div class="col-sm-2">
-                    <label for="Discontinued" class=""><i class="fas fa-tag prefix grey-text"></i>Satishdan çıxar</label>
-                    <input type="checkbox"  [(ngModel)]="item.Discontinued"   name="Discontinued"  class="form-control" formControlName="Discontinued" placeholder="" mdbInput> 
-                 </div>
+                    </div>              
+                 <div class="col-sm-12"> 
+                  <hr>
+                  <!-- <label for="formGroupExampleInput">Color seçin</label>  -->
+                  <div class="form-check form-check-inline" *ngFor="let item of _color; let i=index">
+                    <input name="colId" [checked]="item.isChecked" (change)="onChangeColor(item.colId, $event.target.checked)" formControlName="colId" class="form-check-input" type="checkbox"/>
+                      <label class="form-check-label" for="inlineCheckbox1">{{item.colname}}</label>
+                  </div>  
+                  <hr>
+                  <!-- <select [(ngModel)]="colname"  name="_col" formControlName="colId" (change)="selcol($event.target.value)"                       
+                       class="browser-default custom-select" >
+                         <option >Choose</option>                                    
+                   <option *ngFor="let o of _color" [value]="o.colname" >{{o.colname}}</option>                                 
+                 </select>                     -->
+                </div> 
                     <div class="col-sm-12">                                          
                     <img *ngFor="let url of urls; let i = index" [src]="url" width="50" height="50" alt="" (click)="_delFiles(i)" class="img-fluid img-thumbnail">
                      <input type="file" [src]="imgsrc" formControlName="_file" accept=" image/* " multiple (change)="_selectFiles($event)" />                   
@@ -222,14 +229,15 @@
             <tbody *ngFor='let p of listitem'>
               <tr>
                 <!-- 'firmaname','price','itemname','beden','genname','color','catname' -->
-                <td class="pt-3-half" contenteditable="true">{{ p.firmaname }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.itemname }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.price }}</td>                
-                <td class="pt-3-half" contenteditable="true">{{ p.beden }}</td>               
+                <td class="pt-3-half" contenteditable="true">{{ p.storname }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.prodname }}</td>
+                <td class="pt-3-half" contenteditable="true">{{ p.buy_unitprice }}</td>                
+                <!-- <td class="pt-3-half" contenteditable="true">{{ p.beden }}</td>                -->
                 <td class="pt-3-half" contenteditable="true">{{ p.genname }}</td>
-                <td class="pt-3-half" contenteditable="true">{{ p.color }}</td>                
+                <td class="pt-3-half" contenteditable="true">{{ p.colname }}</td>                
                 <td class="pt-3-half" contenteditable="true">{{ p.catname }}</td>
                 
+
                 <!-- <td class="pt-3-half" contenteditable="true">{{ p.delivery }}</td>
                 <td class="pt-3-half" contenteditable="true">{{ p.desenname }}</td>
                 <td class="pt-3-half" contenteditable="true">{{ p.discount }}</td>

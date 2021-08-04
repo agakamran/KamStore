@@ -50,11 +50,13 @@ export class HazirlaComponent implements OnInit {
     private _auth:AuthService,  private noti: NotificationService) {    
    }
   ngOnInit(): void {
-    let rol=this._auth.getrole();    
+    let rol=this._auth.getrole();  
+    //console.log(rol)  
     this._caSer1._allmenu(rol)
     .pipe(
       flatMap(p=>{
-         this.listnav=p;          
+         this.listnav=p;  
+       //  console.log(this._caSer1._jsonmenu())         
        return this._caSer1._jsonmenu()
       })).subscribe(list=>
       { 
@@ -210,7 +212,7 @@ export class HazirlaComponent implements OnInit {
 
   addmenu()
   { 
-  // console.log(this.listnav)
+   console.log(this.listnav)
    if(this.listnav.length===0)
    {
      // console.log(this.jsonlistnav.length)

@@ -89,28 +89,40 @@ export class NavbarComponent implements OnInit {
     if(val){  
         for (var i = 0; i < this._role.length; i++) { 
            if(this._role[i].name===userRole){
-            this._role[i].isChecked=true;                    
+             console.log(userRole)
+
+            this._role[i].isChecked=true;  
+            var nrs=new NavbarRole();
+            nrs.nrid="";
+            nrs.RoleId=this._role[i].id;
+            nrs.nid=this.nav.nid;
+          this._caSer._addnavrol(nrs).subscribe();                  
           }
         }
       }
     else{
       for (var i = 0; i < this._role.length; i++) { 
         if(this._role[i].name===userRole){
-         this._role[i].isChecked=false;                    
+         this._role[i].isChecked=false;  
+         var nrs=new NavbarRole();
+         nrs.nrid="";
+         nrs.RoleId=this._role[i].id;
+         nrs.nid=this.nav.nid;
+         this._caSer._delnavrol(nrs).subscribe();                    
        }
       }           
      }      
-      this._caSer._delnavrol(this.nav.nid,'').subscribe();        
-       for (var i = 0; i < this._role.length; i++) {
+      // this._caSer._delnavrol(this.nav.nid,'').subscribe();        
+      //  for (var i = 0; i < this._role.length; i++) {
         
-        if(this._role[i].isChecked==true){
-          var nrs=new NavbarRole();
-          nrs.nrid="";
-          nrs.RoleId=this._role[i].id;
-          nrs.nid=this.nav.nid;
-         this._caSer._addnavrol(nrs).subscribe();;
-         }         
-       } 
+      //   if(this._role[i].isChecked==true){
+      //     var nrs=new NavbarRole();
+      //     nrs.nrid="";
+      //     nrs.RoleId=this._role[i].id;
+      //     nrs.nid=this.nav.nid;
+      //    this._caSer._addnavrol(nrs).subscribe();;
+      //    }         
+      //  } 
       // console.log(this._role)
    // console.log(this.checkboxlist);
   }
