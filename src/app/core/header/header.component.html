@@ -2,7 +2,7 @@
 <mdb-navbar #navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark unique-color justify-content-between scrolling-navbar" [containerInside]="false">
 
   <!-- Navbar brand -->
-  <mdb-navbar-brand>
+  <mdb-navbar-brand>    
     <button mat-icon-button routerLink="/" (click)="onToggleSidenav()">            
       <span class="navbar-toggler-icon"></span> 
       <!-- <mdb-icon fas icon="align-justify"></mdb-icon>      -->
@@ -11,6 +11,7 @@
      <!-- <a class="navbar-brand" routerLink="/">
           <img src="https://mdbootstrap.com/img/Marketing/other/logo/logo-mdb-angular-small.png" height="30" alt="">
       </a>-->
+      
   </mdb-navbar-brand>
 
   <!-- Collapsible content -->
@@ -51,7 +52,51 @@
       </ng-container>    
    </ul>
     <ul class="navbar-nav">                 
-      
+       <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="united kingdom flag m-0"></i>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li>
+            <a class="dropdown-item" href="#"
+              ><i class="united kingdom flag"></i>English
+              <i class="fa fa-check text-success ms-2"></i
+            ></a>
+          </li>
+          <li><hr class="dropdown-divider" /></li>
+          <li>
+            <a class="dropdown-item" href="#"><i class="poland flag"></i>Polski</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#"><i class="china flag"></i>中文</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#"><i class="japan flag"></i>日本語</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#"><i class="germany flag"></i>Deutsch</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#"><i class="france flag"></i>Français</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#"><i class="spain flag"></i>Español</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#"><i class="russia flag"></i>Русский</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#"><i class="portugal flag"></i>Português</a>
+          </li>
+        </ul>
+      </li>
     </ul>
     <!-- Links -->
 
@@ -97,4 +142,5 @@
   <!-- Collapsible content -->
 
 </mdb-navbar>
+
 <!--/.Navbar-->

@@ -1,6 +1,15 @@
 {
   "name": "clbazar",
   "version": "0.0.0",
+  "author": {
+    "name": "agakam",
+    "url": "https://",
+    "github": "",
+    "twitter": ""
+  },
+  "homepage": "https://coreui.io/angular",
+  "copyright": "Copyright 2021 ",
+  "license": "",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

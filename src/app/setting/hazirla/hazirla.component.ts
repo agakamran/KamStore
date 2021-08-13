@@ -51,7 +51,7 @@ export class HazirlaComponent implements OnInit {
    }
   ngOnInit(): void {
     let rol=this._auth.getrole();  
-    //console.log(rol)  
+   // console.log(rol)  
     this._caSer1._allmenu(rol)
     .pipe(
       flatMap(p=>{

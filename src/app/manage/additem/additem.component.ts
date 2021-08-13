@@ -56,8 +56,8 @@ export class AdditemComponent implements OnInit {
   //#endregion
   //#endregion
   searchText: string = '';
-  previous: string;
-  headElements = ['firmaname','_name','_buy_unitprice','genname','_color','_catname',
+  previous: string; //'firmaname',
+  headElements = ['imag','_name','_buy_unitprice','genname','beden','trEu','_color','_catname',
 
   // '_delivery','_desenname','_discount','_hidden','_markaname','_materalname','_unitsinstock','_sales_price','_stil_name','kullanim_name',
   // 'kumash_name','qaime_date','qelip_name','qoltipi_name','trEu','yaka_name'
@@ -112,7 +112,7 @@ export class AdditemComponent implements OnInit {
       bedenId: new FormControl('', [Validators.maxLength(36)]), 
       colId: new FormControl('', [Validators.required,Validators.maxLength(36)]),    
       prodname: new FormControl('', [Validators.required,Validators.maxLength(36)]),    
-      barcode: new FormControl('', [Validators.required,Validators.maxLength(36)]),  
+      barcode: new FormControl(0),  
       storId: new FormControl('', [Validators.required,Validators.maxLength(36)]),  
       boxquantity: new FormControl(1, [Validators.required,Validators.required]),
       unitsinstock: new FormControl(1, [Validators.required,Validators.required]),        
@@ -265,7 +265,18 @@ selkumas(sel:any){ this._kum=sel;}
       this.stilname=this._stil.find(k=>k.stilId===ca.stilId)!.stilname;   
       //console.log(ca.item_color_Id)
 
-      if(ca.colId!=null){ ccol=this._color.find(k=>k.colId=== ca.colId)!.colname;this.colname = ccol; }
+      if(ca.colId!=null){
+       
+         ccol=this._color.find(k=>k.colId=== ca.colId)!.colname;this.colname = ccol; 
+         for(let i=0;i<this._color.length;i++){
+           this._color[i].isChecked=false;
+           if(this._color[i].colname===ccol){
+             this._color[i].isChecked=true;
+             //console.log(this._color[i].colname)
+            }
+          }
+        }
+     // console.log(ccol)
       
        
       this.item.prodname=ca.prodname;  
@@ -273,6 +284,7 @@ selkumas(sel:any){ this._kum=sel;}
       this.item.buy_unitprice=ca.buy_unitprice; 
       this.item.sell_unitprice=ca.sell_unitprice; 
       this.item.unitsinstock=ca.unitsinstock;
+      this.item.boxquantity=ca.boxquantity;
       this.item.discount=ca.discount;
       this.item.Discontinued=ca.Discontinued;
       let dd=false;
@@ -309,6 +321,7 @@ selkumas(sel:any){ this._kum=sel;}
         var file = new File([blob],filename);
         this.selectedFiles.push(file);
         this.urls.push(ad+s[i].photourl); 
+
         //console.log(ad+s[i].item_photo_url)     
       }     
   }     
@@ -323,8 +336,8 @@ selkumas(sel:any){ this._kum=sel;}
     this._getit();    
   } 
   async _additem()
-  {
-    //this.itemForm.reset();
+  {    
+    for(let i=0;i<this._color.length;i++){this._color[i].isChecked=false;}
     this.item.proId='';
     this.item.storId=this._email;
    
@@ -332,7 +345,7 @@ selkumas(sel:any){ this._kum=sel;}
     this.item.catId='';  
     this.item.markaId='';  
     this.item.bedenId='';          
-    this.item.colId='';    
+   // this.item.colId='';    
     this.item.qelipId='';
     this.item.matId='';   
     this.item.yakaId='';  
@@ -342,7 +355,7 @@ selkumas(sel:any){ this._kum=sel;}
     this.item.kulalanId='';   
     this.item.kumashId='';   
     this.item.prodname=''; 
-    this.item.barcode='';    
+   // this.item.barcode=0;    
     this.item.buy_unitprice=0;
     this.item.sell_unitprice=0;
     this.item.boxquantity=1; 
@@ -355,6 +368,7 @@ selkumas(sel:any){ this._kum=sel;}
     this.urls = [];
     this.gender=this.catname=this.marname=this.colname=this.kulname=this.stilname=
     this.bedname=this.yakname=this.qolname=this.kumname=this.qelname=this.matname=this.desname='';
+    this.barkod();
     //console.log('BBB')
    // console.log(this.item.firma_Id)    
   }
@@ -443,7 +457,7 @@ _selectFiles(event:any)
  onChangeColor(cid:string,val:boolean){
    if(val){ this.colors.push(cid) }
    else{this.colors= this.colors.filter(item => item !== cid);}
- console.log(this.colors)
+ //console.log(this.colors)
  }
  async _uploadFiles() {
 // console.log('33')  
@@ -499,6 +513,7 @@ _selectFiles(event:any)
    if(this.itemForm.value.kulalanId!=undefined){
     itemkulid= this._kullan.find(h=>h.kullanimname===this.itemForm.value.kulalanId)!.kulalanId
    }
+    console.log(this.colors.length) 
    for(let j=0;j<this.colors.length;j++){   
       if(_itm===undefined){_itm='';}
         var p={
@@ -534,7 +549,7 @@ _getit(){
     {   
         if(list!=[]){
           this.listitem=list;
-      // console.log(this.listitem)
+       //console.log(this.listitem)
          //  this.mdbTable.setDataSource(this.listitem);
         //this.previous = this.mdbTable.getDataSource();
         }                                
@@ -544,14 +559,25 @@ _getit(){
     let per:number;
     this._store.select(getpercent).subscribe(k=>{  per=k;   })
     this.item.sell_unitprice= Number.parseFloat(event) +  (Number.parseFloat(event)* per/100);
-    this.barkod();
+   // this.barkod();
     
    }
    barkod(){
-     if(this.listitem!=null){
-       // alert('g')
+    // console.log('!!!!')
+   //  console.log(this.listitem.length)
+     if(this.listitem.length===0){        
+        this.item.barcode=1;
      }
-     //alert(this.listitem)
-     this.item.barcode=this. item.storId.substring(0,3)+'_00000000'+1;
+     else {
+       let z=0;
+       for(let f=0;f<this.listitem.length;f++) {
+       // console.log('sss')         
+          if(z<this.listitem[f].barcode) {
+            z=this.listitem[f].barcode;           
+            //  this.item.barcode=this. item.storId.substring(0,3)+'_00000000'+1;
+          }
+        }
+        this.item.barcode = z+1;
+     }     
    } 
 }

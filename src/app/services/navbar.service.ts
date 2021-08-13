@@ -39,10 +39,10 @@ export class NavbarService {
   
   _allmenu(pra:any): Observable<any>{  
     
-   // const body=JSON.stringify(pra);
-   // console.log(pra)
+    const body=JSON.stringify(pra);
+    //console.log(pra)
     
-    return this.http.post<any>(this.pathAPI +'_getnavbar',[pra])
+    return this.http.post<any>(this.pathAPI +'_getnavbar',body)
     .pipe(map((data)=>{
       return data;
     }),

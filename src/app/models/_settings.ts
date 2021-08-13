@@ -43,6 +43,7 @@ export class _color
     colId:string;
     colname:string;
     colurl:string;
+    isChecked?:boolean;
 }
 export class yaka {      
         yakaId: string;        
@@ -99,10 +100,10 @@ export class product{
     kulalanId: string;    
     kumashId: string; 
     prodname:string;   
-    barcode?: string;
-    storId:string ;              //magaza
-    boxquantity?:number;          //qutuda olan 
-    unitsinstock:number;        //anbarda olan       
+    barcode?: number;  
+    storId:string ;           //magaza
+    boxquantity?:number;      //qutuda olan 
+    unitsinstock:number;      //anbarda olan       
     buy_unitprice: number;     //birinin      alish
     sell_unitprice:number;   //birinin      satish       
     discount:number;          //скидка    
